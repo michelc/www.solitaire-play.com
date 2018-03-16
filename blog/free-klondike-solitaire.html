@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Solitaire / Free Klondike Solitaire</title>
+    <meta name="description" content="Back in the old days of Visual Basic 3, I used to create some games. Mainly solitaire card games. Today, with HTML and Javascript I do it again!">
+    <meta name="keywords" content="New, Free, Card, Game, Solitaire, Klondike, Turn-One, Patience, Play, Online">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="../css/solitaire.min.css">
+    <style>
+      .play { text-align: center; }
+      @media (max-width: 24rem) { .play > img { height: 100%; width: 100%; } }
+    </style>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body class="blog">
+
+    <div class="container">
+
+      <div class="row">
+
+        <h1>
+          <a href="/" title="Play Solitaire online">Solitaire</a>
+          / Free Klondike Solitaire
+        </h1>
+
+        <p>
+          Hello, I am Michel and I created Solitaire-Play. Twenty years ago, I
+          had already written a few games with Visual Basic 3. The first was
+          <a href="/golf/">Golf</a>, because it's a solitaire card game with no
+          drag &amp; drop to manage. Today, with HTML and Javascript I should be
+          able to do it again!
+        </p>
+
+        <p>
+          This time, I choose to code a Klondike Solitaire game, because it's
+          probably the best known solitaire in the world. Thus, everyone
+          should know its rules and can start to play immediately for free...
+        </p>
+
+        <p class="play">
+          <img src="../img/klondike-solitaire.png" title="Klondike Solitaire online" alt="" />
+        </p>
+
+        <p>
+          For fun (and because I'm used to it), I tried to copy the game play
+          from Windows Solitaire:
+        </p>
+
+        <ul>
+          <li>Use drag &amp; drop to move cards from one stack to another</li>
+          <li>Click on the deck to draw a new card</li>
+          <li>Double-click or right-click on a card to add it to a foundation</li>
+          <li>Right-click on the background to move all possible cards to the foundations</li>
+          <li>Allow unlimited undo to try different moves</li>
+          <li>Accept the same keyboard shortcuts (F2, H and Control+Z)</li>
+        </ul>
+
+        <p>
+          I wanted to play solitaire online on a tablet (and maybe phone).
+          So I use a responsive design to make the display part. I didn't want
+          to go with Bootstrap and just made it basic by following a really
+          <a href="http://www.adamkaplan.me/grid/">simple guide to responsive
+          design</a> by Adam Kaplan. There are 7 stacks in the Klondike Solitaire
+          game, so I just build a 7 columns grid.
+        </p>
+
+        <p>
+          I was a little worried, but finally the Javascript part wasn't too
+          hard. Basically, I'm not a real Javascript developer, but thanks to
+          <a href="https://jquery.com/">JQuery</a> and
+          <a href="https://jqueryui.com/">jQuery UI</a>, I was able to code
+          quite easily. I found <a href="http://touchpunch.furf.com/">jQuery UI
+          Touch Punch</a> by Dave Furfero so that drag &amp; drop also works on
+          tablets. It's not perfect, but it's a good start.
+        </p>
+
+        <p>
+          For cards, I also made it simple and used
+          <a href="http://sourceforge.net/projects/vector-cards/">Vectorized
+          Playing Cards</a> by Chris Aguilar, and some graphics from
+          <a href="http://svg-cards.sourceforge.net/">SVG-cards</a> by David
+          Bellot.
+        </p>
+
+        <p>
+          I have not used 52 images (one per card), but rather a single grid of
+          images. That was pretty easy because I had already used this technique
+          through the article <a href="http://alistapart.com/article/sprites">CSS
+          Sprites: Image Slicing’s Kiss of Death</a> by Dave Shea. Once my
+          sprite was ready, <a href="https://tinypng.com/">TinyPNG</a> was useful
+          to optimize its size.
+        </p>
+
+        <p>
+          After coding the game, I played with it to debug. A lot. Then I
+          bought a domain name and here we are, with yet another <a href="/"
+          title="Play Solitaire">free online solitaire game</a>!
+        </p>
+
+        <p>
+          And remember, it's a responsive game. You can play Klondike Solitaire
+          with phone, tablet or desktop!
+        </p>
+
+        <p>
+          If you have questions or comments about the game, feel free to contact
+          me at the email "michel.c at gmail".
+        </p>
+        <p>
+          Michel. <span>(2014/08/21)</span>
+        </p>
+
+      </div>
+
+      <div class="row">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- solitaire -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5475403929650645"
+     data-ad-slot="2876021655"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      </div>
+
+      <footer>
+          <p>
+              &copy; 2018
+              <span>
+                / <a href="/" title="Play Klondike Solitaire">Solitaire</a>
+                / <a href="/games/" title="Online solitaire games">Games</a>
+                / <a href="/about/" title="About Solitaire-Play">About</a>
+                / <a href="/blog/" title="Solitaire News">Blog</a>
+              </span>
+              <span>
+                - http://www.solitaire-play.com/
+              </span>
+          </p>
+      </footer>
+
+    </div>
+
+  </body>
+
+</html>

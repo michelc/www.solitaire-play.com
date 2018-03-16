@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Solitaire / Play Solitaire On Phone</title>
+    <meta name="description" content="When you play Golf on phone, in portrait mode, game over dialog hides cards on the foundation. As you can't see the last draw, you can't be sure your last move was the good one.">
+    <meta name="keywords" content="Free, Card, Game, Solitaire, Golf, Play, Online, Phone, UI, Responsive">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="../css/solitaire.min.css">
+    <style>
+      .play div { margin: 10px 0; text-align: center; }
+      .play div img { background-color: #333; border: 1px #ccc solid; border-radius: 7px; padding: 20px 15px; }
+      @media (max-width: 28.1rem) { .column.half { display:block; width: 100%; } }
+    </style>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body class="blog">
+
+    <div class="container">
+
+      <div class="row">
+
+        <h1>
+          <a href="/" title="Play Solitaire online">Solitaire</a>
+          / Play Solitaire On Phone
+        </h1>
+
+        <p>
+          When you play <a href="/golf/">Golf solitaire</a> online with a phone
+          set in portrait mode, game over dialog hides cards on the foundation.
+        </p>
+
+        <p>
+          Let's say the stock contains one last card, foundation ends with 8 of
+          clubs and 2 cards remain on the tableau: 7 of hearts and 9 of spades.
+        </p>
+
+        <p>
+          Suppose you play 9 of spades, draw the last card from stock and the
+          game over dialog immediately pops up. That means the last card isn't a
+          6 or an 8, otherwise you still have a valid move.
+        </p>
+
+        <p>
+          But on phone, you can't see the last draw. May be it's a 10? In this
+          case, you undo the last move and instead build 7 of hearts over the 8
+          of clubs. Then draw the last card and win the game by playing the 9
+          of spades over this 10!
+        </p>
+
+        <p>
+          From now, I display the game over dialog at the bottom of the screen.
+          So the game surface is free and you can choose to undo last move or
+          give up.
+        </p>
+
+        <div class="row play">
+          <div class="column half">
+            <img src="../img/golf-phone-1.png" title="Before" alt="" />
+          </div>
+          <div class="column half">
+            <img src="../img/golf-phone-2.png" title="After" alt="" />
+          </div>
+        </div>
+
+        <p>
+          Update: I also recreate cards deck for phones. Now each card contains
+          its suit on left, which is better when cards are displayed in fan view.
+        </p>
+
+        <p>
+          Michel <span>(2015/12/03)</span>
+        </p>
+
+      </div>
+
+      <div class="row">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- solitaire -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5475403929650645"
+     data-ad-slot="2876021655"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      </div>
+
+      <footer>
+          <p>
+              &copy; 2018
+              <span>
+                / <a href="/" title="Play Klondike Solitaire">Solitaire</a>
+                / <a href="/games/" title="Online solitaire games">Games</a>
+                / <a href="/about/" title="About Solitaire-Play">About</a>
+                / <a href="/blog/" title="Solitaire News">Blog</a>
+              </span>
+              <span>
+                - http://www.solitaire-play.com/
+              </span>
+          </p>
+      </footer>
+
+    </div>
+
+  </body>
+
+</html>

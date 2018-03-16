@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Solitaire / Free Klondike Turn Three</title>
+    <meta name="description" content="Solitaire-Play turns two years this summer! I always procrastinated, but it's really time to release the Klondike Turn Three version... It wasn't difficult to develop, but a lot harder to win.">
+    <meta name="keywords" content="New, Free, Card, Game, Solitaire, Klondike, Turn-One, Turn-Three, Patience, Play, Online">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="../css/solitaire.min.css">
+    <style>
+      .play { text-align: center; }
+      @media (max-width: 24rem) { .play > img { height: 100%; width: 100%; } }
+    </style>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body class="blog">
+
+    <div class="container">
+
+      <div class="row">
+
+        <h1>
+          <a href="/" title="Play Solitaire online">Solitaire</a>
+          / Free Klondike Turn Three
+        </h1>
+
+        <p>
+          Two years ago, I started Solitaire-Play with the “Turn One” variant of
+          Klondike Solitaire. It's a classic game and my favorite version, the
+          one I used to play on Windows. You know it's already difficult to win
+          with a single draw. I don't feel the challenge to turn three cards at
+          a time.
+        </p>
+
+        <p>
+          I understand it's just my opinion and that it's finally time to
+          launch another solitaire. This summer, I took a few hours to create a
+          new Klondike “Turn Three”. Some months ago, I had improved my CSS
+          files to better represent all kind of card stacks. And now, with one
+          extra CSS rule, I succeed to display the waste pile as a fan of three
+          cards.
+        </p>
+
+        <p class="play">
+          <img src="../img/klondike-turn-three.png" title="Klondike Turn Three online" alt="" />
+        </p>
+
+        <p>
+          I “just” have to work on the Javascript part to manage the turn three
+          version. The obvious concern was the draw code, to take three cards or
+          one, according to which Klondike is played. But in fact, the big
+          problem was to handle the undo system. After a three draw, all 3 cards
+          must return to the deck when the player chose to cancel his last move.
+        </p>
+
+        <p>
+          Also, I had to update the hint system. I keep it simple and I only
+          change the way of playing a “2” card. With Klondike Turn One, I never
+          suggest to play a “2” from the waste to the tableau:
+        </p>
+
+        <ul>
+          <li>
+            This kind of move may block the underlying “3” when I will need it
+            to build a foundation. Or to play another “2” already on the
+            tableau.
+          </li>
+          <li>
+            The “2” will always be available when I will go through the full
+            deck.
+          </li>
+        </ul>
+
+        <p>
+          But with Klondike Turn Three, it become a more interesting move:
+        </p>
+
+        <ul>
+          <li>
+            It's not sure the “2” will always be available on top of three cards
+            the next time we go through the stock.
+          </li>
+          <li>
+            By removing a card from the deck, we will get to see different cards
+            on top of the waste in the next round.
+          </li>
+        </ul>
+
+        <p>
+          Et voila! I hope this small improvement will please people who prefer
+          <a href="/klondike-turn-three/">Klondike Turn Three</a>. And that
+          players who like the classic <a href="/">Klondike Turn One</a> will
+          give it a try.
+        </p>
+
+        <p>
+          Michel. <span>(2016/08/21)</span>
+        </p>
+
+      </div>
+
+      <div class="row">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- solitaire -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5475403929650645"
+     data-ad-slot="2876021655"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      </div>
+
+      <footer>
+          <p>
+              &copy; 2018
+              <span>
+                / <a href="/" title="Play Klondike Solitaire">Solitaire</a>
+                / <a href="/games/" title="Online solitaire games">Games</a>
+                / <a href="/about/" title="About Solitaire-Play">About</a>
+                / <a href="/blog/" title="Solitaire News">Blog</a>
+              </span>
+              <span>
+                - http://www.solitaire-play.com/
+              </span>
+          </p>
+      </footer>
+
+    </div>
+
+  </body>
+
+</html>

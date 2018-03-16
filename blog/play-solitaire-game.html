@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Solitaire / Select Solitaire Game</title>
+    <meta name="description" content="Currently, Solitaire-Play website offers only two card games: the classic Klondike solitaire and a Golf solitaire. But I expect to create more solitaire games this year.">
+    <meta name="keywords" content="Free, Card, Game, Solitaire, Golf, Play, Online, Phone, UI, Responsive, Hamburger, Menu">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="../css/solitaire.min.css">
+    <style>
+      .play { text-align: center; }
+      @media (max-width: 24rem) { .play > img { height: 100%; width: 100%; } }
+      .unicode { font-size: 1000%; margin: -.4em 0; text-align: center; }
+    </style>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body class="blog">
+
+    <div class="container">
+
+      <div class="row">
+
+        <h1>
+          <a href="/" title="Play Solitaire online">Solitaire</a>
+          / Select Solitaire Game
+        </h1>
+
+        <p>
+          Currently, Solitaire-Play website offers only two card games:
+          the classic Klondike solitaire and a Golf solitaire. But I
+          expect to create more games this year. So I need to find a
+          way to select which solitaire you want to play online.
+        </p>
+
+        <p>
+          From the beginning, I display menu options in the top right of
+          the title bar:
+        </p>
+
+        <ul>
+          <li>GAME: to start a new game</li>
+          <li>HINT: to get a hint for playing</li>
+          <li>UNDO: to back up a move</li>
+        </ul>
+
+        <p>
+          But on phone, I have to be responsive and the "GAME" option is
+          hidden. This way, you click the game title to start a free
+          solitaire game.
+        </p>
+
+        <p>
+          So it would be difficult to add a new menu option to select
+          between Klondike and Golf. Plus I didn't know how to name this
+          option ("GAME" may be? Then old "GAME" become "PLAY"? Or simply
+          "OPTION"?). And for months, I just display a big link
+          "<a href="/">Play Klondike Solitaire</a>" or
+          "<a href="/golf/">Play Golf Solitaire</a>" near the game
+          subtitle.
+        </p>
+
+        <p>
+          Sometimes ago, I found a better solution. I can use "the"
+          hamburger menu: it's small, I don't have to find a good name
+          and people are used to this symbol.
+        </p>
+
+        <p>
+          And "cerise sur le gâteau", there is a Unicode symbol which
+          looks like the hamburger menu: the character for "IDENTICAL TO"
+          (U+2261).
+        </p>
+
+        <p class="unicode">
+          &#x2261;
+        </p>
+
+        <p>
+          Last days, I just need to adapt the game over dialog box, show two
+          buttons for Klondike and Golf, write a few lines of javascript
+          and do this print screen:
+        </p>
+
+        <p class="play">
+          <img src="../img/solitaire-games.png" title="Solitaire-Play: list of solitaire games" alt="" />
+        </p>
+
+        <p>
+          Now I really have to build another online solitaire game before 2017.
+        </p>
+
+        <p>
+          Michel <span>(2016/03/02)</span>
+        </p>
+
+      </div>
+
+      <div class="row">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- solitaire -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5475403929650645"
+     data-ad-slot="2876021655"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      </div>
+
+      <footer>
+          <p>
+              &copy; 2018
+              <span>
+                / <a href="/" title="Play Klondike Solitaire">Solitaire</a>
+                / <a href="/games/" title="Online solitaire games">Games</a>
+                / <a href="/about/" title="About Solitaire-Play">About</a>
+                / <a href="/blog/" title="Solitaire News">Blog</a>
+              </span>
+              <span>
+                - http://www.solitaire-play.com/
+              </span>
+          </p>
+      </footer>
+
+    </div>
+
+  </body>
+
+</html>

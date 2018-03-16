@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Solitaire / Free Golf Solitaire</title>
+    <meta name="description" content="A little over a year after the release of Klondike Solitaire online, I finally find enough time to code another solitaire card game. So, let's play Golf, like the one in Microsoft Entertainment Pack for Windows.">
+    <meta name="keywords" content="New, Free, Card, Game, Solitaire, Golf, Patience, Play, Online, Phone, Tablet, Desktop">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="../css/solitaire.min.css">
+    <style>
+      .play { text-align: center; }
+      @media (max-width: 24rem) { .play > img { height: 100%; width: 100%; } }
+    </style>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body class="blog">
+
+    <div class="container">
+
+      <div class="row">
+
+        <h1>
+          <a href="/" title="Play Solitaire online">Solitaire</a>
+          / Free Golf Solitaire
+        </h1>
+
+        <p>
+          <a href="/golf/">Golf</a> is one of the oldest forms of solitaire
+          card games. It was called One Foundation and I first play it from the
+          game developed by Ken Sykes for Microsoft Entertainment Pack. It was
+          actually the first game I ever created with Visual Basic 3 (after some
+          kinds of Breakout and Pong for Apple II).
+        </p>
+
+        <p>
+          Golf Solitaire is played with a single pack of 52 playing cards. Like
+          <a href="/">Klondike Solitaire</a>, the game starts with a tableau
+          where seven columns of cards are dealt. Except this time, each stack
+          contains five cards and all cards are face up.
+        </p>
+
+        <p>
+          The remaining cards forms a stock in the bottom left and the first one
+          is turned over to start the foundation. And now, our goal is to send
+          all the cards from the tableau to the foundation.
+        </p>
+
+        <p class="play">
+          <img src="../img/golf-layout.png" title="Golf: card layout" alt="" />
+        </p>
+
+        <p>
+          We can move the top card from any of the seven stacks to the
+          foundation. It must be either one higher or one lower in rank than
+          the top card on the foundation, regardless of suit.
+        </p>
+
+        <p>
+          So in the above example, either the ace of hearts or the 3 of spades
+          may be built on the 2 of spades.
+        </p>
+
+        <ul>
+          <li>
+            Ace is one lesser than 2 and we can play one heart over one spade.
+          </li>
+          <li>
+            3 is one greater than the current card in the foundation and we
+            don't care that they are both spades.
+          </li>
+        </ul>
+
+        <p>
+          Then, if we played the 3 of spades, it may be followed by the 4 of
+          clubs from the second column. 4 is one greater than 3 and suit doesn't
+          matter.
+        </p>
+
+        <p>
+          Changes of direction are allowed at any time. Thus we can play the
+          3 of clubs from the last column (which is now on top as we first
+          moved the 3 of spades) over the 4 of clubs. So far, we played the
+          following sequence: 2, 3, 4, 3 which is totally valid.
+        </p>
+
+        <p class="play">
+          <img src="../img/golf-foundation.png" title="Golf: foundation build" alt="" />
+        </p>
+
+        <p>
+          Let's build the 2 of clubs then the ace of hearts.
+        </p>
+
+        <p>
+          In the strict form of Golf, we can only move twos on aces, kings are
+          only allowed on queens and we can't play nothing on kings. With this
+          rule, it's quite impossible to win (unless you keep playing all day
+          long).
+        </p>
+
+        <p>
+          Solitaire-Play uses the variant where sequences may turn the corner:
+          we can play kings on aces and aces on kings. With this change, game
+          become a little more rewarding.
+        </p>
+
+        <p>
+          To follow with our current game, we can now play either the king of
+          spades or the king of hearts over the ace of hearts.
+        </p>
+
+        <p>
+          The king of hearts is a better choice, because it shows the ace of
+          clubs. So we can build this ace then the king of spades.
+        </p>
+
+        <p class="play">
+          <img src="../img/golf-king-ace.png" title="Golf: kings on aces and aces on kings" alt="" />
+        </p>
+
+        <p>
+          After our last move, no more card from the tableau can be played to
+          the foundation. We have to deal another card from the stock and try to
+          resume the building.
+        </p>
+
+        <p class="play">
+          <img src="../img/golf-stock.png" title="Golf: one more card from the stock" alt="" />
+        </p>
+
+        <p>
+          Jack of hearts! We are lucky. Now we can play:
+        </p>
+
+        <ul>
+          <li>
+            3 cards: 10 of hearts, jack of spades and queen of hearts.
+          </li>
+          <li>
+            8 cards: 10 of hearts, jack of spades, 10 of diamonds, 9 of clubs,
+            10 of spades, jack of diamonds, queen of hearts, jack of clubs.
+          </li>
+        </ul>
+
+        <p>
+          It's better to play cards that will allow for long streaks of play
+          (but there are some exceptions).
+        </p>
+
+        <p>
+          You win the game when all cards in the tableau have been built to the
+          foundation. The game is over when the stock is empty and no more moves
+          are possible.
+        </p>
+
+        <p>
+          Game after game, you'll understand that it's quite difficult to win.
+          There will always be some cards on the tableau. And since win is
+          unusual, your goal is to finish the game with the fewest cards
+          possible.
+        </p>
+
+        <p>
+          Rules are easy. Play may seem a little bit mechanical. But it becomes
+          exciting when you play more on instinct. Once you get to see the game,
+          the moves ahead, you can fully enjoy a fast paced and very fun game.
+        </p>
+
+        <p>
+          Don't take my words for it. Try it yourself and go put your luck and
+          patience to the test by playing <a href="/golf/">Golf Solitaire
+          online</a>.
+        </p>
+
+        <p>
+          And remember, it's a responsive game like Klondike Solitaire. You can
+          play it for free with phone, tablet or desktop!
+        </p>
+
+        <p>
+          Michel <span>(2015/10/24)</span>
+        </p>
+
+      </div>
+
+      <div class="row">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- solitaire -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5475403929650645"
+     data-ad-slot="2876021655"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      </div>
+
+      <footer>
+          <p>
+              &copy; 2018
+              <span>
+                / <a href="/" title="Play Klondike Solitaire">Solitaire</a>
+                / <a href="/games/" title="Online solitaire games">Games</a>
+                / <a href="/about/" title="About Solitaire-Play">About</a>
+                / <a href="/blog/" title="Solitaire News">Blog</a>
+              </span>
+              <span>
+                - http://www.solitaire-play.com/
+              </span>
+          </p>
+      </footer>
+
+    </div>
+
+  </body>
+
+</html>
