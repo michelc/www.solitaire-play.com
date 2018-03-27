@@ -32,7 +32,7 @@
   </url>
   <url>
     <loc>http://www.solitaire-play.com/aces-up/</loc>
-    <lastmod>2018-03-21</lastmod>
+    <lastmod>2018-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -56,7 +56,7 @@
   </url>
   <url>
     <loc>http://www.solitaire-play.com/blog/</loc>
-    <lastmod>2018-01-29</lastmod>
+    <lastmod>2018-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -105,6 +105,12 @@
   <url>
     <loc>http://www.solitaire-play.com/blog/free-monte-carlo-solitaire.html</loc>
     <lastmod>2018-01-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.solitaire-play.com/blog/free-aces-up-solitaire.html</loc>
+    <lastmod>2018-03-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
