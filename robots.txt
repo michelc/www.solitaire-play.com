@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://www.solitaire-play.com/sitemap.xml
+Sitemap: https://www.solitaire-play.com/sitemap.xml
