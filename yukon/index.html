@@ -150,7 +150,8 @@
           <li>UNDO: Back up one move (or press Control+Z). You can continue to
               undo until you reach the beginning of the game.</li>
           <li>≡ MENU: Play another free online solitaire card game like Klondike,
-              Klondike 3, Golf, Cruel, Monte Carlo, Aces Up or Yukon Solitaire.</li>
+              Klondike 3, Golf, Cruel, Monte Carlo, Aces Up, Yukon or Russian
+              Solitaire.</li>
         </ul>
       </div>
 
@@ -181,10 +182,11 @@
       <h3>Let's play another solitaire game</h3>
       <a href="/">KLONDIKE</a>
       <a href="/klondike-turn-three/">KLONDIKE 3</a>
+      <a href="/aces-up/">ACES UP</a>
       <a href="/cruel/">CRUEL</a>
       <a href="/golf/">GOLF</a>
       <a href="/monte-carlo/">MONTE CARLO</a>
-      <a href="/aces-up/">ACES UP</a>
+      <a href="/russian/">RUSSIAN</a>
       <a href="/yukon/">YUKON</a>
     </div>
 
@@ -193,7 +195,7 @@
     <script src="../js/jquery.16.11.20.min.js"></script>
     <script src="../js/yukon.min.js"></script>
     <script>
-        (function($) { Start(); })(jQuery);
+        (function($) { Start(1); })(jQuery);
         new Image().src = "http://26.pagesd.info/counter/solitaire?r=" + encodeURIComponent(document.referrer) + "&u=" + encodeURIComponent(window.location.href);
       </script>
 
