@@ -44,7 +44,7 @@
   </url>
   <url>
     <loc>https://www.solitaire-play.com/russian/</loc>
-    <lastmod>2018-04-17</lastmod>
+    <lastmod>2018-04-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -62,7 +62,7 @@
   </url>
   <url>
     <loc>https://www.solitaire-play.com/blog/</loc>
-    <lastmod>2018-04-10</lastmod>
+    <lastmod>2018-04-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -123,6 +123,12 @@
   <url>
     <loc>https://www.solitaire-play.com/blog/free-yukon-solitaire.html</loc>
     <lastmod>2018-04-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.solitaire-play.com/blog/free-russian-solitaire.html</loc>
+    <lastmod>2018-04-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
