@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Solitaire / Play Pyramid Solitaire</title>
+    <meta name="description" content="Play Pyramid Solitaire online, for free. A fun and speed variant of solitaire with a good gameplay: undo, hint, automatic move... HTML5 and Javascript solitaire card game for browser, tablet or phone.">
+    <meta name="keywords" content="Solitaire, Pyramid, One-Foundation, Patience, Card, Game, Free, Play, Online, HTML5, JS, Javascript">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@ms_michel" />
+    <meta property="og:url" content="https://www.solitaire-play.com/pyramid/">
+    <meta property="og:type" content="game">
+    <meta property="og:title" content="Pyramid Solitaire">
+    <meta property="og:description" content="Play Pyramid Solitaire card game online, for free. A fun and speed variant of solitaire with a good gameplay: undo, hint, automatic move...">
+    <meta property="og:image" content="https://www.solitaire-play.com/cards/pyramid-solitaire.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
+    <script>
+      (new Image).src = "../cards/card-" + ((document.documentElement.clientWidth > 736) ? "game.png" : "phone.png");
+    </script>
+    <link rel="stylesheet" href="../css/solitaire.min.css">
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+    <style>
+  #p1 .card { margin-top: -29px !important; }
+  #p2 .card { margin-top: -58px !important; }
+  #p3 .card { margin-top: -87px !important; }
+  #p4 .card { margin-top: -116px !important; }
+  #p5 .card { margin-top: -145px !important; }
+  #p6 .card { margin-top: -174px !important; }
+  #pyramid #solitaire { max-height: 320px; overflow-y: hidden; }
+@media (min-width: 28rem) {
+  #p1 .card { margin-top: -52px !important; }
+  #p2 .card { margin-top: -104px !important; }
+  #p3 .card { margin-top: -156px !important; }
+  #p4 .card { margin-top: -208px !important; }
+  #p5 .card { margin-top: -260px !important; }
+  #p6 .card { margin-top: -312px !important; }
+  #pyramid #solitaire { max-height: 335px; }
+}
+@media (min-width: 48rem) {
+  #p1 .card { margin-top: -80px !important; }
+  #p2 .card { margin-top: -155px !important; }
+  #p3 .card { margin-top: -230px !important; }
+  #p4 .card { margin-top: -305px !important; }
+  #p5 .card { margin-top: -380px !important; }
+  #p6 .card { margin-top: -455px !important; }
+  #pyramid #solitaire { max-height: 530px; }
+}
+
+      #p0 { margin-top: 10px; }
+      #pyramid .pile { background-image: none; }
+
+      #pyramid #t1 { margin-left: 35.71425%; }
+      #pyramid #t3 { margin-left: 28.5714%; }
+      #pyramid #t6 { margin-left: 21.4285%; }
+      #pyramid #t10 { margin-left: 14.2857%; }
+      #pyramid #t15 { margin-left: 7.14285%; }
+    </style>
+  </head>
+
+  <body id="pyramid">
+
+    <div class="container">
+
+      <div id="header" class="row">
+        <h1><a href="" title="Pyramid, a fast and fun solitaire card game">Pyramid<span> Solitaire</span></a></h1>
+        <div class="menu">
+          <button id="game" title="Play a new Pyramid solitaire (F2)">GAME</button>
+          <button id="hint" title="Show possible moves (H)">HINT</button>
+          <button id="undo" title="Undo last move (Control+Z)">UNDO</button>
+          <button id="tool" title="Select solitaire game">≡</button>
+        </div>
+      </div>
+
+      <div id="solitaire" class="clearfix">
+
+        <div id="p0" class="row">
+          <div id="stock" class="column pile pile-stack"><div class="draw"><div>×</div></div></div>
+          <div id="waste" class="column drop pile pile-stack"></div>
+          <div class="column space pile"><!-- space --></div>
+          <div id="t0" class="column drop pile pile-stack"></div>
+          <div class="column space pile"><!-- space --></div>
+          <div class="column space pile"><!-- space --></div>
+          <div id="f0" class="column pile pile-stack"></div>
+        </div>
+
+        <div id="p1" class="row">
+          <div id="t1" class="column drop pile pile-stack"></div>
+          <div id="t2" class="column drop pile pile-stack"></div>
+        </div>
+
+        <div id="p2" class="row">
+          <div id="t3" class="column drop pile pile-stack"></div>
+          <div id="t4" class="column drop pile pile-stack"></div>
+          <div id="t5" class="column drop pile pile-stack"></div>
+        </div>
+
+        <div id="p3" class="row">
+          <div id="t6" class="column drop pile pile-stack"></div>
+          <div id="t7" class="column drop pile pile-stack"></div>
+          <div id="t8" class="column drop pile pile-stack"></div>
+          <div id="t9" class="column drop pile pile-stack"></div>
+        </div>
+
+        <div id="p4" class="row">
+          <div id="t10" class="column drop pile pile-stack"></div>
+          <div id="t11" class="column drop pile pile-stack"></div>
+          <div id="t12" class="column drop pile pile-stack"></div>
+          <div id="t13" class="column drop pile pile-stack"></div>
+          <div id="t14" class="column drop pile pile-stack"></div>
+        </div>
+
+        <div id="p5" class="row">
+          <div id="t15" class="column drop pile pile-stack"></div>
+          <div id="t16" class="column drop pile pile-stack"></div>
+          <div id="t17" class="column drop pile pile-stack"></div>
+          <div id="t18" class="column drop pile pile-stack"></div>
+          <div id="t19" class="column drop pile pile-stack"></div>
+          <div id="t20" class="column drop pile pile-stack"></div>
+        </div>
+
+        <div id="p6" class="row">
+          <div id="t21" class="column drop pile pile-stack"></div>
+          <div id="t22" class="column drop pile pile-stack"></div>
+          <div id="t23" class="column drop pile pile-stack"></div>
+          <div id="t24" class="column drop pile pile-stack"></div>
+          <div id="t25" class="column drop pile pile-stack"></div>
+          <div id="t26" class="column drop pile pile-stack"></div>
+          <div id="t27" class="column drop pile pile-stack"></div>
+        </div>
+
+      </div>
+
+      <div class="row" id="share">
+        <a id="bt1" target="_blank" title="Share on Facebook" href="http://on.fb.me/1XFBUZ7"></a>
+        <a id="bt2" target="_blank" title="Tweet" href="http://bit.ly/1i9Hymq"></a>
+        <a id="bt3" target="_blank" title="Share on Google+" href="http://bit.ly/1VKM6xD"></a>
+        <a id="bt4" target="_blank" title="Pin it" href="http://bit.ly/1KYxHuq"></a>
+        <a id="bt5" target="_blank" title="Email" href="mailto:?subject=Play%20Solitaire&body=Play%20the%20classic%20Klondike%20Solitaire%20card%20game%20online%2C%20for%20free.:%20http%3A%2F%2Fwww.solitaire-play.com%2F"></a>
+      </div>
+
+      <div class="row">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- solitaire -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5475403929650645"
+     data-ad-slot="2876021655"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      </div>
+
+      <div class="row" id="cookies">
+        <p>
+          Solitaire-Play uses cookies to improve the site.
+          <a href="../blog/this-site-uses-cookies.html">Find out more.</a>
+        </p>
+      </div>
+
+      <div class="row">
+        <button id="list">≡ Select Solitaire Game...</button>
+      </div>
+
+      <div class="row" id="rules">
+        <h2>
+          Pyramid Solitaire Game
+          <span>(or play <a href="/">Klondike Solitaire</a>)</span>
+        </h2>
+        <p>
+          Your goal is to win!
+          You win the game when you move all cards to the foundation (the empty
+          place in the upper right corner).
+          You fill the foundation by removing a pair of cards from the tableau.
+          Open your eyes!
+        </p>
+        <p>
+          At the beginning of the game, cards are shuffled and 28 are dealt face
+          up in a pyramid shape on the tableau. The remaining 16 cards forms the
+          stock (top left) and the game start with one card turned from the deck
+          into the waste pile.
+        </p>
+        <p>
+          You can pair two cards where ranks add up to 13 (regardless of suit)
+          to transfer them to the foundation. With a rank of 13, Kings are
+          removed individually.
+        </p>
+        <p>
+          You can make pair with any card:
+        </p>
+        <ul>
+          <li>That is free with no other card lying on top of it.</li>
+          <li>That will be made free by removing the first card.</li>
+          <li>That is on top of the waste pile.</li>
+        </ul>
+        <p>
+          Once all possible pairs are removed, you turn one card from the stock
+          to the waste pile and the game go on. When the stock become empty, the
+          cards from the waste pile are reused.
+        </p>
+        <h3>How to play Free Pyramid Solitaire</h3>
+        <p>
+          Pyramid is a basic HTML5 and Javascript card game. No drag &amp;
+          drop, just patience, observation and some clicks:
+        </p>
+        <ul>
+          <li>Click on a card from the tableau or the waste to start a pair</li>
+          <li>Click on another card to move the pair to the foundation</li>
+          <li>Right-click on the background to move all possible pairs to the
+              foundations</li>
+        </ul>
+        <h3>Pyramid Solitaire online game</h3>
+        <p>
+          Simply click the top left title to play a new solitaire game, or use
+          one of the menu commands:
+        </p>
+        <ul>
+          <li>GAME: Play a new game of solitaire (or press F2) at any time, even
+              in the middle of a game.</li>
+          <li>HINT: Get some help to find your next best move (or press H).</li>
+          <li>UNDO: Back up one move (or press Control+Z). You can continue to
+              undo until you reach the beginning of the game.</li>
+          <li>≡ MENU: Play another free online solitaire card game like Klondike,
+              Klondike 3, Aces Up, Cruel, Golf, Monte Carlo, Pyramid, Russian or
+              Yukon Solitaire.</li>
+        </ul>
+      </div>
+
+      <footer>
+          <p>
+              &copy; 2018
+              <span>
+                / <a href="/" title="Play Klondike Solitaire">Solitaire</a>
+                / <a href="/games/" title="Online solitaire games">Games</a>
+                / <a href="/about/" title="About Solitaire-Play">About</a>
+                / <a href="/blog/" title="Solitaire News">Blog</a>
+              </span>
+              <span>
+                - https://www.solitaire-play.com/
+              </span>
+          </p>
+      </footer>
+
+    </div>
+
+    <div id="win" class="dialog">
+      <h3 class="win">Congratulations, you won! <span>It's only a game, but still.</span></h3>
+      <h3 class="lost">Game over! <span>No big deal, it's only a game.</span></h3>
+      <button id="again">NEW GAME?</button>
+    </div>
+
+    <div id="pun" class="dialog">
+      <h3>Let's play another solitaire game</h3>
+      <a href="/">KLONDIKE</a>
+      <a href="/klondike-turn-three/">KLONDIKE 3</a>
+      <a href="/aces-up/">ACES UP</a>
+      <a href="/cruel/">CRUEL</a>
+      <a href="/golf/">GOLF</a>
+      <a href="/monte-carlo/">MONTE CARLO</a>
+      <a href="/pyramid/">PYRAMID</a>
+      <a href="/russian/">RUSSIAN</a>
+      <a href="/yukon/">YUKON</a>
+    </div>
+
+    <div id="overlay"></div>
+
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/pyramid.min.js"></script>
+    <script>(function($) { Start(); })(jQuery);</script>
+
+  </body>
+
+</html>
