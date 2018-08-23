@@ -5,16 +5,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Solitaire / Play Cruel Solitaire</title>
-    <meta name="description" content="Play Cruel Solitaire online, for free. A very simple but addictive solitaire with a good gameplay: undo, hint, automatic move... HTML5 and JavaScript solitaire card game for browser, tablet or phone.">
-    <meta name="keywords" content="Solitaire, Cruel, Perseverance, Forty-Thieves, Patience, Concentration, Card, Game, Free, Play, Online, Phone, HTML5, JavaScript">
+    <title>Solitaire / Play Canfield Solitaire</title>
+    <meta name="description" content="Play Canfield Solitaire online, for free. A very popular variant of solitaire with a good gameplay: undo, hint, automatic move... HTML5 and JavaScript solitaire card game for browser, tablet or phone.">
+    <meta name="keywords" content="Solitaire, Canfield, Demon, Devil's Own, Fascination, Pounce, Racing Demon, Thirteen, Patience, Card, Game, Free, Play, Online, HTML5, JS, JavaScript">
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@ms_michel" />
+    <meta property="og:url" content="https://www.solitaire-play.com/canfield/">
     <meta property="og:type" content="game">
-    <meta property="og:url" content="https://www.solitaire-play.com/cruel/">
-    <meta property="og:title" content="Cruel Solitaire">
-    <meta property="og:description" content="Play Cruel Solitaire card game online, for free. A very simple but addictive solitaire with a good gameplay: undo, hint, automatic move...">
-    <meta property="og:image" content="https://www.solitaire-play.com/cards/cruel-solitaire.png">
+    <meta property="og:title" content="Canfield Solitaire">
+    <meta property="og:description" content="Play Canfield Solitaire card game online, for free. A very popular variant of solitaire with a good gameplay: undo, hint, automatic move...">
+    <meta property="og:image" content="https://www.solitaire-play.com/cards/canfield-solitaire.png">
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
     <script>
@@ -26,14 +26,14 @@
     <![endif]-->
   </head>
 
-  <body id="cruel">
+  <body id="canfield">
 
     <div class="container">
 
       <div id="header" class="row">
-        <h1><a href="" title="Cruel, a simple but addictive solitaire card game">Cruel<span> Solitaire</span></a></h1>
+        <h1><a href="" title="Canfield, a very popular solitaire card game">Canfield<span> Solitaire</span></a></h1>
         <div class="menu">
-          <button id="game" title="Play a new Cruel solitaire (F2)">GAME</button>
+          <button id="game" title="Play a new Canfield solitaire (F2)">GAME</button>
           <button id="hint" title="Show possible moves (H)">HINT</button>
           <button id="undo" title="Undo last move (Control+Z)">UNDO</button>
           <button id="tool" title="Select solitaire game">≡</button>
@@ -43,7 +43,8 @@
       <div id="solitaire" class="clearfix">
 
         <div id="plateaux" class="row">
-          <div id="stock" class="column pile pile-stack"><div class="draw"><div>×</div></div></div>
+          <div id="stock" class="column pile pile-stack"><div class="draw"><div>+</div></div></div>
+          <div id="waste" class="column pile pile-stack"></div>
           <div class="column space pile"><!-- space --></div>
           <div id="f0" class="column drop pile pile-stack"></div>
           <div id="f1" class="column drop pile pile-stack"></div>
@@ -52,18 +53,13 @@
         </div>
 
         <div id="tableaux" class="row">
-          <div id="t0" class="column drop pile pile-stack"></div>
-          <div id="t1" class="column drop pile pile-stack"></div>
-          <div id="t2" class="column drop pile pile-stack"></div>
-          <div id="t3" class="column drop pile pile-stack"></div>
-          <div id="t4" class="column drop pile pile-stack"></div>
-          <div id="t5" class="column drop pile pile-stack"></div>
-          <div id="t6" class="column drop pile pile-stack"></div>
-          <div id="t7" class="column drop pile pile-stack"></div>
-          <div id="t8" class="column drop pile pile-stack"></div>
-          <div id="t9" class="column drop pile pile-stack"></div>
-          <div id="t10" class="column drop pile pile-stack"></div>
-          <div id="t11" class="column drop pile pile-stack"></div>
+          <div class="column space pile"><!-- space --></div>
+          <div class="column space pile"><!-- space --></div>
+          <div id="reserve" class="column pile pile-fan"></div>
+          <div id="t0" class="column drop pile pile-fan"></div>
+          <div id="t1" class="column drop pile pile-fan"></div>
+          <div id="t2" class="column drop pile pile-fan"></div>
+          <div id="t3" class="column drop pile pile-fan"></div>
         </div>
 
       </div>
@@ -102,58 +98,46 @@
 
       <div class="row" id="rules">
         <h2>
-          Cruel Solitaire Game
+          Canfield Solitaire Game
           <span>(or play <a href="/">Klondike Solitaire</a>)</span>
         </h2>
         <p>
           Your goal is to win!
-          You win the game only when you move all cards to the foundation (the
-          four piles in the bottom right corner).
-          Each foundation starts with an Ace. Then you place cards of the same
-          suit in ascending order: Ace, 2, 3, 4, ..., 10, Jack, Queen and King.
-        </p>
+          You win the game when you move all cards to the foundations (the 4
+          piles in the upper right corner).
+         </p>
         <p>
-          Cards are shuffled and dealt face up on the tableau (the 12 piles in
-          the bottom of the screen). During the deal, each Ace goes on a
-          foundation, leaving exactly four cards per pile on the tableau.
-        </p>
-        <p>
-          Only the top card from the tableau can be moved to another pile:
+          Cards are shuffled and 13 go face down to the reserve (the vertical
+          pile) with the top card face up. Then one card is dealt to the first
+          foundation and into each tableau pile. The remaining 34 cards forms
+          the stock (top left) and the game starts with one card turned into the
+          waste pile.
         </p>
         <ul>
-          <li>The foundation of the same suit, in ascending order.</li>
-          <li>Another top card of the same suit, in descending order.</li>
+          <li>You can play the last card of each pile from the tableau to the
+            foundation of the same suit, in ascending order.</li>
+          <li>All visibles cards from one pile can be moved to another, but in
+            alternate color and descending order: 7 of Hearts, 6 of Clubs, 5 of
+            Diamonds, 4 of Clubs...</li>
+          <li>Only a King can go to an empty pile.</li>
         </ul>
         <p>
-          Note: If a pile becomes empty, you cannot place any card on it.
+          Canfield is easy to play but it's a strategic solitaire game. First,
+          build aces to the foundation as soon as possible. Then, uncover faces
+          down cards so you can start moving cards around...
         </p>
+        <h3>How to play Free Canfield Solitaire</h3>
         <p>
-          When no more cards can be played, click the empty stock pile in the
-          top left to redeal the cards from the tableau. Cards are collected but
-          not shuffled and dealt again into 4 cards piles.
-        </p>
-        <p>
-          You can redeal at any time, and an unlimited number of times. You won
-          if all cards are in the foundations. But when no move is possible
-          after a redeal, then the game is over.
-        </p>
-        <p>
-          Read blog to get more informations about how to <a
-          href="../blog/free-cruel-solitaire.html">play Cruel Solitaire</a>.
-        </p>
-        <h3>How to play Free Cruel Solitaire</h3>
-        <p>
-          Cruel is a very simple HTML5 and JavaScript card game. A little bit of
-          drag &amp; drop, a little bit of click and quite a lot of luck,
-          perseverance and concentration:
+          Canfield is an easy to learn HTML5 and JavaScript card game, with a
+          gameplay similar to Klondike Solitaire:
         </p>
         <ul>
           <li>Use drag &amp; drop to move cards from one pile to another</li>
-          <li>Click on a card from the tableau to move it to the foundation</li>
-          <li>Right-click on the background to move all possible cards to the foundations</li>
-          <li>Click on the stock to redeal cards from the tableau</li>
+          <li>Click on the stock to draw one more card</li>
+          <li>Double-click on a card to add it to a foundation</li>
+          <li>Right-click on the background to autoplay all possible cards to the foundations</li>
         </ul>
-        <h3>Cruel Solitaire online game</h3>
+        <h3>Canfield Solitaire online game</h3>
         <p>
           Simply click the top left title to play a new solitaire game, or use
           one of the menu commands:
@@ -163,10 +147,10 @@
               in the middle of a game.</li>
           <li>HINT: Get some help to find your next best move (or press H).</li>
           <li>UNDO: Back up one move (or press Control+Z). You can continue to
-              undo until you reach the last redeal of the game.</li>
+              undo until you reach the beginning of the game.</li>
           <li>≡ MENU: Play another free online solitaire card game like Klondike,
               Klondike 3, Aces Up, Cruel, Golf, Monte Carlo, Pyramid, Russian or
-              Yukon Solitaire.</li>
+              Canfield Solitaire.</li>
         </ul>
       </div>
 
@@ -198,6 +182,7 @@
       <a href="/">KLONDIKE</a>
       <a href="/klondike-turn-three/">KLONDIKE 3</a>
       <a href="/aces-up/">ACES UP</a>
+      <a href="/canfield/">CANFIELD</a>
       <a href="/cruel/">CRUEL</a>
       <a href="/golf/">GOLF</a>
       <a href="/monte-carlo/">MONTE CARLO</a>
@@ -209,8 +194,8 @@
     <div id="overlay"></div>
 
     <script src="../js/jquery.16.11.20.min.js"></script>
-    <script src="../js/cruel.min.js"></script>
-    <script>(function($) { Start(); })(jQuery);</script>
+    <script src="../js/canfield.js"></script>
+    <script>(function($) { Start(1); })(jQuery);</script>
 
   </body>
 
