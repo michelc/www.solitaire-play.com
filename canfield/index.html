@@ -198,7 +198,16 @@
 
     <script src="../js/jquery.16.11.20.min.js"></script>
     <script src="../js/canfield.js"></script>
-    <script>(function($) { Start(1); })(jQuery);</script>
+    <script>
+      (function($) {
+        if (typeof Start === "function")
+          Start(1);
+        else {
+          document.write("<script src='../js/canfield.min.js'>\x3C/script>");
+          document.write("<script>Start(1);\x3C/script>");
+        }
+      })(jQuery);
+    </script>
 
   </body>
 
