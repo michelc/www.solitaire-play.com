@@ -24,6 +24,19 @@
     <!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>
     <![endif]-->
+    <style type="text/css">
+#plateaux .draw div {
+  color: #eee;
+  cursor: default;
+  font-size: 4rem;
+  font-weight: bold;
+  margin-top: -3rem !important;
+  opacity: .6;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+}
+    </style>
   </head>
 
   <body id="canfield">
@@ -47,9 +60,9 @@
           <div id="waste" class="column pile pile-stack"></div>
           <div class="column space pile"><!-- space --></div>
           <div id="f0" class="column drop pile pile-stack"></div>
-          <div id="f1" class="column drop pile pile-stack"></div>
-          <div id="f2" class="column drop pile pile-stack"></div>
-          <div id="f3" class="column drop pile pile-stack"></div>
+          <div id="f1" class="column drop pile pile-stack"><div class="draw"><div>?</div></div></div>
+          <div id="f2" class="column drop pile pile-stack"><div class="draw"><div>?</div></div></div>
+          <div id="f3" class="column drop pile pile-stack"><div class="draw"><div>?</div></div></div>
         </div>
 
         <div id="tableaux" class="row">
@@ -113,18 +126,8 @@
           the stock (top left) and the game starts with one card turned into the
           waste pile.
         </p>
-        <ul>
-          <li>You can play the last card of each pile from the tableau to the
-            foundation of the same suit, in ascending order.</li>
-          <li>All visibles cards from one pile can be moved to another, but in
-            alternate color and descending order: 7 of Hearts, 6 of Clubs, 5 of
-            Diamonds, 4 of Clubs...</li>
-          <li>Only a King can go to an empty pile.</li>
-        </ul>
         <p>
-          Canfield is easy to play but it's a strategic solitaire game. First,
-          build aces to the foundation as soon as possible. Then, uncover faces
-          down cards so you can start moving cards around...
+          <strong>Warning</strong>: This is work in progress...
         </p>
         <h3>How to play Free Canfield Solitaire</h3>
         <p>
