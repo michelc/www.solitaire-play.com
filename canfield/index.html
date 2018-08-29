@@ -200,12 +200,10 @@
     <script src="../js/canfield.js"></script>
     <script>
       (function($) {
-        if (typeof Start === "function")
+        if (window.Start)
           Start(1);
-        else {
-          document.write("<script src='../js/canfield.min.js'>\x3C/script>");
-          document.write("<script>Start(1);\x3C/script>");
-        }
+        else
+          document.write("<script src='../js/canfield.min.js'>\x3C/script><script>Start(1);\x3C/script>");
       })(jQuery);
     </script>
 
