@@ -24,19 +24,6 @@
     <!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>
     <![endif]-->
-    <style type="text/css">
-#plateaux .draw div {
-  color: #eee;
-  cursor: default;
-  font-size: 4rem;
-  font-weight: bold;
-  margin-top: -3rem !important;
-  opacity: .6;
-  position: absolute;
-  width: 100%;
-  top: 50%;
-}
-    </style>
   </head>
 
   <body id="canfield">
@@ -56,13 +43,13 @@
       <div id="solitaire" class="clearfix">
 
         <div id="plateaux" class="row">
-          <div id="stock" class="column pile pile-stack"><div class="draw"><div>+</div></div></div>
+          <div id="stock" class="column pile pile-stack"><div class="write"><div>+</div></div></div>
           <div id="waste" class="column pile pile-stack"></div>
           <div class="column space pile"><!-- space --></div>
           <div id="f0" class="column drop pile pile-stack"></div>
-          <div id="f1" class="column drop pile pile-stack"><div class="draw"><div>?</div></div></div>
-          <div id="f2" class="column drop pile pile-stack"><div class="draw"><div>?</div></div></div>
-          <div id="f3" class="column drop pile pile-stack"><div class="draw"><div>?</div></div></div>
+          <div id="f1" class="column drop pile pile-stack"><div class="write"><div>?</div></div></div>
+          <div id="f2" class="column drop pile pile-stack"><div class="write"><div>?</div></div></div>
+          <div id="f3" class="column drop pile pile-stack"><div class="write"><div>?</div></div></div>
         </div>
 
         <div id="tableaux" class="row">
@@ -125,9 +112,6 @@
           foundation and into each tableau pile. The remaining 34 cards forms
           the stock (top left) and the game starts with one card turned into the
           waste pile.
-        </p>
-        <p>
-          <strong>Warning</strong>: This is work in progress...
         </p>
         <h3>How to play Free Canfield Solitaire</h3>
         <p>
