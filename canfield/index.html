@@ -31,7 +31,7 @@
     <div class="container">
 
       <div id="header" class="row">
-        <h1><a href="" title="Canfield, a very popular solitaire card game">Canfield<span> Solitaire</span></a></h1>
+        <h1><a href="" title="Canfield, a legendary solitaire card game">Canfield<span> Solitaire</span></a></h1>
         <div class="menu">
           <button id="game" title="Play a new Canfield solitaire (F2)">GAME</button>
           <button id="hint" title="Show possible moves (H)">HINT</button>
@@ -136,8 +136,8 @@
           <li>UNDO: Back up one move (or press Control+Z). You can continue to
               undo until you reach the beginning of the game.</li>
           <li>≡ MENU: Play another free online solitaire card game like Klondike,
-              Klondike 3, Aces Up, Cruel, Golf, Monte Carlo, Pyramid, Russian or
-              Canfield Solitaire.</li>
+              Klondike 3, Aces Up, Canfield, Cruel, Golf, Monte Carlo, Pyramid,
+              Russian or Yukon Solitaire.</li>
         </ul>
       </div>
 
@@ -181,15 +181,7 @@
     <div id="overlay"></div>
 
     <script src="../js/jquery.16.11.20.min.js"></script>
-    <script src="../js/canfield.js"></script>
-    <script>
-      (function($) {
-        if (window.Start)
-          Start(1);
-        else
-          document.write("<script src='../js/canfield.min.js'>\x3C/script><script>Start(1);\x3C/script>");
-      })(jQuery);
-    </script>
+    <script src="../js/canfield.min.js"></script>
 
   </body>
 
