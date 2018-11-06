@@ -2,73 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.solitaire-play.com/</loc>
-    <lastmod>2018-09-13</lastmod>
+    <lastmod>2018-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.solitaire-play.com/klondike-turn-three/</loc>
-    <lastmod>2018-09-13</lastmod>
+    <lastmod>2018-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.solitaire-play.com/aces-up/</loc>
-    <lastmod>2018-09-13</lastmod>
+    <lastmod>2018-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.solitaire-play.com/canfield/</loc>
-    <lastmod>2018-09-13</lastmod>
+    <lastmod>2018-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.solitaire-play.com/canfield-turn-three/</loc>
+    <lastmod>2018-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.solitaire-play.com/cruel/</loc>
-    <lastmod>2018-09-13</lastmod>
+    <lastmod>2018-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.solitaire-play.com/golf/</loc>
-    <lastmod>2018-09-13</lastmod>
+    <lastmod>2018-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.solitaire-play.com/monte-carlo/</loc>
-    <lastmod>2018-09-13</lastmod>
+    <lastmod>2018-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.solitaire-play.com/pyramid/</loc>
-    <lastmod>2018-09-13</lastmod>
+    <lastmod>2018-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.solitaire-play.com/russian/</loc>
-    <lastmod>2018-09-13</lastmod>
+    <lastmod>2018-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.solitaire-play.com/yukon/</loc>
-    <lastmod>2018-09-13</lastmod>
+    <lastmod>2018-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.solitaire-play.com/about/</loc>
-    <lastmod>2018-09-13</lastmod>
+    <lastmod>2018-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.solitaire-play.com/games/</loc>
-    <lastmod>2018-09-13</lastmod>
+    <lastmod>2018-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
