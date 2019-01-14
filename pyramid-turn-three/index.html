@@ -24,42 +24,9 @@
     <!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>width: 14.2857%;
     <![endif]-->
-    <style type="text/css">
-      #solitaire { background-color: green; }
-      x.column { width: 12.5% !important; max-width: 12.5% !important; }
-      .column { width: 12.5%; }
-      .column.two { width: 25%; }
-      .pile { border: 1px dotted black; }
-#pyramid #t1 { margin-left: 31.25%; }
-#pyramid #t3 { margin-left: 25%; }
-#pyramid #t6 { margin-left: 18.75%; }
-#pyramid #t10 { margin-left: 12.5%; }
-#pyramid #t15 { margin-left: 6.25%; }
-@media (max-width: 22rem) {
-      #solitaire { background-color: pink; }
-  #game { display: none; }
-  .card { background-size: 532px 264px; } /* 38x14 x 66x4 */
-  .card, .write { width: 38px; }
-  .pile { background-size: 38px 66px; }
-}    </style>
-<!--
-  #game { display: none; }
-  .card, .write { width: 42px; }
-  .pile { background-size: 42px 66px; }
-<style>
-#pyramid #solitaire { max-height: 320px; min-height: 555px; overflow-y: hidden; }
-
-#pyramid #t1 { margin-left: 47.5%; }
-#pyramid #t3 { margin-left: 38%; }
-#pyramid #t6 { margin-left: 28.5%; }
-#pyramid #t10 { margin-left: 19%; }
-#pyramid #t15 { margin-left: 9.5%; }
-
-</style>
--->
   </head>
 
-  <body id="pyramid">
+  <body id="pyramid" class="grid8">
 
     <div class="container">
 
@@ -266,7 +233,7 @@
     <div id="overlay"></div>
 
     <script src="../js/jquery-3.1.1.min.js"></script>
-    <script src="../js/pyramid.js"></script>
+    <script src="../js/pyramid.min.js"></script>
     <script>(function($) { Start(3); })(jQuery);</script>
 
   </body>
