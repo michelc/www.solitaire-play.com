@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>dQuery / Test Unitaires</title>
+    <style type="text/css">
+      p { margin: 0; padding: 0; }
+    </style>
+  </head>
+
+  <body>
+
+    <button onclick="RunTests()">Run Tests</button>
+
+    <ul id="results">
+
+    </ul>
+
+    <hr>
+
+    <div id="selector">
+      <h3>Test selecteurs</h3>
+      <p id="select1" class="select">#select1 + .select</p>
+      <p id="select2" class="select">#select2 + .select</p>
+      <p id="select3" class="select">#select3 + .select</p>
+    </div>
+
+    <div id="css">
+      <h3>Test .css()</h3>
+      <p id="css1">#css1</p>
+      <p id="css2">#css2</p>
+    </div>
+
+    <div id="hide">
+      <h3>Test .hide()</h3>
+      <p class="lig1">.lig1</p>
+      <p class="lig2">.lig2</p>
+      <p class="lig3">.lig3</p>
+    </div>
+
+    <div id="show">
+      <h3>Test .show()</h3>
+      <p class="lig1">.lig1</p>
+      <p class="lig2">.lig2</p>
+      <p class="lig3">.lig3</p>
+    </div>
+
+    <div id="addClass">
+      <h3>Test .addClass()</h3>
+    </div>
+
+    <div id="removeClass">
+      <h3>Test .removeClass()</h3>
+    </div>
+
+    <div id="html">
+      <h3>Test .html()</h3>
+    </div>
+
+    <div id="append">
+      <h3>Test .append()</h3>
+    </div>
+
+    <div id="text">
+      <h3>Test .text()</h3>
+    </div>
+
+    <div id="remove">
+      <h3>Test .remove()</h3>
+      <p class="to-remove">.to-remove</p>
+      <p class="to-remove">.to-remove</p>
+      <p class="not-remove">.not-remove</p>
+    </div>
+
+    <div id="onclick">
+      <h3>Test .on()</h3>
+      <p id="click">#click</p>
+    </div>
+
+    <script src="dquery.min.js"></script>
+
+<script>
+function RunTests() {
+  $("#results").html("");
+
+  Test(select_by_id_renvoie_un_element);
+  Test(select_by_class_renvoie_plusieurs_elements);
+  Test(select_avec_2_id_renvoie_deux_elements);
+  Test(select_document_renvoie_un_element);
+  Test(select_by_element_renvoie_cet_element);
+  Test(select_id_plus_element_renvoie_cet_element);
+  Test(select_id_plus_class_renvoie_plusieurs_elements);
+  Test(select_last_child_renvoie_dernier_element);
+
+  Test(css_simple_met_a_jour_style_cssText);
+  Test(css_avec_tiret_met_a_jour_style_cssText);
+
+  Test(hide_doit_mettre_display_a_none);
+  Test(show_doit_mettre_display_a_block);
+
+  Test(addClass_met_a_jour_className);
+  Test(removeClass_met_a_jour_className);
+
+  Test(html_modifie_outerHTML);
+  Test(append_modifie_outerHTML);
+  Test(text_modifie_textContent);
+  Test(remove_supprime_du_contenu);
+
+  Test(on_xxxx_defini_un_evenement);
+}
+
+function Assert(what, expected, result) {
+  var ul = $("#results");
+  if (expected === result) {
+    ul.append(`<li>${what}: ok</li>`);
+  } else {
+    ul.append(`<li style="color:red">${what}: KO - «${result}» au lieu de «${expected}»</li>`);
+  }
+}
+
+function Test(func) {
+  //arguments.callee.name
+  var name = func.toString();
+  name = name.substr('function '.length);
+  name = name.substr(0, name.indexOf('('));
+
+  func(name.replace(/_/g, " "));
+}
+
+function select_by_id_renvoie_un_element (what) {
+  Assert(what, 1, $("#select1").value.length);
+}
+
+function select_by_class_renvoie_plusieurs_elements (what) {
+  Assert(what, 3, $(".select").value.length);
+}
+
+function select_avec_2_id_renvoie_deux_elements (what) {
+  Assert(what, 2, $("#select1, #select2").value.length);
+}
+
+function select_document_renvoie_un_element (what) {
+  Assert(what, 1, $(document).value.length);
+}
+
+function select_by_element_renvoie_cet_element (what) {
+  var div = document.getElementById("select2");
+  Assert(what, 1, $(div).value.length);
+}
+
+function select_id_plus_element_renvoie_cet_element (what) {
+  Assert(what, 1, $("#selector h3").value.length);
+}
+
+function select_id_plus_class_renvoie_plusieurs_elements (what) {
+  Assert(what, 3, $("#selector .select").value.length);
+}
+
+function select_last_child_renvoie_dernier_element (what) {
+  Assert(what, "select3", $(".select:last-child").value[0].id);
+}
+
+function css_simple_met_a_jour_style_cssText (what) {
+  $("#css1").css("color", "red");
+  var temp = document.getElementById("css1");
+  Assert(what, "color: red;", temp.style.cssText);
+}
+
+function css_avec_tiret_met_a_jour_style_cssText (what) {
+  $("#css2").css("background-color", "red");
+  var temp = document.getElementById("css2");
+  Assert(what, "background-color: red;", temp.style.cssText);
+}
+
+function hide_doit_mettre_display_a_none (what) {
+  var p = $("#hide .lig2");
+  p.hide();
+  Assert(what, "none", p.value[0].style.display);
+}
+
+function show_doit_mettre_display_a_block (what) {
+  var p = $("#show .lig2");
+  p.value[0].style.display = "none";
+  p.show();
+  Assert(what, "block", p.value[0].style.display);
+}
+
+function addClass_met_a_jour_className (what) {
+  var temp = document.getElementById("addClass");
+  temp.className = "";
+  $("#addClass").addClass("toto");
+  Assert(what, "toto", temp.className);
+  $("#addClass").addClass("tutu");
+  Assert(what, "toto tutu", temp.className);
+}
+
+function removeClass_met_a_jour_className (what) {
+  $("#removeClass").addClass("toto");
+  $("#removeClass").addClass("tutu");
+  $("#removeClass").removeClass("tutu");
+  var temp = document.getElementById("removeClass");
+  Assert(what, "toto", temp.className.trim());
+}
+
+function html_modifie_outerHTML (what) {
+  $("#html").html("<h3>Test .html() ok</h3>");
+  var temp = document.getElementById("html").outerHTML;
+  temp = temp.replace(/\r\s*/g, "").replace(/\n\s*/g, "").replace(/\"/g, "'");
+  Assert(what, "<div id='html'><h3>Test .html() ok</h3></div>", temp);
+}
+
+function append_modifie_outerHTML (what) {
+  $("#append p").remove();
+  $("#append").append("<p>ok !</p>");
+  var temp = document.getElementById("append").outerHTML;
+  temp = temp.replace(/\r\s*/g, "").replace(/\n\s*/g, "").replace(/\"/g, "'");
+  Assert(what, "<div id='append'><h3>Test .append()</h3><p>ok !</p></div>", temp);
+}
+
+function text_modifie_textContent (what) {
+  $("#text h3").text("Test .text() ok");
+  var temp = document.getElementById("text");
+  Assert(what, "Test .text() ok", temp.textContent.trim());
+}
+
+function remove_supprime_du_contenu (what) {
+  $("#remove .to-remove").remove();
+  var temp = document.getElementById("remove").outerHTML;
+  Assert(what, false, temp.includes(".to-remove"));
+}
+
+function on_xxxx_defini_un_evenement (what) {
+  var temp = "";
+  $("#onclick").on("click", function(e) { temp = e.target.id; });
+  document.getElementById("onclick").click();
+  Assert(what + "_1", "onclick", temp);
+  document.getElementById("click").click();
+  Assert(what + "_2", "click", temp);
+}
+
+function on_xxxx_defini_un_evenement2 (what) {
+  var temp = "";
+  $("#click").on("click", function(e) { temp = e.target.id; });
+  document.getElementById("onclick").click();
+  Assert(what, "onclick", temp);
+}
+
+function on_xxxx_defini_un_evenement3 (what) {
+  var temp = "";
+  $("#onclick").on("click", function(e) { temp = e.target.id; });
+  document.getElementById("onclick").click();
+  Assert(what, "onclick", temp);
+}
+
+</script>
+
+  </body>
+
+</html>
