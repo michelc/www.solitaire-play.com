@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Solitaire / Play FreeCell Solitaire</title>
+    <meta name="description" content="Play FreeCell Solitaire online, for free. The most popular solitaire with a puzzle-like logic and a good gameplay: undo, hint, automatic move... HTML5 and JavaScript solitaire card game for browser, tablet or phone.">
+    <meta name="keywords" content="Solitaire, FreeCell, Baker's Game, Eight Off, Brain Jam, SuperMove, Logic, Puzzle, Patience, Card, Game, Free, Play, Online, HTML5, JS, JavaScript">
+    <link rel="canonical" href="https://www.solitaire-play.com/freecell/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@ms_michel">
+    <meta property="og:url" content="https://www.solitaire-play.com/freecell/">
+    <meta property="og:type" content="game">
+    <meta property="og:title" content="FreeCell Solitaire">
+    <meta property="og:description" content="Play FreeCell Solitaire online, for free. The most popular solitaire with a puzzle-like logic and a good gameplay: undo, hint, automatic move...">
+    <meta property="og:image" content="https://www.solitaire-play.com/cards/freecell-solitaire.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
+    <script>
+      (new Image).src = "../cards/card-" + ((document.documentElement.clientWidth > 736) ? "game.png" : "phone.png");
+    </script>
+    <link rel="stylesheet" href="../css/solitaire.min.css">
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body id="freecell" class="grid8">
+
+    <div class="container">
+
+      <div id="header" class="row">
+        <h1><a href="" title="FreeCell, one of the most popular solitaire games">FreeCell<span> Solitaire</span></a></h1>
+        <div class="menu">
+          <button id="game" title="Play a new solitaire (F2)">GAME</button>
+          <button id="hint" title="Show possible moves (H)">HINT</button>
+          <button id="undo" title="Undo last move (Control+Z)">UNDO</button>
+          <button id="tool" title="Select solitaire game">≡</button>
+        </div>
+      </div>
+
+      <div id="solitaire" class="clearfix">
+
+        <div id="plateaux" class="row">
+          <div id="r0" class="column drop pile pile-stack freecell"></div>
+          <div id="r1" class="column drop pile pile-stack freecell"></div>
+          <div id="r2" class="column drop pile pile-stack freecell"></div>
+          <div id="r3" class="column drop pile pile-stack freecell"></div>
+          <div id="f0" class="column drop pile pile-stack"></div>
+          <div id="f1" class="column drop pile pile-stack"></div>
+          <div id="f2" class="column drop pile pile-stack"></div>
+          <div id="f3" class="column drop pile pile-stack"></div>
+        </div>
+
+        <div id="tableaux" class="row">
+          <div id="t0" class="column drop pile pile-fan"></div>
+          <div id="t1" class="column drop pile pile-fan"></div>
+          <div id="t2" class="column drop pile pile-fan"></div>
+          <div id="t3" class="column drop pile pile-fan"></div>
+          <div id="t4" class="column drop pile pile-fan"></div>
+          <div id="t5" class="column drop pile pile-fan"></div>
+          <div id="t6" class="column drop pile pile-fan"></div>
+          <div id="t7" class="column drop pile pile-fan"></div>
+        </div>
+
+      </div>
+
+      <div class="row" id="share">
+        <a id="bt1" target="_blank" title="Share on Facebook" href="http://on.fb.me/1XFBUZ7"></a>
+        <a id="bt2" target="_blank" title="Tweet" href="http://bit.ly/1i9Hymq"></a>
+        <a id="bt3" target="_blank" title="Share on Google+" href="http://bit.ly/1VKM6xD"></a>
+        <a id="bt4" target="_blank" title="Pin it" href="http://bit.ly/1KYxHuq"></a>
+        <a id="bt5" target="_blank" title="Email" href="mailto:?subject=Play%20Solitaire&body=Play%20the%20classic%20Klondike%20Solitaire%20card%20game%20online%2C%20for%20free.:%20http%3A%2F%2Fwww.solitaire-play.com%2F"></a>
+      </div>
+
+      <div class="row">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- solitaire -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5475403929650645"
+     data-ad-slot="2876021655"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      </div>
+
+      <div class="row" id="cookies">
+        <p>
+          Solitaire-Play uses cookies to improve the site.
+          <a href="../blog/this-site-uses-cookies.html">Find out more.</a>
+        </p>
+      </div>
+
+      <div class="row">
+        <button id="list">≡ Select Solitaire Game...</button>
+      </div>
+
+      <div class="row" id="rules">
+        <h2>
+          FreeCell Solitaire Game
+          <span>(or play <a href="/">Klondike Solitaire</a>)</span>
+        </h2>
+        <p>
+          Your goal is to win!
+          You win the game when you move all cards to the foundations (the 4
+          empty piles in the upper right corner).
+          You must start each foundation with an Ace. Then you can place cards
+          of the same suit in ascending order: Ace, 2, 3, 4, ..., 10, Jack,
+          Queen and King.
+        </p>
+        <p>
+          Cards are shuffled and dealt face up on the tableau (the 7 piles in
+          the bottom of the screen). There is no waste or stock, but 4 free
+          cells in the upper left corner.
+        </p>
+        <ul>
+          <li>The last card of each pile from the tableau can be transferred to
+            the foundation of the same suit, in ascending order.</li>
+          <li>Any visible card from one pile can be moved to another, but in
+            alternate color and descending order: 7 of Hearts, 6 of Clubs, 5 of
+            Diamonds, 4 of Clubs...</li>
+          <li>The top card from the waste can also be played to the tableau
+            piles or foundations.</li>
+          <li>Any card may be placed in an empty pile.</li>
+        </ul>
+        <p>
+          One estimates that nearly every deal is solvable and thus winnable.
+          Since all cards are face up, there is nothing to guess, just to show
+          some logic like with puzzle. However, as some games require more
+          cleverness and others can be very tricky, it's always a very pleasant
+          and challenging game.
+        </p>
+        <h3>How to play FreeCell Solitaire</h3>
+        <p>
+          FreeCell Solitaire is an HTML5 and JavaScript card game, but I tried
+          to copy the gameplay from Windows Classic Solitaire:
+        </p>
+        <ul>
+          <li>Use drag &amp; drop to move cards from one pile to another</li>
+          <li>Click on the stock to draw three new cards</li>
+          <li>Double-click on a card to add it to a foundation</li>
+          <li>Right-click on the background to move all possible cards to the foundations</li>
+        </ul>
+        <h3>FreeCell Solitaire online game</h3>
+        <p>
+          Simply click the top left title to play a new solitaire game, or use
+          one of the menu commands:
+        </p>
+        <ul>
+          <li>GAME: Play a new game of solitaire (or press F2) at any time, even
+              in the middle of a game.</li>
+          <li>HINT: Get some help to find your next best move (or press H).</li>
+          <li>UNDO: Back up one move (or press Control+Z). You can continue to
+              undo until you reach the beginning of the game.</li>
+          <li>≡ MENU: Play another free online solitaire card game like Klondike,
+              Klondike 3, Aces Up, Canfield, Canfield 3, Cruel, FreeCell, Golf,
+              Monte Carlo, Pyramid, Pyramid 3, Russian or Yukon Solitaire.</li>
+        </ul>
+      </div>
+
+      <div id="debug"></div>
+
+      <footer>
+        <p>
+          &copy; 2019
+          <span>
+            / <a href="/" title="Play Klondike Solitaire">Solitaire</a>
+            / <a href="/games/" title="Online solitaire games">Games</a>
+            / <a href="/about/" title="About Solitaire-Play">About</a>
+            / <a href="/blog/" title="Solitaire News">Blog</a>
+          </span>
+          <span>
+            - https://www.solitaire-play.com/
+          </span>
+        </p>
+      </footer>
+
+    </div>
+
+    <div id="win" class="dialog">
+      <h3 class="win">Congratulations, you won! <span>It's only a game, but still.</span></h3>
+      <h3 class="lost">Game over! <span>No big deal, it's only a game.</span></h3>
+      <button id="again">NEW GAME?</button>
+    </div>
+
+    <div id="run" class="dialog">
+      <h3>Let's play another solitaire game</h3>
+      <p>
+        <a href="/">KLONDIKE</a>
+        <a href="/freecell/">KLONDIKE 3</a>
+        <a href="/aces-up/">ACES UP</a>
+        <a href="/canfield/">CANFIELD</a>
+        <a href="/canfield-turn-three/">CANFIELD 3</a>
+        <a href="/cruel/">CRUEL</a>
+        <a href="/freecell/">FREECELL</a>
+        <a href="/golf/">GOLF</a>
+        <a href="/monte-carlo/">MONTE CARLO</a>
+        <a href="/pyramid/">PYRAMID</a>
+        <a href="/pyramid-turn-three/">PYRAMID 3</a>
+        <a href="/russian/">RUSSIAN</a>
+        <a href="/yukon/">YUKON</a>
+      </p>
+    </div>
+
+    <div id="overlay"></div>
+
+    <script src="../js/jquery.16.11.20.min.js"></script>
+    <script src="../js/freecell.js"></script>
+    <script>(function($) { Start(); })(jQuery);</script>
+
+  </body>
+
+</html>
