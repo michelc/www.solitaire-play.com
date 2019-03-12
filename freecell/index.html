@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Solitaire / Play FreeCell Solitaire</title>
     <meta name="description" content="Play FreeCell Solitaire online, for free. The most popular solitaire with a puzzle-like logic and a good gameplay: undo, hint, automatic move... HTML5 and JavaScript solitaire card game for browser, tablet or phone.">
-    <meta name="keywords" content="Solitaire, FreeCell, Baker's Game, Eight Off, Brain Jam, SuperMove, Logic, Puzzle, Patience, Card, Game, Free, Play, Online, HTML5, JS, JavaScript">
+    <meta name="keywords" content="Solitaire, FreeCell, Baker's Game, Eight Off, Brain Jam, SuperMove, Logic, Puzzle, Paul Alfille, Jim Horne, Patience, Card, Game, Free, Play, Online, HTML5, JS, JavaScript">
     <link rel="canonical" href="https://www.solitaire-play.com/freecell/">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@ms_michel">
@@ -25,6 +25,17 @@
     <!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>
     <![endif]-->
+    <style>
+      @media (min-width: 52rem) and (min-height: 48rem) {
+        .grid8 .card, .grid8 .write {
+          xxbackground-size: 1344px 528px;  /* 96x14 x 132x4 */
+          xxheight: 132px;
+          xxwidth: 96px;
+          background-size: 1316px 528px;  /* 94x14 x 132x4 */
+          width: 94px;
+        }
+      }
+    </style>
   </head>
 
   <body id="freecell" class="grid8">
@@ -75,19 +86,6 @@
         <a id="bt5" target="_blank" title="Email" href="mailto:?subject=Play%20Solitaire&body=Play%20the%20classic%20Klondike%20Solitaire%20card%20game%20online%2C%20for%20free.:%20http%3A%2F%2Fwww.solitaire-play.com%2F"></a>
       </div>
 
-      <div class="row">
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- solitaire -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-5475403929650645"
-     data-ad-slot="2876021655"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-      </div>
-
       <div class="row" id="cookies">
         <p>
           Solitaire-Play uses cookies to improve the site.
@@ -118,30 +116,35 @@
           cells in the upper left corner.
         </p>
         <ul>
-          <li>The last card of each pile from the tableau can be transferred to
-            the foundation of the same suit, in ascending order.</li>
-          <li>Any visible card from one pile can be moved to another, but in
-            alternate color and descending order: 7 of Hearts, 6 of Clubs, 5 of
-            Diamonds, 4 of Clubs...</li>
-          <li>The top card from the waste can also be played to the tableau
-            piles or foundations.</li>
-          <li>Any card may be placed in an empty pile.</li>
+          <li>Any top card can be played to the foundation of the same suit, in
+            ascending order.</li>
+          <li>A top card from one pile can be moved to another, in alternate
+            color and descending order: 9 of Spades, 8 of Hearts, 7 of
+            Clubs...</li>
+          <li>Any top card may go to a free cell or an empty pile.</li>
+          <li>A free cell only contains one card at a time.</li>
         </ul>
+        <!--
+        <p>
+          Only the top card is playable. “SuperMove” allows to transfer several
+          ordered cards from one pile to another, using free cells and empty
+          piles as intermediate locations for each single move.
+        </p>
+        -->
         <p>
           One estimates that nearly every deal is solvable and thus winnable.
           Since all cards are face up, there is nothing to guess, just to show
-          some logic like with puzzle. However, as some games require more
-          cleverness and others can be very tricky, it's always a very pleasant
-          and challenging game.
+          puzzle logic. Some games require more cleverness and others can be
+          hard and tricky, so it's always a very pleasant and challenging
+          occupation.
         </p>
         <h3>How to play FreeCell Solitaire</h3>
         <p>
           FreeCell Solitaire is an HTML5 and JavaScript card game, but I tried
-          to copy the gameplay from Windows Classic Solitaire:
+          to copy the gameplay from the one included in Windows:
         </p>
         <ul>
           <li>Use drag &amp; drop to move cards from one pile to another</li>
-          <li>Click on the stock to draw three new cards</li>
           <li>Double-click on a card to add it to a foundation</li>
           <li>Right-click on the background to move all possible cards to the foundations</li>
         </ul>
