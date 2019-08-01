@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Solitaire / Online FreeCell Solitaire</title>
+    <meta name="description" content="The famous logic puzzle in the form of a solitaire card game. No hidden cards, no luck involved, a lot of thinking and every game should be winnable.">
+    <meta name="keywords" content="New, Free, Card, Game, Solitaire, FreeCell, Klondike, Eight Off,  Napoleon, Forty Thieves, Logic, Puzzle, Patience, Play, Online, Phone, Tablet, Desktop">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="../css/solitaire.min.css">
+    <style>
+      .play { text-align: center; }
+      @media (max-width: 24rem) { .play > img { height: 100%; width: 100%; } }
+    </style>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body class="blog">
+
+    <div class="container">
+
+      <div class="row">
+
+        <h1>
+          <a href="/" title="Play Solitaire online">Solitaire</a>
+          / Free FreeCell Solitaire
+        </h1>
+
+        <p>
+          As for <a href="/pyramid/">Pyramid Solitaire</a>, here's a post on <a
+          href="/freecell/">FreeCell Solitaire</a> widely copied from the
+          original Microsoft FreeCell documentation.
+        </p>
+
+        <p>
+          FreeCell is a logic puzzle in the form of a solitaire card game.
+          FreeCell is similar to other solitaire games you may have played. You
+          play red cards on black cards and black cards on red cards. The object
+          of this classic solitaire is to move all the cards to the foundations,
+          or “home cells”, piling up cards in order of the same suit starting
+          with the Ace.
+        </p>
+
+        <p>
+          However, FreeCell is unlike most solitaire games, in that there is no
+          luck involved after the initial shuffle. There are no hidden cards,
+          they are all dealt face up at the start of the game. It's believed
+          (although not proven) that every game is winnable.
+        </p>
+
+        <h2>Layout and object of the game</h2>
+
+        <p>
+          The FreeCell game area consists in three places:
+        </p>
+
+        <ul>
+
+          <li>
+            The “free cells” are the four card locations in the top left corner
+            of the screen. Each free cell can hold only one card.
+          </li>
+
+          <li>
+            The “home cells” are the four card locations in the top right corner
+            of the screen. Aces can be played to home cells immediately, and
+            other cards of the same suit can be played in order on top of them.
+          </li>
+
+          <li>
+            The tableau is where the deck of cards is dealt face up in eight
+            columns at the beginning of the game.
+          </li>
+
+        </ul>
+
+        <p>
+          The object of the game is to move all the cards to the home cells (or
+          foundations in other solitaire games), using the four free cells as
+          placeholders. To win, you must make four stacks of cards on the home
+          cells: one for each suit, with the Ace on the bottom and each card
+          stacked in order or rank (from Ace to King).
+        </p>
+
+        <h2>Rules of the game</h2>
+
+        <p>
+          There are three legal moves in FreeCell:
+        </p>
+
+        <ul>
+
+          <li>
+            You can move any card from the top of a pile to an empty free cell.
+          </li>
+
+          <li>
+            You can move any card from a free cell or from the top of a pile to
+            a home cell, if this card is one greater in rank than the card in
+            the home cell, and of the same suit. For example, you can move a
+            four of Clubs on to a three of Clubs in a home cell. Aces can always
+            be moved to an empty home cell.
+          </li>
+
+          <li>
+            You can move a card from a free cell or from the top of a pile to
+            the top of another pile as long as the rank of the card is one less
+            than the rank of the card you will place it on, and the color of the
+            cards are different. For example, you can move a black three onto a
+            red four. Any card can be moved to an empty pile.
+          </li>
+
+        </ul>
+
+        <p>
+          Although you can move only one card at a time to another pile,
+          “SuperMove” allows to transfer several ordered cards from one pile to
+          another, using free cells and empty piles as intermediate locations
+          for each single move.
+        </p>
+
+        <p>
+          <u>Note</u>: At the end of each move, FreeCell will transfer unneeded
+          cards to the home cell (aka “AutoPlay”). A card is unneeded if there
+          are no lower-rank cards of the opposite color left in the playing
+          area.
+        </p>
+
+        <h2>Winning</h2>
+
+        <p>
+          You win when you have moved all the cards from the tableau piles to
+          the home cells, or foundations.
+        </p>
+
+        <p>
+          You lose if there are no more legal move.
+        </p>
+
+        <h2>Strategy and hints</h2>
+
+        <p>
+          This section contains helpful hints for playing FreeCell successfully.
+        </p>
+
+        <p>
+          Winning at FreeCell requires patience. A common mistake is to make a
+          move just because it is possible, and then to realize that it cuts off
+          another move.
+        </p>
+
+        <p>
+          Spend the first few games becoming familiar with all the legal moves.
+          Be sure you understand how the moving a pile of stack of cards works,
+          and what the limitations are.
+        </p>
+
+        <p>
+          Study the deck carefully before you make your first move. Look for
+          trouble spots like Aces hidden under other cards, or both red sevens
+          stacked behind three Kings.
+        </p>
+
+        <p>
+          Use your free cell carefully. There are only four. Try to keep them
+          unoccupied as much as possible.
+        </p>
+
+        <h2>History of FreeCell</h2>
+
+        <p>
+          One of the oldest ancestors of FreeCell is <a href="https://en.wikipedia.org/wiki/Eight_Off">Eight
+          Off</a>. In the June 1968  edition of Scientific American, Martin
+          Gardner described in his “Mathematical Games” column a game by C. L.
+          Baker that is similar to FreeCell, except that cards on the tableau
+          are built by suit rather than by alternate colors. Gardner wrote, “The
+          game was taught to Baker by his father, who in turn learned it from an
+          Englishman during the 1920s”. This variant is now called Baker's Game.
+          FreeCell's origins may date back even further to 1945 and a
+          Scandinavian game called Napoleon in St. Helena (not the game <a
+          href="https://en.wikipedia.org/wiki/Napoleon_at_St_Helena">Napoleon at
+          St. Helena</a>, also known as Forty Thieves).
+        </p>
+
+        <p>
+          Paul Alfille changed Baker's Game by making cards build according to
+          alternate colors, thus creating FreeCell. He implemented the first
+          computerized version of it in the <a href="https://en.wikipedia.org/wiki/TUTOR_(programming_language)">TUTOR
+          programming language</a> for the <a href="https://en.wikipedia.org/wiki/PLATO_(computer_system)">PLATO
+          educational computer system</a> at CERL in 1978. By the early 1980s
+          Control Data Corporation had published it for all PLATO systems.
+        </p>
+
+        <p>
+          Jim Horne, who enjoyed playing FreeCell on the PLATO system at the
+          University of Alberta, published a shareware $10 DOS version with
+          color graphics in 1988. That year Horne joined Microsoft, and later
+          ported the game to Windows.
+        </p>
+
+        <p>
+          The Windows version was first included in <a href="https://en.wikipedia.org/wiki/Microsoft_Entertainment_Pack">Microsoft
+          Entertainment Pack Volume 2</a> and later the Best Of Microsoft
+          Entertainment Pack. It was subsequently included with Win32s as an
+          application that enabled the testing of the 32-bit thunking layer to
+          ensure that it was installed properly.
+        </p>
+
+        <p>
+          The original Microsoft FreeCell package supports 32,000 numbered
+          deals, generated by a 15-bit, pseudorandom-number seed. These deals
+          are known as the “Microsoft 32,000”, and all but one of them (deal
+          number 11982) have been completed. Later versions of FreeCell include
+          more than one million deals.
+        </p>
+
+        <p>
+          And to conclude, remember that all Solitaire-Play games come with
+          undos, hints and automatic moves. As usual, you can play <a
+          href="/freecell/">FreeCell Solitaire</a> for free on desktop, tablet
+          and phone...
+        </p>
+
+        <p>
+          Michel <span>(2019/08/01)</span>
+        </p>
+
+      </div>
+
+      <div class="row">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- solitaire -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5475403929650645"
+     data-ad-slot="2876021655"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      </div>
+
+      <footer>
+        <p>
+          &copy; 2019
+          <span>
+            / <a href="/" title="Play Klondike Solitaire">Solitaire</a>
+            / <a href="/games/" title="Online solitaire games">Games</a>
+            / <a href="/about/" title="About Solitaire-Play">About</a>
+            / <a href="/blog/" title="Solitaire News">Blog</a>
+          </span>
+          <span>
+            - https://www.solitaire-play.com/
+          </span>
+        </p>
+      </footer>
+
+    </div>
+
+  </body>
+
+</html>

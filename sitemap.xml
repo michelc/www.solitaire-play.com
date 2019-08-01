@@ -38,7 +38,7 @@
   </url>
   <url>
     <loc>https://www.solitaire-play.com/freecell/</loc>
-    <lastmod>2019-03-21</lastmod>
+    <lastmod>2019-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -92,7 +92,7 @@
   </url>
   <url>
     <loc>https://www.solitaire-play.com/blog/</loc>
-    <lastmod>2019-02-08</lastmod>
+    <lastmod>2019-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -171,6 +171,12 @@
   <url>
     <loc>https://www.solitaire-play.com/blog/free-pyramid-solitaire.html</loc>
     <lastmod>2019-02-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.solitaire-play.com/blog/online-freecell-solitaire.html</loc>
+    <lastmod>2019-08-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
