@@ -80,7 +80,7 @@
       <p id="click">#click</p>
     </div>
 
-    <script src="dquery.min.js"></script>
+    <script src="dquery.js"></script>
 
 <script>
 function RunTests() {
@@ -115,9 +115,9 @@ function RunTests() {
 function Assert(what, expected, result) {
   var ul = $("#results");
   if (expected === result) {
-    ul.append(`<li>${what}: ok</li>`);
+    ul.append('<li>' + what + ': ok</li>');
   } else {
-    ul.append(`<li style="color:red">${what}: KO - «${result}» au lieu de «${expected}»</li>`);
+    ul.append('<li style="color:red">' + what + ': KO - «' + result + '» au lieu de «' + expected + '»</li>');
   }
 }
 
@@ -131,36 +131,36 @@ function Test(func) {
 }
 
 function select_by_id_renvoie_un_element (what) {
-  Assert(what, 1, $("#select1").value.length);
+  Assert(what, 1, $("#select1").items.length);
 }
 
 function select_by_class_renvoie_plusieurs_elements (what) {
-  Assert(what, 3, $(".select").value.length);
+  Assert(what, 3, $(".select").items.length);
 }
 
 function select_avec_2_id_renvoie_deux_elements (what) {
-  Assert(what, 2, $("#select1, #select2").value.length);
+  Assert(what, 2, $("#select1, #select2").items.length);
 }
 
 function select_document_renvoie_un_element (what) {
-  Assert(what, 1, $(document).value.length);
+  Assert(what, 1, $(document).items.length);
 }
 
 function select_by_element_renvoie_cet_element (what) {
   var div = document.getElementById("select2");
-  Assert(what, 1, $(div).value.length);
+  Assert(what, 1, $(div).items.length);
 }
 
 function select_id_plus_element_renvoie_cet_element (what) {
-  Assert(what, 1, $("#selector h3").value.length);
+  Assert(what, 1, $("#selector h3").items.length);
 }
 
 function select_id_plus_class_renvoie_plusieurs_elements (what) {
-  Assert(what, 3, $("#selector .select").value.length);
+  Assert(what, 3, $("#selector .select").items.length);
 }
 
 function select_last_child_renvoie_dernier_element (what) {
-  Assert(what, "select3", $(".select:last-child").value[0].id);
+  Assert(what, "select3", $(".select:last-child").items[0].id);
 }
 
 function css_simple_met_a_jour_style_cssText (what) {
@@ -178,23 +178,23 @@ function css_avec_tiret_met_a_jour_style_cssText (what) {
 function hide_doit_mettre_display_a_none (what) {
   var p = $("#hide .lig2");
   p.hide();
-  Assert(what, "none", p.value[0].style.display);
+  Assert(what, "none", p.items[0].style.display);
 }
 
 function show_doit_mettre_display_a_block (what) {
   var p = $("#show .lig2");
-  p.value[0].style.display = "none";
+  p.items[0].style.display = "none";
   p.show();
-  Assert(what, "block", p.value[0].style.display);
+  Assert(what, "block", p.items[0].style.display);
 }
 
 function addClass_met_a_jour_className (what) {
   var temp = document.getElementById("addClass");
   temp.className = "";
   $("#addClass").addClass("toto");
-  Assert(what, "toto", temp.className);
+  Assert(what, "toto", temp.className.trim());
   $("#addClass").addClass("tutu");
-  Assert(what, "toto tutu", temp.className);
+  Assert(what, "toto tutu", temp.className.trim());
 }
 
 function removeClass_met_a_jour_className (what) {
@@ -229,7 +229,7 @@ function text_modifie_textContent (what) {
 function remove_supprime_du_contenu (what) {
   $("#remove .to-remove").remove();
   var temp = document.getElementById("remove").outerHTML;
-  Assert(what, false, temp.includes(".to-remove"));
+  Assert(what, false, temp.indexOf(".to-remove") !== -1);
 }
 
 function on_xxxx_defini_un_evenement (what) {
