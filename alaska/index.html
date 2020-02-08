@@ -5,40 +5,37 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Solitaire / Play FreeCell Solitaire</title>
-    <meta name="description" content="Play FreeCell Solitaire online, for free. The most popular solitaire with a puzzle-like logic and a good gameplay: undo, hint, automatic move... HTML5 and JavaScript solitaire card game for browser, tablet or phone.">
-    <meta name="keywords" content="Solitaire, FreeCell, Baker's Game, Eight Off, Brain Jam, SuperMove, Logic, Puzzle, Paul Alfille, Jim Horne, Patience, Card, Game, Free, Play, Online, HTML5, JS, JavaScript">
-    <link rel="canonical" href="https://www.solitaire-play.com/freecell/">
+    <title>Solitaire / Play Alaska Solitaire</title>
+    <meta name="description" content="Play Alaska Solitaire online, for free. A focusing and strategic variant of solitaire with a good gameplay: undo, hint, automatic move... HTML5 and JavaScript solitaire card game for browser, tablet or phone.">
+    <meta name="keywords" content="Solitaire, Alaska, Russian, Yukon, Concentration, Strategy, Patience, Card, Game, Free, Play, Online, HTML5, JS, JavaScript">
+    <link rel="canonical" href="https://www.solitaire-play.com/alaska/">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@ms_michel">
-    <meta property="og:url" content="https://www.solitaire-play.com/freecell/">
+    <meta property="og:url" content="https://www.solitaire-play.com/alaska/">
     <meta property="og:type" content="game">
-    <meta property="og:title" content="FreeCell Solitaire">
-    <meta property="og:description" content="Play FreeCell Solitaire online, for free. The most popular solitaire with a puzzle-like logic and a good gameplay: undo, hint, automatic move...">
-    <meta property="og:image" content="https://www.solitaire-play.com/cards/freecell-solitaire.png">
+    <meta property="og:title" content="Alaska Solitaire">
+    <meta property="og:description" content="Play Alaska Solitaire card game online, for free. A focusing and strategic variant of solitaire with a good gameplay: undo, hint, automatic move...">
+    <meta property="og:image" content="https://www.solitaire-play.com/cards/alaska-solitaire.png">
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
     <script>
       (new Image).src = "../cards/card-" + ((document.documentElement.clientWidth > 736) ? "game.png" : "phone.png");
     </script>
-    <link rel="stylesheet" href="../css/solitaire.min.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/solitaire.css">
     <!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>
     <![endif]-->
-    <style type="text/css">
-      .card { cursor: default; }
-      .drag { cursor: pointer; }
-    </style>
   </head>
 
-  <body id="freecell" class="grid8">
+  <body id="yukon">
 
     <div class="container">
 
       <div id="header" class="row">
-        <h1><a href="" title="FreeCell, one of the most popular solitaire games">FreeCell<span> Solitaire</span></a></h1>
+        <h1><a href="" title="Alaska, a highly hard solitaire card game">Alaska<span> Solitaire</span></a></h1>
         <div class="menu">
-          <button id="game" title="Play a new solitaire (F2)">GAME</button>
+          <button id="game" title="Play a new Alaska solitaire (F2)">GAME</button>
           <button id="hint" title="Show possible moves (H)">HINT</button>
           <button id="undo" title="Undo last move (Control+Z)">UNDO</button>
           <button id="tool" title="Select solitaire game">≡</button>
@@ -48,10 +45,6 @@
       <div id="solitaire" class="clearfix">
 
         <div id="plateaux" class="row">
-          <div id="r0" class="column drop pile pile-stack freecell"></div>
-          <div id="r1" class="column drop pile pile-stack freecell"></div>
-          <div id="r2" class="column drop pile pile-stack freecell"></div>
-          <div id="r3" class="column drop pile pile-stack freecell"></div>
           <div id="f0" class="column drop pile pile-stack"></div>
           <div id="f1" class="column drop pile pile-stack"></div>
           <div id="f2" class="column drop pile pile-stack"></div>
@@ -66,7 +59,6 @@
           <div id="t4" class="column drop pile pile-fan"></div>
           <div id="t5" class="column drop pile pile-fan"></div>
           <div id="t6" class="column drop pile pile-fan"></div>
-          <div id="t7" class="column drop pile pile-fan"></div>
         </div>
 
       </div>
@@ -75,10 +67,10 @@
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- solitaire -->
 <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-5475403929650645"
-     data-ad-slot="2876021655"
-     data-ad-format="auto"></ins>
+      style="display:block"
+      data-ad-client="ca-pub-5475403929650645"
+      data-ad-slot="2876021655"
+      data-ad-format="auto"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
@@ -105,8 +97,8 @@
 
       <div class="row" id="rules">
         <h2>
-          FreeCell Solitaire Game
-          <span>(or play <a href="/">Klondike Solitaire</a>)</span>
+          Alaska Solitaire Game
+          <span>(or play <a href="/yukon/">Yukon Solitaire</a>)</span>
         </h2>
         <p>
           Your goal is to win!
@@ -117,47 +109,38 @@
           Queen and King.
         </p>
         <p>
-          Cards are shuffled and dealt face up on the tableau (the 7 piles in
-          the bottom of the screen). There is no waste or stock, but 4 free
-          cells in the upper left corner.
+          Cards are shuffled and 28 form the tableau (the 7 piles in the bottom
+          of the screen). The remaining 24 cards are distributed face up to the
+          final 6 piles. There is no waste or stock.
         </p>
         <ul>
-          <li>Any top card can be played to the foundation of the same suit, in
-            ascending order.</li>
-          <li>A top card from one pile can be moved to another, in alternate
-            color and descending order: 9 of Spades, 8 of Hearts, 7 of
-            Clubs...</li>
-          <li>Any top card may go to a free cell or an empty pile.</li>
-          <li>A free cell only contains one card at a time.</li>
+          <li>You can play the last card of each pile from the tableau to the
+            foundation of the same suit, in ascending order.</li>
+          <li>All visibles cards from one pile can be moved to another, but in
+            the same suit and both descending order (7 of Hearts, 6 of Hearts...)
+            or ascending order (4 of Hearts, 5 of Hearts...)</li>
+          <li>Only a King can go to an empty pile.</li>
         </ul>
         <p>
-          Only the top card is playable. “SuperMove” allows to transfer several
-          ordered cards from one pile to another, using free cells and empty
-          piles as intermediate locations for each single move.
-        </p>
-        <p>
-          One estimates that nearly every deal is solvable and thus winnable.
-          Since all cards are face up, there is nothing to guess, just to show
-          puzzle logic. Some games require more cleverness and others can be
-          hard and tricky, so it's always a very pleasant and challenging
-          occupation.
+          Alaska is easy to play but it's a highly hard to solve solitaire game.
+          First, build aces to the foundation as soon as possible. Then, uncover
+          faces down cards so you can start moving cards around...
         </p>
         <p>
           Read blog to get more informations about how to <a
-          href="../blog/online-freecell-solitaire.html">play FreeCell
-          Solitaire</a>.
+          href="../blog/free-alaska-solitaire.html">play Alaska Solitaire</a>.
         </p>
-        <h3>How to play FreeCell Solitaire</h3>
+        <h3>How to play Free Alaska Solitaire</h3>
         <p>
-          FreeCell Solitaire is an HTML5 and JavaScript card game, but I tried
-          to copy the gameplay from the one included in Windows:
+          Alaska is an easy to learn HTML5 and JavaScript card game, similar to
+          Klondike Solitaire:
         </p>
         <ul>
           <li>Use drag &amp; drop to move cards from one pile to another</li>
           <li>Double-click on a card to add it to a foundation</li>
           <li>Right-click (or tap and hold) to move all possible cards to the foundations</li>
         </ul>
-        <h3>FreeCell Solitaire online game</h3>
+        <h3>Alaska Solitaire online game</h3>
         <p>
           Simply click the top left title to play a new solitaire game, or use
           one of the menu commands:
@@ -173,8 +156,6 @@
               Pyramid, Russian or Yukon Solitaire.</li>
         </ul>
       </div>
-
-      <div id="debug"></div>
 
       <footer>
         <p>
@@ -222,8 +203,8 @@
     <div id="overlay"></div>
 
     <script src="../js/jquery.16.11.20.min.js"></script>
-    <script src="../js/freecell.min.js"></script>
-    <script>(function($) { Start(); })(jQuery);</script>
+    <script src="../js/yukon.min.js"></script>
+    <script>(function($) { Start(3); })(jQuery);</script>
 
   </body>
 
