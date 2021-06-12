@@ -5,17 +5,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Solitaire / Play Canfield Solitaire</title>
-    <meta name="description" content="Play Canfield Solitaire online, for free. A very popular variant of solitaire with a good gameplay: undo, hint, automatic move... HTML5 and JavaScript solitaire card game for browser, tablet or phone.">
-    <meta name="keywords" content="Solitaire, Canfield, Demon, Devil's Own, Fascination, Pounce, Racing Demon, Thirteen, Patience, Card, Game, Free, Play, Online, HTML5, JS, JavaScript">
-    <link rel="canonical" href="https://www.solitaire-play.com/canfield/">
+    <title>Solitaire / Play Australian Patience</title>
+    <meta name="description" content="Play Australian Patience online, for free. A challenging but popular solitaire card game with a good gameplay: undo, hint, automatic move... HTML5 and JavaScript solitaire card game for browser, tablet or phone.">
+    <meta name="keywords" content="Solitaire, Australian, Patience, Yukon, Alaska, Concentration, Strategy, Card, Game, Free, Play, Online, HTML5, JS, JavaScript">
+    <link rel="canonical" href="https://www.solitaire-play.com/australian-patience/">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@ms_michel">
-    <meta property="og:url" content="https://www.solitaire-play.com/canfield/">
+    <meta property="og:url" content="https://www.solitaire-play.com/australian-patience/">
     <meta property="og:type" content="game">
-    <meta property="og:title" content="Canfield Solitaire">
-    <meta property="og:description" content="Play Canfield Solitaire card game online, for free. A very popular variant of solitaire with a good gameplay: undo, hint, automatic move...">
-    <meta property="og:image" content="https://www.solitaire-play.com/cards/canfield-solitaire.png">
+    <meta property="og:title" content="Australian Patience">
+    <meta property="og:description" content="Play Australian Patience card game online, for free. A challenging but popular solitaire card game with a good gameplay: undo, hint, automatic move...">
+    <meta property="og:image" content="https://www.solitaire-play.com/cards/australian-patience.png">
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
     <script>
@@ -27,14 +27,14 @@
     <![endif]-->
   </head>
 
-  <body id="canfield">
+  <body id="australian">
 
     <div class="container">
 
       <div id="header" class="row">
-        <h1><a href="" title="Canfield, a legendary solitaire card game">Canfield<span> Solitaire</span></a></h1>
+        <h1><a href="" title="Australian Patience, a needy solitaire game">Australian<span> Patience</span></a></h1>
         <div class="menu">
-          <button id="game" title="Play a new Canfield solitaire (F2)">GAME</button>
+          <button id="game" title="Play a new Australian patience (F2)">GAME</button>
           <button id="hint" title="Show possible moves (H)">HINT</button>
           <button id="undo" title="Undo last move (Control+Z)">UNDO</button>
           <button id="tool" title="Select solitaire game">≡</button>
@@ -43,24 +43,24 @@
 
       <div id="solitaire" class="clearfix">
 
-        <div id="plateaux" class="row reverse">
+        <div id="plateaux" class="row">
           <div id="stock" class="column pile pile-stack"><div class="write"><div>+</div></div></div>
           <div id="waste" class="column pile pile-stack"></div>
           <div class="column space pile"><!-- space --></div>
-          <div id="f0" class="column drop pile pile-stack"><div class="write lead"><div>?</div></div></div>
-          <div id="f1" class="column drop pile pile-stack"><div class="write lead"><div>?</div></div></div>
-          <div id="f2" class="column drop pile pile-stack"><div class="write lead"><div>?</div></div></div>
-          <div id="f3" class="column drop pile pile-stack"><div class="write lead"><div>?</div></div></div>
+          <div id="f0" class="column drop pile pile-stack"></div>
+          <div id="f1" class="column drop pile pile-stack"></div>
+          <div id="f2" class="column drop pile pile-stack"></div>
+          <div id="f3" class="column drop pile pile-stack"></div>
         </div>
 
-        <div id="tableaux" class="row reverse">
-          <div class="column space pile"><!-- space --></div>
-          <div id="r0" class="column pile pile-fan"></div>
-          <div class="column space pile"><!-- space --></div>
+        <div id="tableaux" class="row">
           <div id="t0" class="column drop pile pile-fan"></div>
           <div id="t1" class="column drop pile pile-fan"></div>
           <div id="t2" class="column drop pile pile-fan"></div>
           <div id="t3" class="column drop pile pile-fan"></div>
+          <div id="t4" class="column drop pile pile-fan"></div>
+          <div id="t5" class="column drop pile pile-fan"></div>
+          <div id="t6" class="column drop pile pile-fan"></div>
         </div>
 
       </div>
@@ -99,55 +99,53 @@
 
       <div class="row" id="rules">
         <h2>
-          Canfield Solitaire Game
-          <span>(or play <a href="/canfield-turn-three/">Canfield Turn Three</a>)</span>
+          Australian Patience Game
+          <span>(or play <a href="/">Klondike Solitaire</a>)</span>
         </h2>
         <p>
           Your goal is to win!
           You win the game when you move all cards to the foundations (the 4
-          piles in the upper right corner).
+          empty piles in the upper right corner).
+          You must start each foundation with an Ace. Then you can place cards
+          of the same suit in ascending order: Ace, 2, 3, 4, ..., 10, Jack,
+          Queen and King.
         </p>
         <p>
-          Cards are shuffled and 13 go face down to the reserve (the vertical
-          pile) with the top card face up. Then one card is dealt to the first
-          foundation and into each tableau pile. The remaining 34 cards forms
-          the stock (top left) and the game starts with one card turned into the
-          waste pile.
+          Cards are shuffled and 28 form the tableau (the 7 piles in the bottom
+          of the screen). The remaining 24 cards form the stock (top left) and
+          the game start with one card turned from the stock into the waste pile.
         </p>
         <ul>
-          <li>Each foundation starts with the same rank than the first one</li>
-          <li>Foundations build up by suit, wrapping from King to Ace if necessary</li>
-          <li>
-            Tableau piles build down by alternating color, wrapping from Ace to
-            King if necessary
-          </li>
-          <li>
-            Only the top card from tableau pile is playable, but you can move a
-            full pile
-          </li>
-          <li>An empty tableau pile is filled with the reserve</li>
-          <li>When the reserve runs out, any playable card can fill a free pile</li>
+          <li>You can play the last card of each pile from the tableau to the
+            foundation of the same suit, in ascending order.</li>
+          <li>All visibles cards from one pile can be moved to another,  but in
+            the same suit and descending order: 7 of Hearts, 6 of Hearts, 5 of
+            Hearts, 4 of Hearts...</li>
+          <li>The top card from the waste can also be played to the tableau
+            piles or foundations.</li>
+          <li>Only a King can go to an empty pile.</li>
         </ul>
         <p>
-          When all moves are done, you turn one card from the stock to the
-          waste. When you're out of stock, the waste flip over.
+          When all moves are done, you turn one card from the stock to the waste
+          pile before playing it to a foundation or on the tableau if suitable.
+          When the stock is empty, it's probably time to say you have lost.
         </p>
         <p>
-          Read blog to get more informations about how to <a
-          href="../blog/free-canfield-solitaire.html">play Canfield Solitaire</a>.
+          Australian Patience seems easy to play since all cards are face up.
+          But with no redraw, you always end up needing a card already buried
+          in the waste.
         </p>
-        <h3>How to play Free Canfield Solitaire</h3>
+        <h3>How to play Free Australian Patience</h3>
         <p>
-          Canfield is an easy to learn HTML5 and JavaScript card game, with a
-          gameplay similar to Klondike Solitaire:
+          Australian Patience is an easy to learn HTML5 and JavaScript card game, similar to
+          Klondike Solitaire:
         </p>
         <ul>
           <li>Use drag &amp; drop to move cards from one pile to another</li>
-          <li>Click on the stock to draw one more card</li>
           <li>Double-click on a card to add it to a foundation</li>
-          <li>Right-click (or tap and hold) to autoplay all possible cards to the foundations</li>
+          <li>Right-click (or tap and hold) to move all possible cards to the foundations</li>
         </ul>
-        <h3>Canfield Solitaire online game</h3>
+        <h3>Australian Patience online game</h3>
         <p>
           Simply click the top left title to play a new solitaire game, or use
           one of the menu commands:
@@ -211,8 +209,8 @@
     <div id="overlay"></div>
 
     <script src="../js/jquery.20.03.22.min.js"></script>
-    <script src="../js/canfield.min.js"></script>
-    <script>(function($) { Start(); })(jQuery);</script>
+    <script src="../js/australian.min.js"></script>
+    <script>(function($) { Start(1); })(jQuery);</script>
 
   </body>
 

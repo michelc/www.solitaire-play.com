@@ -20,10 +20,23 @@
     <script>
       (new Image).src = "../cards/card-" + ((document.documentElement.clientWidth > 736) ? "game.png" : "phone.png");
     </script>
-    <link rel="stylesheet" href="../css/solitaire.min.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/solitaire.css">
     <!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>
     <![endif]-->
+    <style type="text/css">
+@media screen and (min-width:0) and (min-resolution:.001dpcm) {
+  .hint { box-shadow: 0 0 6px 4px rgba(255, 255, 0, 1) !important; }
+}
+.hint {
+  animation: blink 0.4s linear;
+}
+@keyframes blink {
+  0%, 100% { box-shadow: 0 0 8px 6px rgba(255, 255, 0, 1); }
+  50% { box-shadow: none; }
+}
+    </style>
   </head>
 
   <body id="golf">
@@ -52,7 +65,7 @@
           <div id="t6" class="column pile pile-fan"></div>
         </div>
 
-        <div id="plateaux" class="row">
+        <div id="plateaux" class="row reverse">
           <div id="stock" class="column pile pile-stack count"><div class="write"><div>×</div></div></div>
           <div id="f0" class="column six pile pile-flat"></div>
         </div>
@@ -104,7 +117,7 @@
         <ul>
           <li>Click on a card from the tableau to move it to the foundation</li>
           <li>Click on the stock to draw a new card</li>
-          <li>Right-click on the background to move all possible cards to the foundations</li>
+          <li>Right-click (or tap and hold) to move all possible cards to the foundations</li>
         </ul>
         <h3>Golf Solitaire online game</h3>
         <p>
@@ -118,8 +131,8 @@
           <li>UNDO: Back up one move (or press Control+Z). You can continue to
               undo until you reach the beginning of the game.</li>
           <li>≡ MENU: Play another free online solitaire card game like Klondike,
-              Klondike 3, Aces Up, Canfield, Canfield 3, Cruel, FreeCell, Golf,
-              Monte Carlo, Pyramid, Pyramid 3, Russian or Yukon Solitaire.</li>
+              Aces Up, Alaska, Australian Patience, Canfield, Cruel, FreeCell,
+              Golf, Monte Carlo, Pyramid, Russian or Yukon Solitaire.</li>
         </ul>
       </div>
 
@@ -152,6 +165,8 @@
         <a href="/">KLONDIKE</a>
         <a href="/klondike-turn-three/">KLONDIKE 3</a>
         <a href="/aces-up/">ACES UP</a>
+        <a href="/alaska/">ALASKA</a>
+        <a href="/australian-patience/">AUSTRALIAN</a>
         <a href="/canfield/">CANFIELD</a>
         <a href="/canfield-turn-three/">CANFIELD 3</a>
         <a href="/cruel/">CRUEL</a>
@@ -167,8 +182,8 @@
 
     <div id="overlay"></div>
 
-    <script src="dquery.min.js"></script>
-    <script src="golf.min.js"></script>
+    <script src="dquery.js"></script>
+    <script src="golf.js"></script>
     <script>(function() { Start(); })();</script>
 
   </body>
