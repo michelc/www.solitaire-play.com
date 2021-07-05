@@ -5,17 +5,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Solitaire / Play FreeCell Solitaire</title>
-    <meta name="description" content="Play FreeCell Solitaire online, for free. The most popular solitaire with a puzzle-like logic and a good gameplay: undo, hint, automatic move... HTML5 and JavaScript solitaire card game for browser, tablet or phone.">
-    <meta name="keywords" content="Solitaire, FreeCell, Baker's Game, Eight Off, Brain Jam, SuperMove, Logic, Puzzle, Paul Alfille, Jim Horne, Patience, Card, Game, Free, Play, Online, HTML5, JS, JavaScript">
-    <link rel="canonical" href="https://www.solitaire-play.com/freecell/">
+    <title>Solitaire / Play Australian Patience Easy</title>
+    <meta name="description" content="Play Australian Patience Easy online, for free. A challenging but popular solitaire card game with a good gameplay: undo, hint, automatic move... HTML5 and JavaScript solitaire card game for browser, tablet or phone.">
+    <meta name="keywords" content="Solitaire, Australian, Patience, Easy, Yukon, Alaska, Concentration, Strategy, Card, Game, Free, Play, Online, HTML5, JS, JavaScript">
+    <link rel="canonical" href="https://www.solitaire-play.com/australian-easy/">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@ms_michel">
-    <meta property="og:url" content="https://www.solitaire-play.com/freecell/">
+    <meta property="og:url" content="https://www.solitaire-play.com/australian-easy/">
     <meta property="og:type" content="game">
-    <meta property="og:title" content="FreeCell Solitaire">
-    <meta property="og:description" content="Play FreeCell Solitaire online, for free. The most popular solitaire with a puzzle-like logic and a good gameplay: undo, hint, automatic move...">
-    <meta property="og:image" content="https://www.solitaire-play.com/cards/freecell-solitaire.png">
+    <meta property="og:title" content="Australian Patience Easy">
+    <meta property="og:description" content="Play Australian Patience Easy card game online, for free. A challenging but popular solitaire card game with a good gameplay: undo, hint, automatic move...">
+    <meta property="og:image" content="https://www.solitaire-play.com/cards/australian-solitaire.png">
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
     <script>
@@ -25,20 +25,16 @@
     <!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>
     <![endif]-->
-    <style type="text/css">
-      .card { cursor: default; }
-      .drag { cursor: pointer; }
-    </style>
   </head>
 
-  <body id="freecell" class="grid8">
+  <body id="australian-ez">
 
     <div class="container">
 
       <div id="header" class="row">
-        <h1><a href="" title="FreeCell, one of the most popular solitaire games">FreeCell<span> Solitaire</span></a></h1>
+        <h1><a href="" title="Australian Patience Easy, make it winable">Australian<span> Easy</span></a></h1>
         <div class="menu">
-          <button id="game" title="Play a new solitaire (F2)">GAME</button>
+          <button id="game" title="Play a new Australian patience (F2)">GAME</button>
           <button id="hint" title="Show possible moves (H)">HINT</button>
           <button id="undo" title="Undo last move (Control+Z)">UNDO</button>
           <button id="tool" title="Select solitaire game">≡</button>
@@ -47,11 +43,10 @@
 
       <div id="solitaire" class="clearfix">
 
-        <div id="plateaux" class="row">
-          <div id="r0" class="column drop pile pile-stack freecell"></div>
-          <div id="r1" class="column drop pile pile-stack freecell"></div>
-          <div id="r2" class="column drop pile pile-stack freecell"></div>
-          <div id="r3" class="column drop pile pile-stack freecell"></div>
+        <div id="plateaux" class="row reverse">
+          <div id="stock" class="column pile pile-stack"><div class="write"><div>+</div></div></div>
+          <div id="waste" class="column pile pile-stack"></div>
+          <div class="column space pile"><!-- space --></div>
           <div id="f0" class="column drop pile pile-stack"></div>
           <div id="f1" class="column drop pile pile-stack"></div>
           <div id="f2" class="column drop pile pile-stack"></div>
@@ -66,7 +61,6 @@
           <div id="t4" class="column drop pile pile-fan"></div>
           <div id="t5" class="column drop pile pile-fan"></div>
           <div id="t6" class="column drop pile pile-fan"></div>
-          <div id="t7" class="column drop pile pile-fan"></div>
         </div>
 
       </div>
@@ -105,8 +99,8 @@
 
       <div class="row" id="rules">
         <h2>
-          FreeCell Solitaire Game
-          <span>(or play <a href="/">Klondike Solitaire</a>)</span>
+          Australian Patience Easy Game
+          <span>(or play <a href="/australian-patience/">Australian Patience</a>)</span>
         </h2>
         <p>
           Your goal is to win!
@@ -117,47 +111,41 @@
           Queen and King.
         </p>
         <p>
-          Cards are shuffled and dealt face up on the tableau (the 7 piles in
-          the bottom of the screen). There is no waste or stock, but 4 free
-          cells in the upper left corner.
+          Cards are shuffled and 28 form the tableau (the 7 piles in the bottom
+          of the screen). The remaining 24 cards form the stock (top left) and
+          the game start with one card turned from the stock into the waste pile.
         </p>
         <ul>
-          <li>Any top card can be played to the foundation of the same suit, in
-            ascending order.</li>
-          <li>A top card from one pile can be moved to another, in alternate
-            color and descending order: 9 of Spades, 8 of Hearts, 7 of
-            Clubs...</li>
-          <li>Any top card may go to a free cell or an empty pile.</li>
-          <li>A free cell only contains one card at a time.</li>
+          <li>You can play the last card of each pile from the tableau to the
+            foundation of the same suit, in ascending order.</li>
+          <li>All visibles cards from one pile can be moved to another,  but in
+            the same suit and descending order: 7 of Hearts, 6 of Hearts, 5 of
+            Hearts, 4 of Hearts...</li>
+          <li>The top card from the waste can also be played to the tableau
+            piles or foundations.</li>
+          <li>Only a King can go to an empty pile.</li>
         </ul>
         <p>
-          Only the top card is playable. “SuperMove” allows to transfer several
-          ordered cards from one pile to another, using free cells and empty
-          piles as intermediate locations for each single move.
+          When all moves are done, you turn one card from the stock to the waste
+          pile before playing it to a foundation or on the tableau if suitable.
+          When the stock is empty, the cards from the waste are reused one time.
         </p>
         <p>
-          One estimates that nearly every deal is solvable and thus winnable.
-          Since all cards are face up, there is nothing to guess, just to show
-          puzzle logic. Some games require more cleverness and others can be
-          hard and tricky, so it's always a very pleasant and challenging
-          occupation.
+          Australian Patience Easy is “easy” to win since all cards are face
+          up and thanks to the redraw, you can expect to win every game.
         </p>
+        <h3>How to play Free Australian Patience Easy</h3>
         <p>
-          Read blog to get more informations about how to <a
-          href="../blog/online-freecell-solitaire.html">play FreeCell
-          Solitaire</a>.
-        </p>
-        <h3>How to play FreeCell Solitaire</h3>
-        <p>
-          FreeCell Solitaire is an HTML5 and JavaScript card game, but I tried
-          to copy the gameplay from the one included in Windows:
+          Australian Patience Easy is an easy to learn HTML5 and JavaScript
+          card game, similar to Klondike Solitaire:
         </p>
         <ul>
           <li>Use drag &amp; drop to move cards from one pile to another</li>
+          <li>Click on the stock to draw one new card</li>
           <li>Double-click on a card to add it to a foundation</li>
           <li>Right-click (or tap and hold) to move all possible cards to the foundations</li>
         </ul>
-        <h3>FreeCell Solitaire online game</h3>
+        <h3>Australian Patience Easy online game</h3>
         <p>
           Simply click the top left title to play a new solitaire game, or use
           one of the menu commands:
@@ -173,8 +161,6 @@
               Golf, Monte Carlo, Pyramid, Russian or Yukon Solitaire.</li>
         </ul>
       </div>
-
-      <div id="debug"></div>
 
       <footer>
         <p>
@@ -224,8 +210,8 @@
     <div id="overlay"></div>
 
     <script src="../js/jquery.20.03.22.min.js"></script>
-    <script src="../js/freecell.min.js"></script>
-    <script>(function($) { Start(); })(jQuery);</script>
+    <script src="../js/australian.min.js"></script>
+    <script>(function($) { Start(-1); })(jQuery);</script>
 
   </body>
 
