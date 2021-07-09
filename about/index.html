@@ -20,8 +20,17 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
     <link rel="stylesheet" href="../css/solitaire.min.css">
     <style>
-      p.date { font-size: .7em; }
-      p.date + ul { margin-top: -.7em; }
+      table { width: 100%; }
+      tr { border-top: #80d5aa dotted 1px; }
+      th, td {
+        font-variant-numeric: tabular-nums;
+        font-weight: 300;
+        line-height: 1.2;
+        padding: 5px 0;
+        text-align: left;
+        vertical-align: top;
+      }
+      th { width: 11ch; }
     </style>
     <!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>
@@ -41,11 +50,11 @@
 
         <h2>Informations</h2>
         <p>
-          Bonjour, I am Michel (michel.c at gmail) and I created Solitaire-Play
+          Hello, I am Michel (michel.c at gmail) and I created Solitaire-Play
           in August 2014. Twenty years ago, I had already written a few games
-          with Visual Basic 3. The very first was <a href="/golf/">Golf</a>, a
-          solitaire card game with no drag &amp; drop to manage. Today, with
-          HTML, CSS and JavaScript I should be able to do it again.
+          with Visual Basic 3. The very first was Golf, a solitaire card game
+          with no drag &amp; drop to manage. Today, with HTML, CSS and
+          JavaScript I should be able to do it again.
         </p>
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -60,113 +69,126 @@
 </script>
 
         <h3>Change log</h3>
-        <p class="date">2021/07/05</p>
-        <ul>
-          <li>Added Australian Patience Easy with 2 redraws.</li>
-        </ul>
-        <p class="date">2021/06/12</p>
-        <ul>
-          <li>New Australian Patience.</li>
-        </ul>
-        <p class="date">2020/02/08</p>
-        <ul>
-          <li>New Alaska Solitaire.</li>
-        </ul>
-        <p class="date">2019/06/12</p>
-        <ul>
-          <li>Animated AutoPlay for FreeCell.</li>
-        </ul>
-        <p class="date">2019/04/29</p>
-        <ul>
-          <li>Added SuperMove with FreeCell.</li>
-        </ul>
-        <p class="date">2019/03/21</p>
-        <ul>
-          <li>Launched FreeCell Solitaire.</li>
-        </ul>
-        <p class="date">2019/01/29</p>
-        <ul>
-          <li>New variant: Pyramid Turn Three Solitaire.</li>
-        </ul>
-        <p class="date">2018/11/06</p>
-        <ul>
-          <li>Launched Canfield Turn Three Solitaire.</li>
-        </ul>
-        <p class="date">2018/09/13</p>
-        <ul>
-          <li>Added Canfield Solitaire.</li>
-        </ul>
-        <p class="date">2018/07/03</p>
-        <ul>
-          <li>Added Pyramid Solitaire.</li>
-        </ul>
-        <p class="date">2018/04/17</p>
-        <ul>
-          <li>Launched Russian Solitaire.</li>
-        </ul>
-        <p class="date">2018/03/21</p>
-        <ul>
-          <li>Launched Yukon Solitaire.</li>
-        </ul>
-        <p class="date">2018/01/29</p>
-        <ul>
-          <li>Added a sixth free solitaire: Aces Up.</li>
-        </ul>
-        <p class="date">2017/10/20</p>
-        <ul>
-          <li>Added a new free game: Monte Carlo.</li>
-        </ul>
-        <p class="date">2016/08/21</p>
-        <ul>
-          <li>Added a new free solitaire: Klondike Turn Three.</li>
-        </ul>
-        <p class="date">2016/06/07</p>
-        <ul>
-          <li>Added a new free game: Cruel Solitaire.</li>
-        </ul>
-        <p class="date">2016/03/20</p>
-        <ul>
-          <li>Better CSS and drag &amp; drop.</li>
-        </ul>
-        <p class="date">2016/02/25</p>
-        <ul>
-          <li>Hamburger menu to select a solitaire online game.</li>
-        </ul>
-        <p class="date">2015/12/12</p>
-        <ul>
-          <li>New phone cards with suit on left, for better fan view.</li>
-        </ul>
-        <p class="date">2015/11/05</p>
-        <ul>
-          <li>Added a second free game: Golf Solitaire.</li>
-        </ul>
-        <p class="date">2015/03/15</p>
-        <ul>
-          <li>Completed the new responsive design for phones and tablets.</li>
-          <li>Added a new cards deck for small screens and phones.</li>
-        </ul>
-        <p class="date">2014/08/21</p>
-        <ul>
-          <li>Started the game with Klondike Solitaire.</li>
-        </ul>
+        <table>
+          <tbody>
+            <tr>
+              <th>2021/07/09</th>
+              <td>
+                Aces suit on top right makes them identifiable underneath another card.<br>
+                + Dialogs are now closable.
+              </td>
+            </tr>
+            <tr>
+              <th>2021/07/05</th>
+              <td>New variant: Australian Patience Easy with 2 redraws.</td>
+            </tr>
+            <tr>
+              <th>2021/06/12</th>
+              <td>Launched Australian Patience.</td>
+            </tr>
+            <tr>
+              <th>2020/02/08</th>
+              <td>New Alaska Solitaire.</td>
+            </tr>
+            <tr>
+              <th>2019/06/12</th>
+              <td>Improved FreeCell with an animated AutoPlay.</td>
+            </tr>
+            <tr>
+              <th>2019/04/29</th>
+              <td>Updated FreeCell with “SuperMove”.</td>
+            </tr>
+            <tr>
+              <th>2019/03/21</th>
+              <td>Added FreeCell Solitaire, a must-have for a game website.</td>
+            </tr>
+            <tr>
+              <th>2019/01/29</th>
+              <td>New variant: Pyramid Turn Three Solitaire.</td>
+            </tr>
+            <tr>
+              <th>2018/11/06</th>
+              <td>Launched Canfield Turn Three Solitaire.</td>
+            </tr>
+            <tr>
+              <th>2018/09/13</th>
+              <td>Added Canfield Solitaire.</td>
+            </tr>
+            <tr>
+              <th>2018/07/03</th>
+              <td>New Pyramid Solitaire.</td>
+            </tr>
+            <tr>
+              <th>2018/04/17</th>
+              <td>Launched Russian Solitaire.</td>
+            </tr>
+            <tr>
+              <th>2018/03/21</th>
+              <td>Added Yukon Solitaire.</td>
+            </tr>
+            <tr>
+              <th>2018/01/29</th>
+              <td>Added a <del>sixth</del> fifth free solitaire game: Aces Up.</td>
+            </tr>
+            <tr>
+              <th>2017/10/20</th>
+              <td>Three years anniversary (and a few months): Monte Carlo Solitaire.</td>
+            </tr>
+            <tr>
+              <th>2016/08/21</th>
+              <td>Two years anniversary: the classic Klondike Turn Three Solitaire.</td>
+            </tr>
+            <tr>
+              <th>2016/06/07</th>
+              <td>Third free game: Cruel Solitaire.</td>
+            </tr>
+            <tr>
+              <th>2016/03/20</th>
+              <td>Better CSS and drag &amp; drop.</td>
+            </tr>
+            <tr>
+              <th>2016/02/25</th>
+              <td>Hamburger menu to select a solitaire online game.</td>
+            </tr>
+            <tr>
+              <th>2015/12/12</th>
+              <td>New phone cards with suit on left, for better fan view.</td>
+            </tr>
+            <tr>
+              <th>2015/11/05</th>
+              <td>Second free game: Golf Solitaire.</td>
+            </tr>
+            <tr>
+              <th>2015/03/15</th>
+              <td>
+                Completed the new responsive design for phones and tablets.<br>
+                + Added a new cards deck for small screens and phones.
+              </td>
+            </tr>
+            <tr>
+              <th>2014/08/21</th>
+              <td>Started the game with the famous Klondike Solitaire.</td>
+            </tr>
+          </tbody>
+        </table>
 
         <h3>Credits</h3>
         <ul>
           <li>
-            CSS: I made it simple and start with <a href="http://www.adamkaplan.me/grid/">a
+            CSS: I made it simple and start with <a href="https://adamkaplan.me/grid/">a
             simple guide to responsive design</a> by Adam Kaplan to build a 7 columns grid.
           </li>
           <li>
-            JavaScript: I keep <a href="https://jquery.com/">JQuery</a> for basic stuff and
-            <a href="https://jqueryui.com/">jQuery UI</a> for drag &amp; drop. I also give a try to
-            <a href="http://touchpunch.furf.com/">jQuery UI Touch Punch</a> by Dave
-            Furfero to hack a touch event support.
+            JavaScript: I keep JQuery for basic stuff and jQuery UI for drag
+            &amp; drop. I also give a try to
+            <a href="https://github.com/furf/jquery-ui-touch-punch/">jQuery UI
+            Touch Punch</a> by Dave Furfero to hack a touch event support.
           </li>
           <li>
-            Cards: I use Consolas font, <a href="http://sourceforge.net/projects/vector-cards/">Vectorized
+            Cards: I use Consolas font,
+            <a href="https://totalnonsense.com/open-source-vector-playing-cards/">Vectorized
             Playing Cards</a> by Chris Aguilar, and card back from
-            <a href="http://svg-cards.sourceforge.net/">SVG-cards</a> by David
-            Bellot. The final sprite is compressed with <a href="https://tinypng.com/">TinyPNG</a>.
+            <a href="http://svg-cards.sourceforge.net/">SVG-cards</a> by David Bellot.
           </li>
         </ul>
       </div>
