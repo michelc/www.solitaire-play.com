@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeMOT - Un mot, un jour</title>
+  <meta name="description" content="Découvrez, chaque jour, en six essais un mot de cinq lettres... Un jeu inspiré de Wordle en HTML5 et JavaScript pour jouer sur ordinateur, tablette ou téléphone.">
+  <meta name="keywords" content="Jeu, Puzzle, Mot, Mots, Vocabulaire, Découvrir, Deviner, France, Français, Wordle, Motus, Gratuit, Jouer, HTML5, JS, JavaScript">
+  <link rel="stylesheet" href="lemot.min.css">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
+</head>
+
+<body id="lemot">
+
+  <div class="container">
+
+    <header>
+      <div class="menu aide">?</div>
+      <h1>LeMOT</h1>
+      <div class="menu outils">⚙</div>
+    </header>
+
+    <div class="plateau-container">
+      <div class="plateau">
+
+        <div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div>
+        <div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div>
+        <div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div>
+        <div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div>
+        <div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div>
+        <div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div>
+
+      </div>
+    </div>
+
+    <div class="clavier">
+
+      <div class="rangee">
+        <button>A</button>
+        <button>Z</button>
+        <button>E</button>
+        <button>R</button>
+        <button>T</button>
+        <button>Y</button>
+        <button>U</button>
+        <button>I</button>
+        <button>O</button>
+        <button>P</button>
+      </div>
+      <div class="rangee">
+        <button>Q</button>
+        <button>S</button>
+        <button>D</button>
+        <button>F</button>
+        <button>G</button>
+        <button>H</button>
+        <button>J</button>
+        <button>K</button>
+        <button>L</button>
+        <button>M</button>
+      </div>
+      <div class="rangee">
+        <button class="enter">↵</button>
+        <button>W</button>
+        <button>X</button>
+        <button>C</button>
+        <button>V</button>
+        <button>B</button>
+        <button>N</button>
+        <button class="back">⌫</button>
+      </div>
+
+    </div>
+
+    <div class="popup instructions">
+      <div class="header">
+        <h2>Comment jouer ?</h2>
+        <div class="menu ferme">&#10005;</div>
+      </div>
+      <p>Devinez <strong>LeMOT</strong> en 6 tentatives.</p>
+      <p>Après chaque essai, la couleur des lettres change pour indiquer à
+        quel point votre réponse était proche du mot à découvrir.</p>
+      <div class="exemples">
+        <div class="word">
+          <div class="case correct">J</div>
+          <div class="case">O</div>
+          <div class="case">U</div>
+          <div class="case">E</div>
+          <div class="case">R</div>
+        </div>
+        <p>La lettre <strong>J</strong> est présente dans le mot et elle est bien placée.</p>
+        <div class="word">
+          <div class="case">P</div>
+          <div class="case">E</div>
+          <div class="case present">R</div>
+          <div class="case">D</div>
+          <div class="case">U</div>
+        </div>
+        <p>La lettre <strong>R</strong> est présente dans le mot mais pas à la bonne place.</p>
+        <div class="word">
+          <div class="case">G</div>
+          <div class="case">A</div>
+          <div class="case">G</div>
+          <div class="case absent">N</div>
+          <div class="case">É</div>
+        </div>
+        <p>La lettre <strong>N</strong> n'est pas présente dans le mot à deviner.</p>
+      </div>
+      <p><strong>Un nouveau LeMOT sera disponible chaque jour !</strong></p>
+      <p class="note">
+        LeMOT est une version (non officielle) de
+        <a href="https://powerlanguage.co.uk/wordle/">WORDLE</a>
+        en français.
+      </p>
+    </div>
+
+    <div class="popup parametres">
+      <div class="header">
+        <h2>Paramètres</h2>
+        <div class="menu ferme">&#10005;</div>
+      </div>
+      <p style="margin-top: 51px">
+        Je comptes bien gérer des paramètres comme dans la version originale
+        de Josh Wardle, mais cela va demander encore un peu de temps.</p>
+      <p>
+        Sinon, la version actuelle est encore en bêta : tout devrait plus ou moins
+        fonctionner, bien qu'il soit possible de rencontrer des problèmes...
+      </p>
+      <div class="header">
+        <h4>Commentaires</h4>
+        <div>
+          <a href="https://twitter.com/intent/tweet?screen_name=ms_michel"
+            target="_blank"
+            title="@ms_michel">Twitter</a>
+        </div>
+      </div>
+      <p class="note">
+        LeMOT est une version (non officielle) de
+        <a href="https://powerlanguage.co.uk/wordle/">WORDLE</a>
+        en français.
+      </p>
+      <div id="puzzle" class="footnote"></div>
+    </div>
+
+  </div>
+
+  <script src="lemot.min.js"></script>
+
+</body>
+
+</html>
