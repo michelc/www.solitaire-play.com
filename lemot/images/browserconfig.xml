@@ -2,8 +2,8 @@
 <browserconfig>
     <msapplication>
         <tile>
-            <square150x150logo src="/lemot/images/lemot-logo-150x150.png"/>
-            <TileColor>#da532c</TileColor>
+            <square150x150logo src="/lemot/images/mstile-150x150.png"/>
+            <TileColor>#ffb000</TileColor>
         </tile>
     </msapplication>
 </browserconfig>
