@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeMOT - Stats d'un Wordle français</title>
+  <meta name="description" content="Les statistiques de LeMOT, un des Wordle en français">
+  <meta name="keywords" content="Wordle, Français, LeMOT, Statistiques">
+  <meta property="og:url" content="https://www.solitaire-play.com/lemot/stats.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="LeMOT - Stats d'un Wordle français<">
+  <meta property="og:image" content="https://www.solitaire-play.com/lemot/lemot-wordle-fr.min.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@LeMotLeJeu">
+  <link rel="canonical" href="https://www.solitaire-play.com/lemot/stats.html">
+  <link rel="stylesheet" href="lemot.min.css">
+  <!-- https://realfavicongenerator.net/ -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/lemot/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/lemot/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/lemot/images/favicon-16x16.png">
+  <link rel="manifest" href="/lemot/manifest.json">
+  <link rel="mask-icon" href="/lemot/images/safari-pinned-tab.svg" color="#ffb000">
+  <link rel="shortcut icon" href="/lemot/images/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffb000">
+  <meta name="msapplication-config" content="/lemot/images/browserconfig.xml">
+  <meta name="theme-color" content="#ffb000">
+  <style>
+    .popup {
+      display: block;
+    }
+  </style>
+</head>
+
+<body id="lemot">
+
+  <div class="container">
+
+    <div class="popup resultats">
+      <div class="header">
+        <h2>Résultat</h2>
+      </div>
+      <h3></h3>
+      <p>
+        <textarea rows="13" style="width:40ch" id="resultats">21
+131
+262
+473
+572
+368
+382</textarea>
+      </p>
+      <p>
+        <button class="correct" id="calculer">
+          CALCULER
+        </button>
+      </p>
+      <p class="note">
+        En cliquant sur PARTAGER, la grille LeMOT est copiée dans le
+        presse-papiers, pour vous permettre de la coller dans Twitter, WhatsApp
+        ou même un Sms... pour informer vos amis de votre résultat.
+      </p>
+      <p><strong>A demain pour un nouveau LeMOT !</strong></p>
+    </div>
+
+  </div>
+
+  <script>
+const $calculer = document.querySelector("#calculer");
+const $resultats = document.querySelector("#resultats");
+$calculer.addEventListener("click", Statistiques, false);
+
+function Statistiques() {
+  const lignes = $resultats.textContent.trim().split('\n');
+  console.log(lignes);
+  const resultats = lignes.map(x => parseInt(x, 10) || 0);
+  const total = resultats.reduce((x, y) => x + y);
+  console.log(resultats);
+  console.log(total);
+  const pourcentages = resultats.map(x => Math.round(x * 100 / total));
+  console.log(pourcentages);
+  const carres = pourcentages.map(x => "🟧".repeat(Math.round(x / 4)));
+  console.log(carres);
+  const puzzle = GetPuzzle() - 1;
+  const reponse = "XXXXXXXXXXXXXXX"
+  let statistiques = `LeMOT ${puzzle} - Stats ${total} parties\n`;
+  for (let i = 0; i < 7; i++) {
+    const essais = i < 6 ? i + 1 : "X";
+    statistiques += `\n${essais}: ${carres[i]} ${pourcentages[i]}%`.replace("  ", " ");
+  }
+  statistiques += `\n\n#LeMotLeJeu #${reponse[0]}${reponse.substring(1).toLowerCase()}`;
+  const url = "https://www.goatcounter.com/ + 🖐️";
+  statistiques += `\n\n${url}`;
+  $resultats.textContent = statistiques;
+}
+
+function GetPuzzle() {
+  const debut = new Date(Date.UTC(2022, 0, 9));
+  const jour = new Date(Date.now());
+  const difference = jour.getTime() - debut.getTime();
+  return Math.ceil(difference / 1000 / 60 / 60 / 24);
+}
+  </script>
+
+</body>
+
+</html>
