@@ -44,17 +44,17 @@
       </div>
       <h3></h3>
       <p>
-        <textarea rows="13" style="width:40ch" id="resultats">21
-131
-262
-473
-572
-368
-382</textarea>
+        <textarea style="height: 315px; width:40ch;" id="resultats">47
+238
+475
+955
+1075
+728
+800</textarea>
       </p>
       <p>
         <button class="correct" id="calculer">
-          CALCULER
+          GENERER
         </button>
       </p>
       <p class="note">
@@ -70,30 +70,35 @@
   <script>
 const $calculer = document.querySelector("#calculer");
 const $resultats = document.querySelector("#resultats");
+let sauvegarde = "";
 $calculer.addEventListener("click", Statistiques, false);
 
 function Statistiques() {
-  const lignes = $resultats.textContent.trim().split('\n');
-  console.log(lignes);
+  const contenu = $resultats.textContent.trim();
+  if (contenu.includes("🟧")) {
+    $resultats.textContent = sauvegarde;
+    $calculer.textContent = "GENERER";
+    return;
+  }
+  sauvegarde = contenu;
+  const lignes = contenu.split('\n');
   const resultats = lignes.map(x => parseInt(x, 10) || 0);
   const total = resultats.reduce((x, y) => x + y);
-  console.log(resultats);
-  console.log(total);
   const pourcentages = resultats.map(x => Math.round(x * 100 / total));
-  console.log(pourcentages);
   const carres = pourcentages.map(x => "🟧".repeat(Math.round(x / 4)));
-  console.log(carres);
   const puzzle = GetPuzzle() - 1;
   const reponse = "XXXXXXXXXXXXXXX"
   let statistiques = `LeMOT ${puzzle} - Stats ${total} parties\n`;
   for (let i = 0; i < 7; i++) {
     const essais = i < 6 ? i + 1 : "X";
-    statistiques += `\n${essais}: ${carres[i]} ${pourcentages[i]}%`.replace("  ", " ");
+    statistiques += `\n${essais}: ${carres[i]} ${pourcentages[i]}%`;
   }
   statistiques += `\n\n#LeMotLeJeu #${reponse[0]}${reponse.substring(1).toLowerCase()}`;
   const url = "https://www.goatcounter.com/ + 🖐️";
   statistiques += `\n\n${url}`;
-  $resultats.textContent = statistiques;
+  $resultats.innerHTML = statistiques;
+  console.log(statistiques);
+  $calculer.textContent = "CHIFFRES";
 }
 
 function GetPuzzle() {
