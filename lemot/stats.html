@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="fr">
 
 <head>
@@ -8,29 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LeMOT - Stats d'un Wordle français</title>
   <meta name="description" content="Les statistiques de LeMOT, un des Wordle en français">
-  <meta name="keywords" content="Wordle, Français, LeMOT, Statistiques">
-  <meta property="og:url" content="https://www.solitaire-play.com/lemot/stats.html">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="LeMOT - Stats d'un Wordle français<">
-  <meta property="og:image" content="https://www.solitaire-play.com/lemot/lemot-wordle-fr.min.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@LeMotLeJeu">
   <link rel="canonical" href="https://www.solitaire-play.com/lemot/stats.html">
   <link rel="stylesheet" href="lemot.min.css">
-  <!-- https://realfavicongenerator.net/ -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/lemot/images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/lemot/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/lemot/images/favicon-16x16.png">
-  <link rel="manifest" href="/lemot/manifest.json">
-  <link rel="mask-icon" href="/lemot/images/safari-pinned-tab.svg" color="#ffb000">
   <link rel="shortcut icon" href="/lemot/images/favicon.ico">
-  <meta name="msapplication-TileColor" content="#ffb000">
-  <meta name="msapplication-config" content="/lemot/images/browserconfig.xml">
-  <meta name="theme-color" content="#ffb000">
   <style>
-    .popup {
-      display: block;
-    }
+    .popup { display: block; }
+    #resultats { height: 315px; width: 45ch; user-select: text; }
   </style>
 </head>
 
@@ -44,69 +26,80 @@
       </div>
       <h3></h3>
       <p>
-        <textarea style="height: 315px; width:40ch;" id="resultats">47
-238
-475
-955
-1075
-728
-800</textarea>
+        <textarea id="resultats"></textarea>
       </p>
       <p>
         <button class="correct" id="calculer">
           GENERER
         </button>
       </p>
-      <p class="note">
-        En cliquant sur PARTAGER, la grille LeMOT est copiée dans le
-        presse-papiers, pour vous permettre de la coller dans Twitter, WhatsApp
-        ou même un Sms... pour informer vos amis de votre résultat.
-      </p>
-      <p><strong>A demain pour un nouveau LeMOT !</strong></p>
     </div>
 
   </div>
 
   <script>
-const $calculer = document.querySelector("#calculer");
-const $resultats = document.querySelector("#resultats");
-let sauvegarde = "";
-$calculer.addEventListener("click", Statistiques, false);
+    const $calculer = document.querySelector("#calculer");
+    const $resultats = document.querySelector("#resultats");
+    let sauvegarde = "";
+    $calculer.addEventListener("click", Statistiques, false);
 
-function Statistiques() {
-  const contenu = $resultats.textContent.trim();
-  if (contenu.includes("🟧")) {
-    $resultats.textContent = sauvegarde;
-    $calculer.textContent = "GENERER";
-    return;
-  }
-  sauvegarde = contenu;
-  const lignes = contenu.split('\n');
-  const resultats = lignes.map(x => parseInt(x, 10) || 0);
-  const total = resultats.reduce((x, y) => x + y);
-  const pourcentages = resultats.map(x => Math.round(x * 100 / total));
-  const carres = pourcentages.map(x => "🟧".repeat(Math.round(x / 4)));
-  const puzzle = GetPuzzle() - 1;
-  const reponse = "XXXXXXXXXXXXXXX"
-  let statistiques = `LeMOT ${puzzle} - Stats ${total} parties\n`;
-  for (let i = 0; i < 7; i++) {
-    const essais = i < 6 ? i + 1 : "X";
-    statistiques += `\n${essais}: ${carres[i]} ${pourcentages[i]}%`;
-  }
-  statistiques += `\n\n#LeMotLeJeu #${reponse[0]}${reponse.substring(1).toLowerCase()}`;
-  const url = "https://www.goatcounter.com/ + 🖐️";
-  statistiques += `\n\n${url}`;
-  $resultats.innerHTML = statistiques;
-  console.log(statistiques);
-  $calculer.textContent = "CHIFFRES";
-}
+    function Statistiques() {
+      // Récupère le contenu source ou généré
+      const contenu = $resultats.value.trim();
+      // Revient aux données sources quand statistiques sont déjà affichées
+      if (contenu.includes("🟧")) {
+        $resultats.value = sauvegarde;
+        $calculer.textContent = "GENERER";
+        return;
+      }
+      // Sauvegarde les données sources avant de générer les statistiques
+      sauvegarde = contenu;
+      // Nettoyage du copier / coller de GoatCounter
+      const stats = contenu.split('\n')
+                          .filter(x => x.includes("puzzle"))
+                          .map(x => x.replace(" \t", "-").replace(" ", "").replace("-X", "-7").split("-"));
+      // Comptabilise pour chaque résultats
+      // - 0 : nombre de parties entamées
+      // - 1 à 6 : nombre de parties gagnées en 1 à 6 coups
+      // - 7 : nombre de parties perdues (X)
+      const resultats = [ 0, 0, 0, 0, 0, 0, 0, 0 ];
+      for (let i = 0; i < stats.length; i++) {
+        const nombre = parseInt(stats[i][0], 10) || 0;
+        const essai = parseInt(stats[i][3], 10) || 0;
+        resultats[essai] += nombre;
+      }
+      // Calcule le nombre de parties terminées (jouées jusqu'au bout)
+      const total = resultats.reduce((x, y) => x + y) - resultats[0];
+      // Calcule le pourcentage de chaque résultat par rapport au nombre de parties terminées
+      const pourcentages = resultats.map(x => Math.round(x * 100 / total));
+      // Génère 1 carré pour chaque 4%
+      const carres = pourcentages.map(x => "🟧".repeat(Math.round(x / 4)));
+      // Retrouve le numéro du puzzle de la veille
+      const puzzle = GetPuzzle() - 1;
+      // Emplacement pour le mot à découvrir de la veille
+      const reponse = "XXXXXXXXXXXXX"
+      // Génère les statistiques
+      let statistiques = `LeMOT #${puzzle} - ${total} parties jouées\n`;
+      for (let i = 1; i < 8; i++) {
+        const essais = i < 7 ? i : "X";
+        statistiques += `\n${essais}: ${carres[i]} ${pourcentages[i]}%`;
+      }
+      statistiques += `\n\n#LeMotStats #LeMotLeJeu #${reponse}`;
+      const url = "https://www.goatcounter.com/ + 🖐️";
+      statistiques += `\n\n${url}`;
+      // Affiche et logue les statistiques
+      $resultats.value = statistiques;
+      console.log(statistiques);
+      // Change l'intitulé du bouton pour revoir les sources
+      $calculer.textContent = "CHIFFRES";
+    }
 
-function GetPuzzle() {
-  const debut = new Date(Date.UTC(2022, 0, 9));
-  const jour = new Date(Date.now());
-  const difference = jour.getTime() - debut.getTime();
-  return Math.ceil(difference / 1000 / 60 / 60 / 24);
-}
+    function GetPuzzle() {
+      const debut = new Date(Date.UTC(2022, 0, 9));
+      const jour = new Date(Date.now());
+      const difference = jour.getTime() - debut.getTime();
+      return Math.ceil(difference / 1000 / 60 / 60 / 24);
+    }
   </script>
 
 </body>
