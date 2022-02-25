@@ -15,103 +15,182 @@
       "type": "image/png"
     }
   ],
-  "lang": "fr",
-  "name": "LeMOT (Wordle en français)",
+  "lang": "fr-FR",
+  "name": "LeMOT (Wordle 🇫🇷)",
   "orientation": "portrait",
+  "related_applications": [],
   "short_name": "LeMOT",
   "start_url": "https://www.solitaire-play.com/lemot/",
   "theme_color": "#ffb000",
   "screenshots": [
     {
-      "src": "/lemot/pwa/lemot-wide-1.png",
-      "sizes": "750x1334",
+      "src": "/lemot/pwa/lemot-narrow-01.png",
+      "sizes": "329x564",
       "type": "image/png",
-      "platform": "wide",
-      "label": "Ecran d'accueil"
+      "platform": "narrow",
+      "label": "Ecran du jeu LeMOT"
     },
     {
-      "src": "/lemot/pwa/lemot-wide-2.png",
-      "sizes": "750x1334",
+      "src": "/lemot/pwa/lemot-narrow-02-clair.png",
+      "sizes": "329x564",
       "type": "image/png",
-      "platform": "wide",
+      "platform": "narrow",
+      "label": "LeMOT en mode clair (light)"
+    },
+    {
+      "src": "/lemot/pwa/lemot-narrow-03-qwerty.png",
+      "sizes": "329x564",
+      "type": "image/png",
+      "platform": "narrow",
+      "label": "Utilisation du clavier QWERTY"
+    },
+    {
+      "src": "/lemot/pwa/lemot-narrow-04-aide.png",
+      "sizes": "329x564",
+      "type": "image/png",
+      "platform": "narrow",
+      "label": "Instructions pour jouer à LeMOT"
+    },
+    {
+      "src": "/lemot/pwa/lemot-narrow-05.png",
+      "sizes": "329x564",
+      "type": "image/png",
+      "platform": "narrow",
       "label": "Début de la saisie du premier mot"
     },
     {
-      "src": "/lemot/pwa/lemot-wide-3.png",
-      "sizes": "750x1334",
+      "src": "/lemot/pwa/lemot-narrow-06.png",
+      "sizes": "329x564",
       "type": "image/png",
-      "platform": "wide",
+      "platform": "narrow",
       "label": "Fin de la saisie du premier mot"
     },
     {
-      "src": "/lemot/pwa/lemot-wide-4.png",
-      "sizes": "750x1334",
+      "src": "/lemot/pwa/lemot-narrow-07.png",
+      "sizes": "329x564",
       "type": "image/png",
-      "platform": "wide",
+      "platform": "narrow",
       "label": "Après avoir validé le premier mot"
     },
     {
-      "src": "/lemot/pwa/lemot-wide-5.png",
-      "sizes": "750x1334",
+      "src": "/lemot/pwa/lemot-narrow-08.png",
+      "sizes": "329x564",
       "type": "image/png",
-      "platform": "wide",
+      "platform": "narrow",
       "label": "Saisie d'un mot inconnu"
     },
     {
-      "src": "/lemot/pwa/lemot-wide-6.png",
-      "sizes": "750x1334",
+      "src": "/lemot/pwa/lemot-narrow-09.png",
+      "sizes": "329x564",
       "type": "image/png",
-      "platform": "wide",
+      "platform": "narrow",
       "label": "Après avoir validé le deuxième mot"
     },
     {
-      "src": "/lemot/pwa/lemot-wide-7.png",
-      "sizes": "750x1334",
+      "src": "/lemot/pwa/lemot-narrow-10.png",
+      "sizes": "329x564",
       "type": "image/png",
-      "platform": "wide",
-      "label": "Après avoir validé le troisième mot"
+      "platform": "narrow",
+      "label":"Après avoir validé le troisième mot"
     },
     {
-      "src": "/lemot/pwa/lemot-wide-8.png",
-      "sizes": "750x1334",
+      "src": "/lemot/pwa/lemot-narrow-11-resultat.png",
+      "sizes": "329x564",
       "type": "image/png",
-      "platform": "wide",
-      "label": "Le quatrième mot proposé est le bon !"
-    },
-    {
-      "src": "/lemot/pwa/lemot-wide-resultat.png",
-      "sizes": "750x1334",
-      "type": "image/png",
-      "platform": "wide",
+      "platform": "narrow",
       "label": "Partage du résultat sur les réseaux sociaux"
     },
     {
-      "src": "/lemot/pwa/lemot-wide-sombre.png",
-      "sizes": "750x1334",
+      "src": "/lemot/pwa/lemot-narrow-12-parametres.png",
+      "sizes": "329x564",
       "type": "image/png",
-      "platform": "wide",
-      "label": "Utilisation du thème sombre"
+      "platform": "narrow",
+      "label": "Configuration du jeu"
     },
     {
-      "src": "/lemot/pwa/lemot-wide-qwerty.png",
-      "sizes": "750x1334",
+      "src": "/lemot/pwa/lemot-wide-01.png",
+      "sizes": "560x630",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Ecran du jeu LeMOT"
+    },
+    {
+      "src": "/lemot/pwa/lemot-wide-02-sombre.png",
+      "sizes": "560x630",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "LeMOT en mode sombre (dark)"
+    },
+    {
+      "src": "/lemot/pwa/lemot-wide-03-qwerty.png",
+      "sizes": "560x630",
       "type": "image/png",
       "platform": "wide",
       "label": "Utilisation du clavier QWERTY"
     },
     {
-      "src": "/lemot/pwa/lemot-wide-aide.png",
-      "sizes": "750x1334",
+      "src": "/lemot/pwa/lemot-wide-04-aide.png",
+      "sizes": "560x630",
       "type": "image/png",
       "platform": "wide",
-      "label": "Comment jouer à LeMOT"
+      "label": "Instructions pour jouer à LeMOT"
     },
     {
-      "src": "/lemot/pwa/lemot-wide-parametres.png",
-      "sizes": "750x1334",
+      "src": "/lemot/pwa/lemot-wide-05.png",
+      "sizes": "560x630",
       "type": "image/png",
       "platform": "wide",
-      "label": "Configurer le jeu"
+      "label": "Début de la saisie du premier mot"
+    },
+    {
+      "src": "/lemot/pwa/lemot-wide-06.png",
+      "sizes": "560x630",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Fin de la saisie du premier mot"
+    },
+    {
+      "src": "/lemot/pwa/lemot-wide-07.png",
+      "sizes": "560x630",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Après avoir validé le premier mot"
+    },
+    {
+      "src": "/lemot/pwa/lemot-wide-08.png",
+      "sizes": "560x630",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Saisie d'un mot inconnu"
+    },
+    {
+      "src": "/lemot/pwa/lemot-wide-09.png",
+      "sizes": "560x630",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Après avoir validé le deuxième mot"
+    },
+    {
+      "src": "/lemot/pwa/lemot-wide-10.png",
+      "sizes": "560x630",
+      "type": "image/png",
+      "platform": "wide",
+      "label":"Après avoir validé le troisième mot"
+    },
+    {
+      "src": "/lemot/pwa/lemot-wide-11-resultat.png",
+      "sizes": "560x630",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Partage du résultat sur les réseaux sociaux"
+    },
+    {
+      "src": "/lemot/pwa/lemot-wide-12-parametres.png",
+      "sizes": "560x630",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Configuration du jeu"
     }
-  ]
+  ],
+  "shortcuts" : []
 }
