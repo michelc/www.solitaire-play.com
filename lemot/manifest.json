@@ -15,6 +15,7 @@
       "type": "image/png"
     }
   ],
+  "id": "/lemot/",
   "lang": "fr-FR",
   "name": "LeMOT (Wordle 🇫🇷)",
   "orientation": "portrait",
@@ -109,84 +110,84 @@
     },
     {
       "src": "/lemot/pwa/lemot-wide-01.png",
-      "sizes": "560x630",
+      "sizes": "530x630",
       "type": "image/png",
       "platform": "wide",
       "label": "Ecran du jeu LeMOT"
     },
     {
       "src": "/lemot/pwa/lemot-wide-02-sombre.png",
-      "sizes": "560x630",
+      "sizes": "530x630",
       "type": "image/png",
       "platform": "wide",
       "label": "LeMOT en mode sombre (dark)"
     },
     {
       "src": "/lemot/pwa/lemot-wide-03-qwerty.png",
-      "sizes": "560x630",
+      "sizes": "530x630",
       "type": "image/png",
       "platform": "wide",
       "label": "Utilisation du clavier QWERTY"
     },
     {
       "src": "/lemot/pwa/lemot-wide-04-aide.png",
-      "sizes": "560x630",
+      "sizes": "530x630",
       "type": "image/png",
       "platform": "wide",
       "label": "Instructions pour jouer à LeMOT"
     },
     {
       "src": "/lemot/pwa/lemot-wide-05.png",
-      "sizes": "560x630",
+      "sizes": "530x630",
       "type": "image/png",
       "platform": "wide",
       "label": "Début de la saisie du premier mot"
     },
     {
       "src": "/lemot/pwa/lemot-wide-06.png",
-      "sizes": "560x630",
+      "sizes": "530x630",
       "type": "image/png",
       "platform": "wide",
       "label": "Fin de la saisie du premier mot"
     },
     {
       "src": "/lemot/pwa/lemot-wide-07.png",
-      "sizes": "560x630",
+      "sizes": "530x630",
       "type": "image/png",
       "platform": "wide",
       "label": "Après avoir validé le premier mot"
     },
     {
       "src": "/lemot/pwa/lemot-wide-08.png",
-      "sizes": "560x630",
+      "sizes": "530x630",
       "type": "image/png",
       "platform": "wide",
       "label": "Saisie d'un mot inconnu"
     },
     {
       "src": "/lemot/pwa/lemot-wide-09.png",
-      "sizes": "560x630",
+      "sizes": "530x630",
       "type": "image/png",
       "platform": "wide",
       "label": "Après avoir validé le deuxième mot"
     },
     {
       "src": "/lemot/pwa/lemot-wide-10.png",
-      "sizes": "560x630",
+      "sizes": "530x630",
       "type": "image/png",
       "platform": "wide",
       "label":"Après avoir validé le troisième mot"
     },
     {
       "src": "/lemot/pwa/lemot-wide-11-resultat.png",
-      "sizes": "560x630",
+      "sizes": "530x630",
       "type": "image/png",
       "platform": "wide",
       "label": "Partage du résultat sur les réseaux sociaux"
     },
     {
       "src": "/lemot/pwa/lemot-wide-12-parametres.png",
-      "sizes": "560x630",
+      "sizes": "530x630",
       "type": "image/png",
       "platform": "wide",
       "label": "Configuration du jeu"
