@@ -2,6 +2,7 @@
   "background_color": "#ffb000",
   "categories": ["education", "games", "social"],
   "description": "Un jeu de mot chaque jour (Wordle en français)",
+  "dir": "ltr",
   "display": "standalone",
   "icons": [
     {
@@ -21,7 +22,7 @@
   "orientation": "portrait",
   "related_applications": [],
   "short_name": "LeMOT",
-  "start_url": "https://www.solitaire-play.com/lemot/",
+  "start_url": "/lemot/",
   "theme_color": "#ffb000",
   "screenshots": [
     {

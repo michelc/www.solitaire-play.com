@@ -1,0 +1,28 @@
+{
+  "background_color": "#ffb000",
+  "categories": ["education", "games", "social"],
+  "description": "Un jeu de mot chaque jour (Wordle en 6 lettres)",
+  "dir": "ltr",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/lemot6/images/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/lemot6/images/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "id": "/lemot6/",
+  "lang": "fr-FR",
+  "name": "LeMOT6 (Wordle 🇫🇷)",
+  "orientation": "portrait",
+  "related_applications": [],
+  "short_name": "LeMOT6",
+  "start_url": "/lemot6/",
+  "theme_color": "#ffb000",
+  "shortcuts" : []
+}

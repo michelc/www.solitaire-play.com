@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeMOT6 - Un jeu de mot chaque jour (Wordle en 6 lettres)</title>
+  <meta name="description" content="Devinez chaque jour un nouveau mot de 6 lettres en 6 essais... Un Wordle en français, pour jouer gratuitement sur ordinateur, tablette ou téléphone.">
+  <meta name="keywords" content="Wordle, Français, Motus, Mastermind, Pendu, Scrabble, Jeu, Puzzle, Vocabulaire, Dictionnaire, Mot, Mots, Croisés, Fléchés, Mélés, Deviner, Découvrir, France, Français, Gratuit, Jouer, HTML5, JS, JavaScript">
+  <meta property="og:url" content="https://www.solitaire-play.com/lemot6/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="LeMOT6 - Un jeu de mot chaque jour (Wordle en 6 lettres)">
+  <meta property="og:image" content="https://www.solitaire-play.com/lemot6/lemot6-wordle-fr.min.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://www.solitaire-play.com/lemot6/twitter6-wordle-fr.min.png">
+  <meta name="twitter:site" content="@LeMotLeJeu">
+  <link rel="canonical" href="https://www.solitaire-play.com/lemot6/">
+  <link rel="stylesheet" href="lemot.min.css">
+  <!-- https://realfavicongenerator.net/ -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/lemot6/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/lemot6/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/lemot6/images/favicon-16x16.png">
+  <link rel="manifest" href="/lemot6/manifest.json">
+  <link rel="mask-icon" href="/lemot6/images/safari-pinned-tab.svg" color="#ffb000">
+  <link rel="shortcut icon" href="/lemot6/images/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffb000">
+  <meta name="msapplication-config" content="/lemot6/images/browserconfig6.xml">
+  <meta name="theme-color" content="#ffb000">
+</head>
+
+<body id="lemot6">
+
+  <div class="container">
+
+    <header>
+      <div class="icone aide">
+        <svg><use href="#icone-aide"></use></svg>
+      </div>
+      <h1 title="Wordle en français">LeMOT6</h1>
+      <div class="icone outils">
+        <svg><use href="#icone-outils"></use></svg>
+      </div>
+    </header>
+
+    <div class="plateau-container">
+      <div class="plateau">
+
+        <div class="case"><span class="curseur">_</span></div><div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div>
+        <div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div>
+        <div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div>
+        <div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div>
+        <div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div>
+        <div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div>
+
+        <div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div>
+
+      </div>
+    </div>
+
+    <div class="message">Mot inconnu</div>
+
+    <div class="clavier">
+
+      <div class="azerty">
+        <div class="rangee">
+          <button>A</button><button>Z</button><button>E</button><button>R</button><button>T</button>
+          <button>Y</button><button>U</button><button>I</button><button>O</button><button>P</button>
+        </div>
+        <div class="rangee">
+          <button>Q</button><button>S</button><button>D</button><button>F</button><button>G</button>
+          <button>H</button><button>J</button><button>K</button><button>L</button><button>M</button>
+        </div>
+        <div class="rangee">
+          <button class="enter"><svg><use href="#touche-enter"></use></svg></button>
+          <button>W</button><button>X</button><button>C</button>
+          <button>V</button><button>B</button><button>N</button>
+          <button class="back"><svg><use href="#touche-back"></use></svg></button>
+        </div>
+      </div>
+
+      <div class="qwerty">
+        <div class="rangee">
+          <button>Q</button><button>W</button><button>E</button><button>R</button><button>T</button>
+          <button>Y</button><button>U</button><button>I</button><button>O</button><button>P</button>
+        </div>
+        <div class="rangee">
+          <span></span>
+          <button>A</button><button>S</button><button>D</button><button>F</button><button>G</button>
+          <button>H</button><button>J</button><button>K</button><button>L</button>
+          <span></span>
+        </div>
+        <div class="rangee">
+          <button class="enter"><svg><use href="#touche-enter"></use></svg></button>
+          <button>Z</button><button>X</button><button>C</button>
+          <button>V</button><button>B</button><button>N</button><button>M</button>
+          <button class="back"><svg><use href="#touche-back"></use></svg></button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="popup instructions">
+      <div class="header">
+        <h2>Comment jouer ?</h2>
+        <div class="icone ferme">
+          <svg><use href="#icone-ferme"></use></svg>
+        </div>
+      </div>
+      <p>Devinez <strong>LeMOT6</strong> en 6 tentatives.</p>
+      <p>Cette version française de Wordle accepte les mots selon les règles du
+        Scrabble, et donc les pluriels et les verbes conjugués.</p>
+      <p>Après chaque essai, la couleur des lettres change pour indiquer à
+        quel point votre réponse est proche du mot du jour.</p>
+      <div class="exemples">
+        <div class="word">
+          <div class="case correct">A</div>
+          <div class="case">M</div>
+          <div class="case">U</div>
+          <div class="case">S</div>
+          <div class="case">E</div>
+          <div class="case">R</div>
+        </div>
+        <p>La lettre <strong>A</strong> est dans le mot, au bon endroit.</p>
+        <div class="word">
+          <div class="case">E</div>
+          <div class="case">T</div>
+          <div class="case present">U</div>
+          <div class="case">D</div>
+          <div class="case">I</div>
+          <div class="case">E</div>
+        </div>
+        <p>Le <strong>U</strong> est dans le mot mais pas à la bonne place.</p>
+        <div class="word">
+          <div class="case">T</div>
+          <div class="case">R</div>
+          <div class="case">O</div>
+          <div class="case">U</div>
+          <div class="case absent">V</div>
+          <div class="case">E</div>
+        </div>
+        <p>La lettre <strong>V</strong> n'est pas dans le mot à deviner.</p>
+      </div>
+      <p><strong>Un nouveau LeMOT6 disponible chaque jour !</strong></p>
+      <p class="note">
+        LeMOT6 est une adaptation de <a href="https://www.nytimes.com/games/wordle/">WORDLE</a> en français.
+      </p>
+    </div>
+
+    <div class="popup parametres">
+      <div class="header">
+        <h2>Paramètres</h2>
+        <div class="icone ferme">
+          <svg><use href="#icone-ferme"></use></svg>
+        </div>
+      </div>
+      <br>
+      <div class="header bloc">
+        <h4>Disposition clavier</h4>
+        <div>
+          <input type="radio" id="azerty" name="clavier" value="azerty" checked>
+          <label for="azerty">Azerty</label>
+          -
+          <input type="radio" id="qwerty" name="clavier" value="qwerty">
+          <label for="qwerty">Qwerty</label>
+        </div>
+      </div>
+      <div class="header bloc">
+        <h4>Commentaires</h4>
+        <div>
+          <a href="https://twitter.com/intent/tweet?screen_name=LeMotLeJeu"
+            target="_blank"
+            title="@LeMotLeJeu">Twitter</a>
+        </div>
+      </div>
+      <div class="header bloc">
+        <h4>Communauté</h4>
+        <div>
+          <a href="https://twitter.com/search?q=%23LeMotLeJeu&f=live"
+            target="_blank"
+            title="#LeMotLeJeu">#LeMotLeJeu</a>
+        </div>
+      </div>
+      <div class="bloc">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="https://icons.getbootstrap.com/" target="_blank">Bootstrap</a> (icones)</li>
+          <li><a href="https://twitter.com/Wiktionnaire" target="_blank">Wiktionnaire</a>,
+              <a href="https://twitter.com/Grammalecte" target="_blank">Grammalecte</a> et
+              <a href="http://www.lexique.org/shiny/openlexicon/" target="_blank">Open Lexicon</a> (mots)</li>
+          <li><a href="https://www.goatcounter.com/" target="_blank">GoatCounter</a> (stats)</li>
+        </ul>
+      </div>
+      <div class="bloc">
+        <h4>Crédits</h4>
+        <ul>
+          <li><a href="https://twitter.com/powerlanguish"
+            target="_blank"
+            title="@powerlanguish">Josh Wardle</a>, créateur de Wordle</li>
+          <li><a href="https://twitter.com/irihapeta"
+            target="_blank"
+            title="@irihapeta">Elizabeth S</a>, inventrice de la grille Wordle</li>
+        </ul>
+      </div>
+      <p class="note">
+        LeMOT6 est une adaptation de <a href="https://www.nytimes.com/games/wordle/">WORDLE</a> en français.
+      </p>
+      <div id="puzzle" class="footnote"></div>
+    </div>
+
+    <div class="popup resultats">
+      <div class="header">
+        <h2>Résultat</h2>
+        <div class="icone ferme">
+          <svg><use href="#icone-ferme"></use></svg>
+        </div>
+      </div>
+      <h3>Bravo !</h3>
+      <p>
+        <textarea></textarea>
+      </p>
+      <p>
+        <button class="correct">
+          PARTAGER
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+            <path d="M13 0H6a2 2 0 0 0-2 2 2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 13V4a2 2 0 0 0-2-2H5a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1zM3 4a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z"/>
+          </svg>
+        </button>
+      </p>
+      <p class="note">
+        En cliquant sur PARTAGER, la grille LeMOT6 est copiée dans le
+        presse-papiers, pour pouvoir la coller dans Twitter, Facebook, WhatsApp
+        ou un Sms... et informer vos amis de votre résultat.
+      </p>
+      <p class="hashtag"><a href="https://twitter.com/search?q=%23LeMotLeJeu&f=live">#LeMotLeJeu</a></p>
+      <p><strong>A demain 🕛 UTC pour un nouveau LeMOT6 !</strong></p>
+    </div>
+  </div>
+
+  <div class="popup">
+    <svg>
+      <symbol id="icone-aide" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+        <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
+      </symbol>
+      <symbol id="icone-outils" viewBox="0 0 16 16">
+        <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+        <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+      </symbol>
+      <symbol id="icone-ferme" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+        <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+      </symbol>
+      <symbol id="touche-enter" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+      </symbol>
+      <symbol id="touche-back" viewBox="0 0 16 16">
+        <path d="M5.83 5.146a.5.5 0 0 0 0 .708L7.975 8l-2.147 2.146a.5.5 0 0 0 .707.708l2.147-2.147 2.146 2.147a.5.5 0 0 0 .707-.708L9.39 8l2.146-2.146a.5.5 0 0 0-.707-.708L8.683 7.293 6.536 5.146a.5.5 0 0 0-.707 0z"/>
+        <path d="M13.683 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-7.08a2 2 0 0 1-1.519-.698L.241 8.65a1 1 0 0 1 0-1.302L5.084 1.7A2 2 0 0 1 6.603 1h7.08zm-7.08 1a1 1 0 0 0-.76.35L1 8l4.844 5.65a1 1 0 0 0 .759.35h7.08a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1h-7.08z"/>
+      </symbol>
+    </svg>
+  </div>
+
+  <script src="lemot.min.js"></script>
+  <script data-goatcounter="https://lemot.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</body>
+
+</html>
