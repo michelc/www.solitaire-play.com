@@ -41,23 +41,37 @@
     const $calculer = document.querySelector("#calculer");
     const $resultats = document.querySelector("#resultats");
     let sauvegarde = "";
+    $resultats.addEventListener("paste", Nettoyage, false);
     $calculer.addEventListener("click", Statistiques, false);
+
+    function Nettoyage() {
+      setTimeout(function() { Nettoyage2(); }, 0)
+    }
+
+    function Nettoyage2() {
+      let contenu = $resultats.value.trim()
+      contenu = contenu.replaceAll(" évènement", "");
+      contenu = contenu.replaceAll("(pas de titre) \t\n", "");
+      $resultats.value = contenu;
+    }
 
     function Statistiques() {
       // Récupère le contenu source ou généré
       const contenu = $resultats.value.trim();
       // Revient aux données sources quand statistiques sont déjà affichées
-      if (contenu.includes("🟧")) {
+      if (contenu.includes("🟧") || contenu.includes("🟠")) {
         $resultats.value = sauvegarde;
         $calculer.textContent = "GENERER";
         return;
       }
       // Sauvegarde les données sources avant de générer les statistiques
       sauvegarde = contenu;
+      const lemot6 = contenu.includes("lemot6");
       // Nettoyage du copier / coller de GoatCounter
       const stats = contenu.split('\n')
-                          .filter(x => x.includes("puzzle"))
+                          .filter(x => x.includes("puzzle") || x.includes("lemot6"))
                           .map(x => x.replace(" \t", "-").replace(" ", "").replace("-X", "-7").split("-"));
+      console.dir(stats);
       // Comptabilise pour chaque résultats
       // - 0 : nombre de parties entamées
       // - 1 à 6 : nombre de parties gagnées en 1 à 6 coups
@@ -70,16 +84,20 @@
       }
       // Calcule le nombre de parties terminées (jouées jusqu'au bout)
       const total = resultats.reduce((x, y) => x + y) - resultats[0];
+      console.log(resultats.join("\t") + "\t" + total);
       // Calcule le pourcentage de chaque résultat par rapport au nombre de parties terminées
       const pourcentages = resultats.map(x => Math.round(x * 100 / total));
       // Génère 1 carré pour chaque 4%
-      const carres = pourcentages.map(x => "🟧".repeat(Math.round(x / 4)));
+      const bloc = lemot6 ? "🟠" : "🟧";
+      const carres = pourcentages.map(x => bloc.repeat(Math.round(x / 4)));
       // Retrouve le numéro du puzzle de la veille
-      const puzzle = GetPuzzle() - 1;
+      let puzzle = GetPuzzle() - 1;
+      if (lemot6) puzzle -= 56;
       // Emplacement pour le mot à découvrir de la veille
       const reponse = "XXXXXXXXXXXXX"
       // Génère les statistiques
       let statistiques = `LeMOT #${puzzle} - ${total} parties jouées\n`;
+      if (lemot6) statistiques = statistiques.replace("LeMOT", "LeMOT6");
       for (let i = 1; i < 8; i++) {
         const essais = i < 7 ? i : "X";
         statistiques += `\n${essais}: ${carres[i]} ${pourcentages[i]}%`;
