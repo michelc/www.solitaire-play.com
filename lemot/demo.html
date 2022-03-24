@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeMOTX - Un jeu chaque semaine (Spelling Bee en 6 français)</title>
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="demo.css">
+</head>
+
+<body id="demo">
+
+  <div class="container">
+
+    <header>
+      <h1>
+        Klondike Solitaire
+      </h1>
+    </header>
+
+    <main id="content">
+
+      <div id="inside">
+        <p>Contenu</p>
+        <p>Contenu</p>
+        <p>Contenu</p>
+        <p>Contenu</p>
+      </div>
+
+    </main>
+
+    <footer id="footer">
+      <p>Hello</p>
+    </footer>
+
+  </div>
+
+  <script>
+    Math.floor(document.getElementById("footer").getBoundingClientRect().bottom) > window.innerHeight && document.documentElement.classList.add("fix100");
+    //document.documentElement.classList.add("fix100");
+  </script>
+
+</body>
+
+</html>
