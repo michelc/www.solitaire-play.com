@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DéMO - Un jeu de mots (Spelling Bee en français)</title>
+  <title>LaBEE - Spelling Bee en français</title>
   <link rel="stylesheet" href="demo.min.css">
 </head>
 
@@ -19,7 +19,7 @@
           <svg><use href="#icone-aide"></use></svg>
         </span>
       </div>
-      <h1>DéMO</h1>
+      <h1>LaBEE</h1>
       <div>
         <span class="icone outils">
           <svg><use href="#icone-outils"></use></svg>
@@ -36,7 +36,7 @@
     </main>
 
     <div class="score">
-      <strong id="rang"></strong>
+      <strong id="niveau"></strong>
       <span id="mots"></span>
       <span id="points"></span>
     </div>
@@ -92,65 +92,64 @@
       </div>
       <p>Devinez des mots, encore des mots, toujours des mots...</p>
       <p>Le but du jeu est de trouver tous les mots possibles à partir des lettres
-        présentes sur la fleur. Chaque mot peut compter entre 4 et 9 lettres et
-        doit obligatoirement contenir la lettre placée au centre de la fleur.</p>
+        posées sur la fleur. Chaque mot peut compter entre 4 et 9 lettres et
+        doit toujours contenir la lettre placée au coeur de la fleur.</p>
       <div class="exemples">
         <p>Quelques règles du jeu :</p>
         <ul>
           <li>Le mot doit contenir au moins 4 lettres</li>
-          <li>Il est obligatoire d'utiliser la lettre au centre de la fleur</li>
-          <li>Il est possible d'utiliser plusieurs fois la même lettre</li>
-          <li>Les conjuguaisons ne sont pas permises</li>
-          <li>Les mots inconnus par le jeu ne sont pas acceptés</li>
+          <li>La lettre au centre de la fleur est obligatoire</li>
+          <li>Une lettre peut être utilisée plusieurs fois</li>
+          <li>Les conjugaisons ne sont pas permises</li>
+          <li>Les mots inconnus du jeu ne sont pas acceptés</li>
         </ul>
         <p>Chaque mot de 4 lettres rapporte 1 point. Les mots de plus de 4
           lettres rapportent 1 point par lettre. Le jeu contient au moins un
           <em>pangramme</em> qui utilise chaque lettre de la fleur et donne un
           bonus de 7 points.</p>
       </div>
-      <p><strong>Bonne nouvelle, un nouveau DéMO ne sera pas disponible chaque
+      <p><strong>Bonne nouvelle, un nouveau LaBEE ne sera pas disponible chaque
         jour ! Prenez votre temps...</strong></p>
       <p class="note">
-        DéMO est inspiré de <a href="https://www.nytimes.com/puzzles/spelling-bee">Spelling Bee</a> en français.
+        LaBEE est inspiré de <a href="https://www.nytimes.com/puzzles/spelling-bee">Spelling Bee</a> en français.
       </p>
     </div>
 
     <div class="popup parametres">
       <div class="header">
-        <h2>Paramètres</h2>
+        <h2>Outils</h2>
         <div class="icone ferme">
           <svg><use href="#icone-ferme"></use></svg>
         </div>
       </div>
-      <br>
-      <div class="header bloc">
-        <h4>Commentaires</h4>
-        <div>
-          <a href="https://twitter.com/intent/tweet?screen_name=LeMotLeJeu"
-            target="_blank"
-            title="@LeMotLeJeu">Twitter</a>
-        </div>
-      </div>
-      <div class="header bloc">
-        <h4>Communauté</h4>
-        <div>
-          <a href="https://twitter.com/search?q=%23LeMotLeJeu&f=live"
-            target="_blank"
-            title="#LeMotLeJeu">#LeMotLeJeu</a>
-        </div>
+      <div class="resultats">
+        <p>
+          <textarea></textarea>
+        </p>
+        <p>
+          <button class="correct">
+            PARTAGER
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+              <path d="M13 0H6a2 2 0 0 0-2 2 2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 13V4a2 2 0 0 0-2-2H5a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1zM3 4a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z"/>
+            </svg>
+          </button>
+        </p>
+        <p class="note">
+          En cliquant sur PARTAGER, la grille est copiée dans le
+          presse-papiers, pour pouvoir la coller dans Twitter, Facebook, WhatsApp
+          ou un Sms... et informer vos amis du niveau atteint.
+        </p>
       </div>
       <div class="bloc">
         <h4>Ressources</h4>
         <ul>
           <li><a href="https://icons.getbootstrap.com/" target="_blank">Bootstrap</a> (icones)</li>
-          <li><a href="https://twitter.com/Wiktionnaire" target="_blank">Wiktionnaire</a>,
-              <a href="https://twitter.com/Grammalecte" target="_blank">Grammalecte</a> et
-              <a href="http://www.lexique.org/shiny/openlexicon/" target="_blank">Open Lexicon</a> (mots)</li>
+          <li><a href="http://www.lexique.org/shiny/openlexicon/" target="_blank">Open Lexicon</a> (mots)</li>
           <li><a href="https://www.goatcounter.com/" target="_blank">GoatCounter</a> (stats)</li>
         </ul>
       </div>
       <p class="note">
-        DéMO est inspiré de <a href="https://www.nytimes.com/puzzles/spelling-bee">Spelling Bee</a> en français.
+        LaBEE est inspiré de <a href="https://www.nytimes.com/puzzles/spelling-bee">Spelling Bee</a> en français.
       </p>
       <div id="puzzle" class="footnote"></div>
     </div>
