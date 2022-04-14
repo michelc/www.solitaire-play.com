@@ -12,7 +12,8 @@
   <link rel="shortcut icon" href="/lemot/images/favicon.ico">
   <style>
     .popup { display: block; }
-    #resultats { height: 315px; width: 45ch; user-select: text; }
+    #resultats { height: 360px; width: 45ch; user-select: text; }
+    #excel { height: 75px; width: 100%; user-select: text; }
   </style>
 </head>
 
@@ -33,6 +34,9 @@
           GENERER
         </button>
       </p>
+      <p>
+        <textarea id="excel"></textarea>
+      </p>
     </div>
 
   </div>
@@ -40,9 +44,23 @@
   <script>
     const $calculer = document.querySelector("#calculer");
     const $resultats = document.querySelector("#resultats");
+    const $excel = document.querySelector("#excel");
     let sauvegarde = "";
     $resultats.addEventListener("paste", Nettoyage, false);
     $calculer.addEventListener("click", Statistiques, false);
+
+    const NIVOS = [
+      "C'est parti",
+      "Pas mal",
+      "En progrès",
+      "Bien",
+      "Fortiche",
+      "Joli",
+      "Super",
+      "Épatant",
+      "Génial",
+      "Formidable",
+    ];
 
     function Nettoyage() {
       setTimeout(function() { Nettoyage2(); }, 0)
@@ -52,6 +70,7 @@
       let contenu = $resultats.value.trim()
       contenu = contenu.replaceAll(" évènement", "");
       contenu = contenu.replaceAll("(pas de titre) \t\n", "");
+      contenu = contenu.replaceAll("(pas de titre)", "");
       $resultats.value = contenu;
     }
 
@@ -59,7 +78,7 @@
       // Récupère le contenu source ou généré
       const contenu = $resultats.value.trim();
       // Revient aux données sources quand statistiques sont déjà affichées
-      if (contenu.includes("🟧") || contenu.includes("🟠")) {
+      if (contenu.includes("🟧") || contenu.includes("🟠") || contenu.includes("🟦")) {
         $resultats.value = sauvegarde;
         $calculer.textContent = "GENERER";
         return;
@@ -67,9 +86,10 @@
       // Sauvegarde les données sources avant de générer les statistiques
       sauvegarde = contenu;
       const lemot6 = contenu.includes("lemot6");
+      const labee = contenu.includes("fleur");
       // Nettoyage du copier / coller de GoatCounter
       const stats = contenu.split('\n')
-                          .filter(x => x.includes("puzzle") || x.includes("lemot6"))
+                          .filter(x => x.includes("puzzle") || x.includes("lemot6") || x.includes("fleur"))
                           .map(x => x.replace(" \t", "-").replace(" ", "").replace("-X", "-7").split("-"));
       console.dir(stats);
       // Comptabilise pour chaque résultats
@@ -77,37 +97,71 @@
       // - 1 à 6 : nombre de parties gagnées en 1 à 6 coups
       // - 7 : nombre de parties perdues (X)
       const resultats = [ 0, 0, 0, 0, 0, 0, 0, 0 ];
+      if (labee) resultats.push(0);
+      if (labee) resultats.push(0);
       for (let i = 0; i < stats.length; i++) {
         const nombre = parseInt(stats[i][0], 10) || 0;
         const essai = parseInt(stats[i][3], 10) || 0;
         resultats[essai] += nombre;
       }
       // Calcule le nombre de parties terminées (jouées jusqu'au bout)
-      const total = resultats.reduce((x, y) => x + y) - resultats[0];
-      console.log(resultats.join("\t") + "\t" + total);
+      let total = resultats.reduce((x, y) => x + y) - resultats[0];
+      if (labee) {
+        total = stats[0][2] === "0" ? resultats[1] : resultats[0];
+        resultats[0] = total;
+      }
+      let excel = resultats.join("\t") + "\t" + total;
+      console.log(excel);
       // Calcule le pourcentage de chaque résultat par rapport au nombre de parties terminées
       const pourcentages = resultats.map(x => Math.round(x * 100 / total));
       // Génère 1 carré pour chaque 4%
-      const bloc = lemot6 ? "🟠" : "🟧";
-      const carres = pourcentages.map(x => bloc.repeat(Math.round(x / 4)));
+      let bloc = lemot6 ? "🟠" : "🟧";
+      if (labee) bloc = "🟦";
+      const carres = labee
+                   ? pourcentages.map(x => bloc.repeat(Math.round(x / 10)))
+                   : pourcentages.map(x => bloc.repeat(Math.round(x / 4)));
       // Retrouve le numéro du puzzle de la veille
       let puzzle = GetPuzzle() - 1;
       if (lemot6) puzzle -= 56;
+      if (labee) puzzle = stats[0][2];
       // Emplacement pour le mot à découvrir de la veille
-      const reponse = "XXXXXXXXXXXXX"
+      let reponse = " #XXXXXXXXXXXXX";
       // Génère les statistiques
       let statistiques = `LeMOT #${puzzle} - ${total} parties jouées\n`;
       if (lemot6) statistiques = statistiques.replace("LeMOT", "LeMOT6");
-      for (let i = 1; i < 8; i++) {
-        const essais = i < 7 ? i : "X";
-        statistiques += `\n${essais}: ${carres[i]} ${pourcentages[i]}%`;
+      if (labee) {
+        statistiques = statistiques.replace("LeMOT", "#LaBEE");
+        statistiques = statistiques.replace(" #0", "");
+        statistiques = statistiques.replace(" - ", " 🌻 ");
+        statistiques = statistiques.replace(" jouées", "");
+        reponse = "";
+        excel = resultats.join("\t");
+        for (let i = 1; i < 10; i++) {
+          if (carres[i] === "")
+            continue;
+          else if (i === 8)
+            carres[i] = carres[i];
+          else if (i === 9)
+            carres[i] = carres[i].replaceAll("🟦", "🟧");
+          else if (pourcentages[i] > 95)
+            continue;
+          statistiques += `\n${carres[i]} ${NIVOS[i]}`;
+          if (i === 8) statistiques += ` (${pourcentages[i]}%)`;
+        }
+      } else {
+        for (let i = 1; i < 8; i++) {
+          const essais = i < 7 ? i : "X";
+          statistiques += `\n${essais}: ${carres[i]} ${pourcentages[i]}%`;
+        }
       }
-      statistiques += `\n\n#LeMotStats #LeMotLeJeu #${reponse}`;
+      statistiques += `\n\n#LeMotStats #LeMotLeJeu${reponse}`;
       const url = "https://www.goatcounter.com/ + 🖐️";
       statistiques += `\n\n${url}`;
       // Affiche et logue les statistiques
       $resultats.value = statistiques;
       console.log(statistiques);
+      // Affiche le détail pour copie dans Excel
+      $excel.value = excel;
       // Change l'intitulé du bouton pour revoir les sources
       $calculer.textContent = "CHIFFRES";
     }
