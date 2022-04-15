@@ -61,8 +61,8 @@
       <span id="mots"></span>
       <span id="points"></span>
     </div>
-    <div class="score">
-      <progress id="progression" max="8" value="1"></progress>
+    <div class="score" id="progression">
+      <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
     </div>
 
     <div class="message"></div>
@@ -111,7 +111,7 @@
           <svg><use href="#icone-ferme"></use></svg>
         </div>
       </div>
-      <p>Devinez des mots, encore des mots, toujours des mots...</p>
+      <p>Combien de mots pouvez-vous trouver avec 7 lettres ?</p>
       <p>Le but du jeu est de trouver tous les mots possibles à partir des lettres
         posées sur la fleur. Chaque mot peut compter entre 4 et 9 lettres et
         doit toujours contenir la lettre placée au coeur de la fleur.</p>
@@ -130,8 +130,8 @@
           bonus de 7 points.</p>
       </div>
       <p>Bonne nouvelle, le jeu ne va pas changer avant des jours et des
-        jours&nbsp;! <strong>Alors prenez tout votre temps pour jouer...</strong>
-        Cinq minutes par jour c'est un très bon rythme :)</p>
+        jours&nbsp;! <strong>Alors prenez votre temps pour jouer...</strong>
+        5 minutes par jour c'est un très bon rythme :)</p>
       <p class="note">
         LaBEE est inspiré de <a href="https://www.nytimes.com/puzzles/spelling-bee">Spelling Bee</a> en français.
       </p>
@@ -184,6 +184,7 @@
           <li><a href="https://icons.getbootstrap.com/" target="_blank">Bootstrap</a> (icones)</li>
           <li><a href="http://www.lexique.org/shiny/openlexicon/" target="_blank">Open Lexicon</a> (mots)</li>
           <li><a href="https://www.goatcounter.com/" target="_blank">GoatCounter</a> (stats)</li>
+          <li><a href="https://www.kirilv.com/canvas-confetti/" target="_blank">Canvas Confetti</a> (victoire)</li>
         </ul>
       </div>
       <p class="note">
@@ -229,6 +230,7 @@
   </script>
   <script src="demo.min.js"></script>
   <script data-goatcounter="https://lemot.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script src="confetti.browser.min.js"></script>
 
 </body>
 
