@@ -39,9 +39,15 @@
         <span class="icone aide">
           <svg><use href="#icone-aide"></use></svg>
         </span>
+        <span class="icone fleur">
+          <svg><use href="#icone-fleur"></use></svg>
+        </span>
       </div>
       <h1>LaBEE</h1>
       <div>
+        <span class="icone">
+          <svg></svg>
+        </span>
         <span class="icone outils">
           <svg><use href="#icone-outils"></use></svg>
         </span>
@@ -112,7 +118,7 @@
           <svg><use href="#icone-ferme"></use></svg>
         </div>
       </div>
-      <p>Combien de mots allez-vous découvrir avec 7 lettres ?</p>
+      <p>Combien de mots allez-vous découvrir avec 7 lettres&nbsp;?</p>
       <p>Le but du jeu est de trouver tous les mots possibles à partir des lettres
         posées sur la fleur. Chaque mot peut compter entre 4 et 9 lettres et
         doit toujours contenir la lettre placée au coeur de la fleur.</p>
@@ -136,6 +142,36 @@
       <p class="note">
         LaBEE est inspiré de <a href="https://www.nytimes.com/puzzles/spelling-bee">Spelling Bee</a> en français.
       </p>
+    </div>
+
+    <div class="popup informations">
+      <div class="header">
+        <h2>Informations</h2>
+        <div class="icone ferme">
+          <svg><use href="#icone-ferme"></use></svg>
+        </div>
+      </div>
+      <div class="bloc">
+        <h4>Statistiques</h4>
+        <ul>
+          <li>Nombre de mots acceptés : %%</li>
+          <li>Total des points possibles : %%</li>
+          <li>Nombre de pangrammes existants : %%</li>
+        </ul>
+      </div>
+      <div class="bloc">
+        <h4>Niveaux</h4>
+        <p>Ils dépendent du nombre de points obtenus. Chaque niveau correspond à
+          un pourcentage du total des points possibles :</p>
+        %%
+      </div>
+      <div class="bloc">
+        <h4>#LaBEE</h4>
+        <p>
+          Suivez <a href="https://twitter.com/LeMotLeJeu" target="_blank" title="@LeMotLeJeu">@<u>LeMotLeJeu</u></a>
+          pour plus d'informations et d'indices...
+        </p>
+      </div>
     </div>
 
     <div class="popup parametres">
@@ -208,6 +244,9 @@
       </symbol>
       <symbol id="icone-ferme" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M 3.734375 2.132812 C 3.597656 2.132812 3.460938 2.183594 3.355469 2.289062 L 2.289062 3.355469 C 2.082031 3.566406 2.082031 3.902344 2.289062 4.109375 L 6.179688 8 L 2.289062 11.890625 C 2.082031 12.097656 2.082031 12.4375 2.289062 12.644531 L 3.355469 13.710938 C 3.566406 13.917969 3.902344 13.917969 4.109375 13.710938 L 8 9.820312 L 11.890625 13.710938 C 12.097656 13.917969 12.4375 13.917969 12.644531 13.710938 L 13.710938 12.644531 C 13.917969 12.433594 13.917969 12.097656 13.710938 11.890625 L 9.820312 8 L 13.710938 4.109375 C 13.917969 3.902344 13.917969 3.5625 13.710938 3.355469 L 12.644531 2.289062 C 12.433594 2.082031 12.097656 2.082031 11.890625 2.289062 L 8 6.179688 L 4.109375 2.289062 C 4.007812 2.183594 3.871094 2.132812 3.734375 2.132812 Z M 3.734375 2.132812 "/>
+      </symbol>
+      <symbol id="icone-fleur" viewBox="0 0 16 16">
+        <path d="M11.424 8c.437-.052.811-.136 1.04-.268a2 2 0 0 0-2-3.464c-.229.132-.489.414-.752.767C9.886 4.63 10 4.264 10 4a2 2 0 1 0-4 0c0 .264.114.63.288 1.035-.263-.353-.523-.635-.752-.767a2 2 0 0 0-2 3.464c.229.132.603.216 1.04.268-.437.052-.811.136-1.04.268a2 2 0 1 0 2 3.464c.229-.132.489-.414.752-.767C6.114 11.37 6 11.736 6 12a2 2 0 1 0 4 0c0-.264-.114-.63-.288-1.035.263.353.523.635.752.767a2 2 0 1 0 2-3.464c-.229-.132-.603-.216-1.04-.268zM9 4a1.468 1.468 0 0 1-.045.205c-.039.132-.1.295-.183.484a12.88 12.88 0 0 1-.637 1.223L8 6.142a21.73 21.73 0 0 1-.135-.23 12.88 12.88 0 0 1-.637-1.223 4.216 4.216 0 0 1-.183-.484A1.473 1.473 0 0 1 7 4a1 1 0 1 1 2 0zM3.67 5.5a1 1 0 0 1 1.366-.366 1.472 1.472 0 0 1 .156.142c.094.1.204.233.326.4.245.333.502.747.742 1.163l.13.232a21.86 21.86 0 0 1-.265.002 12.88 12.88 0 0 1-1.379-.06 4.214 4.214 0 0 1-.51-.083 1.47 1.47 0 0 1-.2-.064A1 1 0 0 1 3.67 5.5zm1.366 5.366a1 1 0 0 1-1-1.732c.001 0 .016-.008.047-.02.037-.013.087-.028.153-.044.134-.032.305-.06.51-.083a12.88 12.88 0 0 1 1.379-.06c.09 0 .178 0 .266.002a21.82 21.82 0 0 1-.131.232c-.24.416-.497.83-.742 1.163a4.1 4.1 0 0 1-.327.4 1.483 1.483 0 0 1-.155.142zM9 12a1 1 0 0 1-2 0 1.476 1.476 0 0 1 .045-.206c.039-.131.1-.294.183-.483.166-.378.396-.808.637-1.223L8 9.858l.135.23c.241.415.47.845.637 1.223.083.19.144.352.183.484A1.338 1.338 0 0 1 9 12zm3.33-6.5a1 1 0 0 1-.366 1.366 1.478 1.478 0 0 1-.2.064c-.134.032-.305.06-.51.083-.412.045-.898.061-1.379.06-.09 0-.178 0-.266-.002l.131-.232c.24-.416.497-.83.742-1.163a4.1 4.1 0 0 1 .327-.4c.046-.05.085-.086.114-.11.026-.022.04-.03.041-.032a1 1 0 0 1 1.366.366zm-1.366 5.366a1.494 1.494 0 0 1-.155-.141 4.225 4.225 0 0 1-.327-.4A12.88 12.88 0 0 1 9.74 9.16a22 22 0 0 1-.13-.232l.265-.002c.48-.001.967.015 1.379.06.205.023.376.051.51.083.066.016.116.031.153.044l.048.02a1 1 0 1 1-1 1.732zM8 9a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
       </symbol>
       <symbol id="touche-enter" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
