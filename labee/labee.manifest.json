@@ -6,12 +6,12 @@
   "display": "standalone",
   "icons": [
     {
-      "src": "/lemot/images/android-chrome-192x192.png",
+      "src": "/labee/images/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/lemot/images/android-chrome-512x512.png",
+      "src": "/labee/images/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
@@ -20,6 +20,6 @@
   "name": "LaBEE (Spelling Bee 🇫🇷)",
   "orientation": "portrait",
   "short_name": "LaBEE",
-  "start_url": "/lemot/demo.html",
+  "start_url": "/labee/",
   "theme_color": "#ffb000"
 }
