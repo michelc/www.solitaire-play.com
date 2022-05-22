@@ -98,19 +98,19 @@
   </url>
   <url>
     <loc>https://www.solitaire-play.com/lemot/</loc>
-    <lastmod>2022-04-29</lastmod>
+    <lastmod>2022-05-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.solitaire-play.com/lemot6/</loc>
-    <lastmod>2022-04-29</lastmod>
+    <lastmod>2022-05-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.solitaire-play.com/labee/</loc>
-    <lastmod>2022-04-29</lastmod>
+    <lastmod>2022-05-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -128,7 +128,7 @@
   </url>
   <url>
     <loc>https://www.solitaire-play.com/blog/</loc>
-    <lastmod>2022-01-11</lastmod>
+    <lastmod>2022-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -219,6 +219,12 @@
   <url>
     <loc>https://www.solitaire-play.com/blog/free-alaska-solitaire.html</loc>
     <lastmod>2022-01-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.solitaire-play.com/blog/labee-3-o-acehpt.html</loc>
+    <lastmod>2022-05-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
