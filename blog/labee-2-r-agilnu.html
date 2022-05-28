@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LaBEE #2 / R - A G I L N U</title>
+    <meta name="description" content="Quelques indices pour jouer et résoudre au mieux la deuxième partie de #LaBEE">
+    <meta name="keywords" content="Spelling Bee, Français, Scrabble, Wordle, LeMOT, Jeu, Puzzle, Mots, Anagrammes">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="../css/solitaire.min.css">
+    <style>
+      .play { text-align: center; }
+      td, th { padding: 3px 12px; text-align: right; }
+      table {margin-left: 50px; }
+      @media (max-width: 24rem) {
+        .play > img { height: 90%; width: 90%; }
+        table { margin: 0 auto; }
+        .blog { padding: 0 3px; }
+      }
+      ol { padding-left: 2ch; }
+      .play span {
+        background-color: #eee;
+        border-radius: 40%;
+        color: black;
+        display: inline-block;
+        font-size: 36px !important;
+        font-weight: 700;
+        height: 70px;
+        line-height: 66px;
+        margin: 5px;
+        width: 70px;
+      }
+      .play span.center {
+        background-color: #ffb000;
+      }
+    </style>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+    <script>if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"michelc@gmail.com ",utcoffset:"1"}))};sessionStorage.setItem("_swa","1");</script>
+  </head>
+
+  <body class="blog">
+
+    <div class="container">
+
+      <div class="row">
+
+        <h1>
+          <a href="/" title="Play Solitaire online">Solitaire</a>
+          / R - A G I L N U
+        </h1>
+
+        <h2>#LaBEE 2 : 01 mai 2022</h2>
+
+        <p>Combien de mots pouvez vous trouver avec 7 lettres ?</p>
+
+        <p class="play">
+          <span>A</span><span>G</span><br>
+          <span>I</span><span class="center">R</span><span>L</span><br>
+          <span>N</span><span>U</span>
+        </p>
+        <p class="play">
+          <a href="/labee/" title="LaBEE - Spelling Bee en français">
+            https://www.solitaire-play.com/labee/
+          </a>
+        </p>
+
+        <ul>
+          <li>Nombre de mots acceptés : 50</li>
+          <li>Total des points possibles : 227</li>
+          <li>Nombre de pangrammes existants : 4</li>
+          <li>Au moins 1 mot débute par chaque lettre : bingo !</li>
+        </ul>
+
+        <h2>Les #NiveauxLaBEE</h2>
+
+        <p>
+          Ils dépendent du nombre de points obtenus. Chaque niveau correspond à
+          un pourcentage du total des points possibles :
+        </p>
+
+        <ul>
+          <li>Pas mal : 4</li>
+          <li>En progrès : 11</li>
+          <li>Bien : 18</li>
+          <li>Fortiche : 34</li>
+          <li>Joli : 56</li>
+          <li>Super : 88</li>
+          <li>Épatant : 111</li>
+          <li>Génial : 156</li>
+        </ul>
+
+        <h2>La #GrilleLaBEE</h2>
+
+        <table>
+          <thead>
+            <tr><th></th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>Σ</th></tr>
+          </thead>
+          <tbody>
+            <tr><th>A</th><td>4</td><td>2</td><td>4</td><td>1</td><td>1</td><td></td><th>12</th></tr>
+            <tr><th>G</th><td>8</td><td>6</td><td>2</td><td>3</td><td></td><td></td><th>19</th></tr>
+            <tr><th>I</th><td></td><td></td><td></td><td></td><td></td><td>1</td><th>1</th></tr>
+            <tr><th>L</th><td></td><td></td><td>1</td><td>1</td><td></td><td></td><th>2</th></tr>
+            <tr><th>N</th><td></td><td>2</td><td>1</td><td></td><td></td><td></td><th>3</th></tr>
+            <tr><th>R</th><td>7</td><td>2</td><td>1</td><td>1</td><td></td><td></td><th>11</th></tr>
+            <tr><th>U</th><td>1</td><td></td><td>1</td><td></td><td></td><td></td><th>2</th></tr>
+          </tbody>
+          <tfoot>
+            <tr><th>Σ</th><th>20</th><th>12</th><th>10</th><th>6</th><th>1</th><th>1</th><th>50</th></tr>
+          </tfoot>
+        </table>
+
+        <p>Quelques explications :</p>
+
+        <ul>
+          <li>4 mots commencent par A et font 6 lettres</li>
+          <li>8 mots commencent par G et font 4 lettres</li>
+          <li>1 mot commence par I et fait 9 lettres</li>
+          <li>Aucun mot commence par L et fait 8 lettres</li>
+        </ul>
+
+        <h2>Les #2InitialesLaBEE</h2>
+
+        <ul>
+          <li>AG-1 AI-3 AL-2 AN-1 AR-3 AU-2</li>
+          <li>GA-5 GI-1 GR-9 GU-4</li>
+          <li>IN-1</li>
+          <li>LA-2</li>
+          <li>NA-3</li>
+          <li>RA-6 RI-2 RU-3</li>
+          <li>UN-1 UR-1</li>
+        </ul>
+
+        <p>Quelques explications :</p>
+
+        <ul>
+          <li>AG-1 => il y a 1 mot qui commence par AG</li>
+          <li>UR-1 => il y a 1 mot qui commence par UR</li>
+          <li>Il n'y a aucun mot qui commence par IR</li>
+        </ul>
+
+        <h2>Les #IndicesLaBEE</h2>
+
+        <ol>
+          <li>A sa gomme</li>
+          <li>Agréger</li>
+          <li>Ample par dessus</li>
+          <li>Arbuste du Japon</li>
+          <li>Arrêter de rêver</li>
+          <li>Avoir hâte de Motchus</li>
+          <li>Bande de métal</li>
+          <li>Belle en troupe</li>
+          <li>Blé iranien</li>
+          <li>Bocal à anchois</li>
+          <li>Boeuf indien</li>
+          <li>Bon pour le coeur</li>
+          <li>Bucolique</li>
+          <li>Chenal</li>
+          <li>En grande pompe</li>
+          <li>Enfant de Louise Michel</li>
+          <li>Enrichir</li>
+          <li>Entre les cordes</li>
+          <li>Etre spirituel</li>
+          <li>Fromage italien</li>
+          <li>Gâter</li>
+          <li>Goy des ottomans</li>
+          <li>Gros navet</li>
+          <li>Grossièrement moulu</li>
+          <li>Halo</li>
+          <li>Huile marocaine</li>
+          <li>Jacter au Paraguay</li>
+          <li>Le bibi d'un mec</li>
+          <li>Loi implacable</li>
+          <li>Mélodie</li>
+          <li>Muffin ?</li>
+          <li>Oraculaire</li>
+          <li>Oseille du Nigéria</li>
+          <li>Pas procrastiner</li>
+          <li>Petit et magique</li>
+          <li>Plus sexy quand il est pronominal</li>
+          <li>Pot de chambre</li>
+          <li>Pousser un cri</li>
+          <li>Princesse indienne</li>
+          <li>Restaurant</li>
+          <li>Sable ou sel</li>
+          <li>Sanscrit moderne</li>
+          <li>Scrooge</li>
+          <li>Semoule ou condiment selon le pays</li>
+          <li>Signes de colère</li>
+          <li>Singe sacré</li>
+          <li>Source de caféine</li>
+          <li>Spécialité des oignons</li>
+          <li>Ustensile de cuisine</li>
+          <li>Vieillot mais meublé</li>
+        </ol>
+
+        <p>
+          Michel <span>(2022/05/01)</span>
+        </p>
+
+      </div>
+
+      <div class="row">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- solitaire -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5475403929650645"
+     data-ad-slot="2876021655"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      </div>
+
+      <footer>
+        <p>
+          &copy; 2022
+          <span>
+            / <a href="/" title="Play Klondike Solitaire">Solitaire</a>
+            / <a href="/games/" title="Online solitaire games">Games</a>
+            / <a href="/about/" title="About Solitaire-Play">About</a>
+            / <a href="/blog/" title="Solitaire News">Blog</a>
+            / <a href="/lemot/" title="WORDLE en français">LeMOT</a>
+          </span>
+          <span>
+            - https://www.solitaire-play.com/
+          </span>
+        </p>
+      </footer>
+
+    </div>
+
+  </body>
+
+</html>

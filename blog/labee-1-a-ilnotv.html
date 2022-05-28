@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LaBEE #1 / A - I L N O T V</title>
+    <meta name="description" content="Quelques indices pour jouer et résoudre au mieux la première partie de #LaBEE">
+    <meta name="keywords" content="Spelling Bee, Français, Scrabble, Wordle, LeMOT, Jeu, Puzzle, Mots, Anagrammes">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="../css/solitaire.min.css">
+    <style>
+      .play { text-align: center; }
+      td, th { padding: 3px 12px; text-align: right; }
+      table {margin-left: 50px; }
+      @media (max-width: 24rem) {
+        .play > img { height: 90%; width: 90%; }
+        table { margin: 0 auto; }
+        .blog { padding: 0 3px; }
+      }
+      ol { padding-left: 2ch; }
+      .play span {
+        background-color: #eee;
+        border-radius: 40%;
+        color: black;
+        display: inline-block;
+        font-size: 36px !important;
+        font-weight: 700;
+        height: 70px;
+        line-height: 66px;
+        margin: 5px;
+        width: 70px;
+      }
+      .play span.center {
+        background-color: #ffb000;
+      }
+    </style>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+    <script>if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"michelc@gmail.com ",utcoffset:"1"}))};sessionStorage.setItem("_swa","1");</script>
+  </head>
+
+  <body class="blog">
+
+    <div class="container">
+
+      <div class="row">
+
+        <h1>
+          <a href="/" title="Play Solitaire online">Solitaire</a>
+          / A - I L N O T V
+        </h1>
+
+        <h2>#LaBEE 1 : 01 avril 2022</h2>
+
+        <p>Combien de mots pouvez vous trouver avec 7 lettres ?</p>
+
+        <p class="play">
+          <span>I</span><span>L</span><br>
+          <span>N</span><span class="center">A</span><span>O</span><br>
+          <span>T</span><span>V</span>
+        </p>
+        <p class="play">
+          <a href="/labee/" title="LaBEE - Spelling Bee en français">
+            https://www.solitaire-play.com/labee/
+          </a>
+        </p>
+
+        <ul>
+          <li>Nombre de mots acceptés : 83</li>
+          <li>Total des points possibles : 418</li>
+          <li>Nombre de pangrammes existants : 2</li>
+          <li>Au moins 1 mot débute par chaque lettre : bingo !</li>
+        </ul>
+
+        <h2>Les #NiveauxLaBEE</h2>
+
+        <p>
+          Ils dépendent du nombre de points obtenus. Chaque niveau correspond à
+          un pourcentage du total des points possibles :
+        </p>
+
+        <ul>
+          <li>Pas mal : 8</li>
+          <li>En progrès : 20</li>
+          <li>Bien : 33</li>
+          <li>Fortiche : 62</li>
+          <li>Joli : 104</li>
+          <li>Super : 163</li>
+          <li>Épatant : 204</li>
+          <li>Génial : 288</li>
+        </ul>
+
+        <h2>La #GrilleLaBEE</h2>
+
+        <table>
+          <thead>
+            <tr><th></th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>Σ</th></tr>
+          </thead>
+          <tbody>
+            <tr><th>A</th><td>6</td><td>7</td><td>2</td><td>2</td><td>1</td><td>1</td><th>19</th></tr>
+            <tr><th>I</th><td>1</td><td></td><td></td><td>1</td><td>2</td><td>1</td><th>5</th></tr>
+            <tr><th>L</th><td>2</td><td>3</td><td>4</td><td></td><td>1</td><td></td><th>10</th></tr>
+            <tr><th>N</th><td>4</td><td>4</td><td>1</td><td></td><td>4</td><td></td><th>13</th></tr>
+            <tr><th>O</th><td></td><td></td><td></td><td>1</td><td></td><td></td><th>1</th></tr>
+            <tr><th>T</th><td>6</td><td>6</td><td>3</td><td>2</td><td>1</td><td>1</td><th>19</th></tr>
+            <tr><th>V</th><td>3</td><td>4</td><td>5</td><td>2</td><td>1</td><td>1</td><th>16</th></tr>
+          </tbody>
+          <tfoot>
+            <tr><th>Σ</th><th>22</th><th>24</th><th>15</th><th>8</th><th>10</th><th>4</th><th>83</th></tr>
+          </tfoot>
+        </table>
+
+        <p>Quelques explications :</p>
+
+        <ul>
+          <li>6 mots commencent par A et font 4 lettres</li>
+          <li>1 mot commence par I et fait 7 lettres</li>
+          <li>Aucun mot commence par L et fait 7 lettres</li>
+          <li>5 mots commencent par V et font 6 lettres</li>
+        </ul>
+
+        <h2>Les #2InitialesLaBEE</h2>
+
+        <ul>
+          <li>AI-1 AL-6 AN-5 AT-2 AV-5</li>
+          <li>IN-4 IO-1</li>
+          <li>LA-5 LI-2 LO-3</li>
+          <li>NA-9 NO-4</li>
+          <li>OV-1</li>
+          <li>TA-14 TI-2 TO-3</li>
+          <li>VA-4 VI-7 VL-1 VO-4</li>
+        </ul>
+
+        <p>Quelques explications :</p>
+
+        <ul>
+          <li>AI-1 => il y a 1 mot qui commence par AI</li>
+          <li>VO-4 => il y a 4 mots qui commencent par VO</li>
+          <li>Il n'y a aucun mot qui commence par OL</li>
+        </ul>
+
+        <h2>Les #IndicesLaBEE</h2>
+
+        <ol>
+          <li>A sa place</li>
+          <li>Ami de Legolas</li>
+          <li>Apocope à bougies</li>
+          <li>Arrivée d'eau</li>
+          <li>Avertissement</li>
+          <li>Bas des fesses</li>
+          <li>Bas du bidon</li>
+          <li>Bikini explosif</li>
+          <li>Blanc et pur</li>
+          <li>C'est fini</li>
+          <li>C'est qui ?</li>
+          <li>Championnat de foot</li>
+          <li>Chanson flamande</li>
+          <li>Comme un espagnol</li>
+          <li>Comme un italien</li>
+          <li>Comme un pou</li>
+          <li>Compensation</li>
+          <li>Courageux et travailleur</li>
+          <li>Cuivré et métis</li>
+          <li>D'origine italienne</li>
+          <li>D'où l'on vient</li>
+          <li>De l'ordre du son</li>
+          <li>De la musique hindoue</li>
+          <li>Donnant à manger</li>
+          <li>Donne des douleurs vives</li>
+          <li>Douceur</li>
+          <li>Du bon temps</li>
+          <li>En tête au féminin</li>
+          <li>Engagée pour l'indépendance</li>
+          <li>Entre côtes</li>
+          <li>Entubant</li>
+          <li>Extrêmement brillante</li>
+          <li>Fait comme l'oiseau</li>
+          <li>Famine !</li>
+          <li>Fatigant</li>
+          <li>Fils d'imbécile</li>
+          <li>Fond de cartes</li>
+          <li>Généralement bon</li>
+          <li>Grave féminine</li>
+          <li>Héritage d'Icare</li>
+          <li>Horizon</li>
+          <li>Indispensable</li>
+          <li>Instrument indien</li>
+          <li>Invention disruptive</li>
+          <li>Jupitérien</li>
+          <li>Mademoiselle Coupeau</li>
+          <li>Mademoiselle Haze</li>
+          <li>Maniaque</li>
+          <li>Manque de respect</li>
+          <li>Marque de méfiance</li>
+          <li>Mayonnaise</li>
+          <li>Mieux vaut l'être bon</li>
+          <li>Minuscule mais inflexible</li>
+          <li>Mot d'enfant facile</li>
+          <li>Oh !</li>
+          <li>On ne sait pas trop combien</li>
+          <li>On ne sait pas trop quand</li>
+          <li>Partie mobile</li>
+          <li>Pas très fiable</li>
+          <li>Passe moi l'éponge</li>
+          <li>Peps</li>
+          <li>Peu à peu</li>
+          <li>Poudre à peaux</li>
+          <li>Poudre à vin</li>
+          <li>Pour une bonne conduite</li>
+          <li>Précédemment</li>
+          <li>Prend position</li>
+          <li>Privilégié</li>
+          <li>Provençal</li>
+          <li>Que d'eau, que d'eau !</li>
+          <li>Qui ne sert pas</li>
+          <li>Réfléchissant</li>
+          <li>Renversé</li>
+          <li>Résultat d'un devoir</li>
+          <li>Sans pomper</li>
+          <li>Sérial musique</li>
+          <li>Sert souvent d'excuse</li>
+          <li>Soeur affectueuse</li>
+          <li>Somme en somme</li>
+          <li>Spécialité des mammifères</li>
+          <li>Triomphe bruyant</li>
+          <li>Une force de la nature</li>
+          <li>Viendez !</li>
+        </ol>
+
+        <p>
+          Michel <span>(2022/04/01)</span>
+        </p>
+
+      </div>
+
+      <div class="row">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- solitaire -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5475403929650645"
+     data-ad-slot="2876021655"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      </div>
+
+      <footer>
+        <p>
+          &copy; 2022
+          <span>
+            / <a href="/" title="Play Klondike Solitaire">Solitaire</a>
+            / <a href="/games/" title="Online solitaire games">Games</a>
+            / <a href="/about/" title="About Solitaire-Play">About</a>
+            / <a href="/blog/" title="Solitaire News">Blog</a>
+            / <a href="/lemot/" title="WORDLE en français">LeMOT</a>
+          </span>
+          <span>
+            - https://www.solitaire-play.com/
+          </span>
+        </p>
+      </footer>
+
+    </div>
+
+  </body>
+
+</html>
