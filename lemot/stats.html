@@ -24,6 +24,7 @@
     <div class="popup resultats">
       <div class="header">
         <h2>Résultat</h2>
+        <h2 id="links"></h2>
       </div>
       <h3></h3>
       <p>
@@ -37,11 +38,17 @@
       <p>
         <textarea id="excel"></textarea>
       </p>
+      <p>Il y a un chat du 14 juillet...</p>
     </div>
 
   </div>
 
   <script>
+    const $links = document.querySelector("#links");
+    $links.innerHTML = `<a href="${GetLink(GetPuzzle() - 1)}">MOT</a> / `
+                     + `<a href="${GetLink(GetPuzzle() - 1 - 56)}">MOT6</a> / `
+                     + `<a href="${GetLink("fleur-" + GetPuzzleBee())}">BEE</a>`;
+
     const $calculer = document.querySelector("#calculer");
     const $resultats = document.querySelector("#resultats");
     const $excel = document.querySelector("#excel");
@@ -89,8 +96,8 @@
       const labee = contenu.includes("fleur");
       // Nettoyage du copier / coller de GoatCounter
       const stats = contenu.split('\n')
-                          .filter(x => x.includes("puzzle") || x.includes("lemot6") || x.includes("fleur"))
-                          .map(x => x.replace(" \t", "-").replace(" ", "").replace("-X", "-7").split("-"));
+                           .filter(x => x.includes("puzzle") || x.includes("lemot6") || x.includes("fleur"))
+                           .map(x => x.replace(" \t", "-").replace(" ", "").replace("-X", "-7").split("-"));
       console.dir(stats);
       // Comptabilise pour chaque résultats
       // - 0 : nombre de parties entamées
@@ -112,13 +119,20 @@
       }
       let excel = resultats.join("\t") + "\t" + total;
       console.log(excel);
+      // Calcule le nombre de joueurs à chaque niveau de LaBEE
+      if (labee) {
+        excel = resultats.join("\t");
+        for (let i = 0; i < resultats.length - 1; i++)
+          resultats[i] = resultats[i] - resultats[i + 1];
+      }
       // Calcule le pourcentage de chaque résultat par rapport au nombre de parties terminées
       const pourcentages = resultats.map(x => Math.round(x * 100 / total));
+      const maximum = Math.max(...pourcentages);
       // Génère 1 carré pour chaque 4%
       let bloc = lemot6 ? "🟠" : "🟧";
       if (labee) bloc = "🟦";
       const carres = labee
-                   ? pourcentages.map(x => bloc.repeat(Math.round(x / 10)))
+                   ? pourcentages.map(x => bloc.repeat(Math.round(x * 10 / maximum)))
                    : pourcentages.map(x => bloc.repeat(Math.round(x / 4)));
       // Retrouve le numéro du puzzle de la veille
       let puzzle = GetPuzzle() - 1;
@@ -135,18 +149,10 @@
         statistiques = statistiques.replace(" - ", " 🌻 ");
         statistiques = statistiques.replace(" jouées", "");
         reponse = "";
-        excel = resultats.join("\t");
-        for (let i = 1; i < 10; i++) {
-          if (carres[i] === "")
-            continue;
-          else if (i === 8)
-            carres[i] = carres[i];
-          else if (i === 9)
+        for (let i = 0; i < 10; i++) {
+          if (i === 9)
             carres[i] = carres[i].replaceAll("🟦", "🟧");
-          else if (pourcentages[i] > 95)
-            continue;
-          statistiques += `\n${carres[i]} ${NIVOS[i]}`;
-          if (i === 8) statistiques += ` (${pourcentages[i]}%)`;
+          statistiques += `\n${carres[i]} ${NIVOS[i]} ${pourcentages[i]}%`;
         }
       } else {
         for (let i = 1; i < 8; i++) {
@@ -172,7 +178,32 @@
       const difference = jour.getTime() - debut.getTime();
       return Math.ceil(difference / 1000 / 60 / 60 / 24);
     }
-  </script>
+
+    function GetPuzzleBee() {
+      const today = new Date();
+      const debut = new Date(Date.UTC(2022, 3, 16));
+      const jour = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()));
+      const difference = jour.getTime() - debut.getTime();
+      return Math.ceil(difference / 1000 / 60 / 60 / 24 / 14);
+    }
+
+    function GetLink(puzzle) {
+      if (!("" + puzzle).startsWith("fleur"))
+        return `https://lemot.goatcounter.com/?hl-period=week&filter=${puzzle}&daily=off`;
+      let du = new Date();
+      du.setDate(du.getDate() - 20);
+      let au = new Date();
+      au.setDate(au.getDate() - 1);
+      return `https://lemot.goatcounter.com/?period-start=${GetYyyyMmDd(du)}&period-end=${GetYyyyMmDd(au)}&filter=${puzzle}&daily=off`;
+    }
+
+    function GetYyyyMmDd(dt) {
+      const yyyy = dt.getUTCFullYear().toString();
+      const mm = (1 + dt.getUTCMonth()).toString().padStart(2, "0");
+      const dd = dt.getUTCDate().toString().padStart(2, "0");
+      return `${yyyy}-${mm}-${dd}`;
+    }
+</script>
 
 </body>
 
