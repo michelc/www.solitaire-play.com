@@ -45,9 +45,9 @@
 
   <script>
     const $links = document.querySelector("#links");
-    $links.innerHTML = `<a href="${GetLink(GetPuzzle() - 1)}">MOT</a> / `
-                     + `<a href="${GetLink(GetPuzzle() - 1 - 56)}">MOT6</a> / `
-                     + `<a href="${GetLink("fleur-" + GetPuzzleBee())}">BEE</a>`;
+    $links.innerHTML = `<a target='_blank' href="${GetLink(GetPuzzle() - 1)}">MOT</a> / `
+                     + `<a target='_blank' href="${GetLink(GetPuzzle() - 1 - 56)}">MOT6</a> / `
+                     + `<a target='_blank' href="${GetLink("fleur-" + GetPuzzleBee())}">BEE</a>`;
 
     const $calculer = document.querySelector("#calculer");
     const $resultats = document.querySelector("#resultats");
@@ -134,10 +134,8 @@
       const carres = labee
                    ? pourcentages.map(x => bloc.repeat(Math.round(x * 10 / maximum)))
                    : pourcentages.map(x => bloc.repeat(Math.round(x / 4)));
-      // Retrouve le numéro du puzzle de la veille
-      let puzzle = GetPuzzle() - 1;
-      if (lemot6) puzzle -= 56;
-      if (labee) puzzle = stats[0][2];
+      // Retrouve le numéro du puzzle correspondant aux stats
+      let puzzle = stats[0][2];
       // Emplacement pour le mot à découvrir de la veille
       let reponse = " #XXXXXXXXXXXXX";
       // Génère les statistiques
