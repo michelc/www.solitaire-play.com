@@ -122,8 +122,10 @@
       // Calcule le nombre de joueurs à chaque niveau de LaBEE
       if (labee) {
         excel = resultats.join("\t");
-        for (let i = 0; i < resultats.length - 1; i++)
+        for (let i = 0; i < resultats.length - 1; i++) {
           resultats[i] = resultats[i] - resultats[i + 1];
+          if (resultats[i] < 0) resultats[i] = 0;
+        }
       }
       // Calcule le pourcentage de chaque résultat par rapport au nombre de parties terminées
       const pourcentages = resultats.map(x => Math.round(x * 100 / total));
