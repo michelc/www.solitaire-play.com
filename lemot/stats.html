@@ -38,15 +38,14 @@
       <p>
         <textarea id="excel"></textarea>
       </p>
-      <p>Il y a un chat du 14 juillet...</p>
     </div>
 
   </div>
 
   <script>
     const $links = document.querySelector("#links");
-    $links.innerHTML = `<a target='_blank' href="${GetLink(GetPuzzle() - 1)}">MOT</a> / `
-                     + `<a target='_blank' href="${GetLink(GetPuzzle() - 1 - 56)}">MOT6</a> / `
+    $links.innerHTML = `<a target='_blank' href="${GetLink(GetPuzzle() - 1 - 56)}">MOT6</a> / `
+                     + `<a target='_blank' href="${GetLink(GetPuzzle() - 1)}">MOT</a> / `
                      + `<a target='_blank' href="${GetLink("fleur-" + GetPuzzleBee())}">BEE</a>`;
 
     const $calculer = document.querySelector("#calculer");
