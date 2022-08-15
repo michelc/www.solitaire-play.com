@@ -46,6 +46,7 @@
     const $links = document.querySelector("#links");
     $links.innerHTML = `<a target='_blank' href="${GetLink(GetPuzzle() - 1 - 56)}">MOT6</a> / `
                      + `<a target='_blank' href="${GetLink(GetPuzzle() - 1)}">MOT</a> / `
+                     + `<a target='_blank' href="${GetLink("labog-" + GetPuzzleBog())}">BOG</a> / `
                      + `<a target='_blank' href="${GetLink("fleur-" + GetPuzzleBee())}">BEE</a>`;
 
     const $calculer = document.querySelector("#calculer");
@@ -84,7 +85,7 @@
       // Récupère le contenu source ou généré
       const contenu = $resultats.value.trim();
       // Revient aux données sources quand statistiques sont déjà affichées
-      if (contenu.includes("🟧") || contenu.includes("🟠") || contenu.includes("🟦")) {
+      if (contenu.includes("🟧") || contenu.includes("🟠") || contenu.includes("🟦") || contenu.includes("🔵")) {
         $resultats.value = sauvegarde;
         $calculer.textContent = "GENERER";
         return;
@@ -93,33 +94,38 @@
       sauvegarde = contenu;
       const lemot6 = contenu.includes("lemot6");
       const labee = contenu.includes("fleur");
+      const labog = contenu.includes("labog");
       // Nettoyage du copier / coller de GoatCounter
-      const stats = contenu.split('\n')
-                           .filter(x => x.includes("puzzle") || x.includes("lemot6") || x.includes("fleur"))
-                           .map(x => x.replace(" \t", "-").replace(" ", "").replace("-X", "-7").split("-"));
+      const stats = contenu
+                    .split('\n')
+                    .filter(x => x.includes("puzzle") || x.includes("lemot6") || x.includes("fleur") || x.includes("labog"))
+                    .map(x => x.replace(" \t", "-").replace(" ", "").replace("-X", "-7").split("-"));
       console.dir(stats);
       // Comptabilise pour chaque résultats
       // - 0 : nombre de parties entamées
       // - 1 à 6 : nombre de parties gagnées en 1 à 6 coups
       // - 7 : nombre de parties perdues (X)
       const resultats = [ 0, 0, 0, 0, 0, 0, 0, 0 ];
-      if (labee) resultats.push(0);
-      if (labee) resultats.push(0);
+      if (labee || labog) resultats.push(0);
+      if (labee || labog) resultats.push(0);
       for (let i = 0; i < stats.length; i++) {
         const nombre = parseInt(stats[i][0], 10) || 0;
         const essai = parseInt(stats[i][3], 10) || 0;
         resultats[essai] += nombre;
       }
+      if (labog) {
+        resultats[8] += resultats[9];
+      }
       // Calcule le nombre de parties terminées (jouées jusqu'au bout)
       let total = resultats.reduce((x, y) => x + y) - resultats[0];
-      if (labee) {
+      if (labee || labog) {
         total = stats[0][2] === "0" ? resultats[1] : resultats[0];
         resultats[0] = total;
       }
       let excel = resultats.join("\t") + "\t" + total;
       console.log(excel);
       // Calcule le nombre de joueurs à chaque niveau de LaBEE
-      if (labee) {
+      if (labee || labog) {
         excel = resultats.join("\t");
         for (let i = 0; i < resultats.length - 1; i++) {
           resultats[i] = resultats[i] - resultats[i + 1];
@@ -132,7 +138,8 @@
       // Génère 1 carré pour chaque 4%
       let bloc = lemot6 ? "🟠" : "🟧";
       if (labee) bloc = "🟦";
-      const carres = labee
+      if (labog) bloc = "🔵";
+      const carres = labee || labog
                    ? pourcentages.map(x => bloc.repeat(Math.round(x * 10 / maximum)))
                    : pourcentages.map(x => bloc.repeat(Math.round(x / 4)));
       // Retrouve le numéro du puzzle correspondant aux stats
@@ -151,6 +158,16 @@
         for (let i = 0; i < 10; i++) {
           if (i === 9)
             carres[i] = carres[i].replaceAll("🟦", "🟧");
+          statistiques += `\n${carres[i]} ${NIVOS[i]} ${pourcentages[i]}%`;
+        }
+      } else if (labog) {
+        statistiques = statistiques.replace("LeMOT", "#LaBOG");
+        statistiques = statistiques.replace(" #0", "");
+        statistiques = statistiques.replace(" jouées", "");
+        reponse = "";
+        for (let i = 0; i < 9; i++) {
+          if (i === 8)
+            carres[i] = carres[i].replaceAll("🔵", "🟠");
           statistiques += `\n${carres[i]} ${NIVOS[i]} ${pourcentages[i]}%`;
         }
       } else {
@@ -184,6 +201,22 @@
       const jour = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()));
       const difference = jour.getTime() - debut.getTime();
       return Math.ceil(difference / 1000 / 60 / 60 / 24 / 14);
+    }
+
+    function GetPuzzleBog() {
+      const today = new Date();
+      const check = today.toISOString().substring(0, 10);
+      if (check > "2022-09-15") return 11;
+      if (check > "2022-09-12") return 10;
+      if (check > "2022-09-08") return 9;
+      if (check > "2022-09-05") return 8;
+      if (check > "2022-09-01") return 7;
+      if (check > "2022-08-29") return 6;
+      if (check > "2022-08-25") return 5;
+      if (check > "2022-08-22") return 4;
+      if (check > "2022-08-18") return 3;
+      if (check > "2022-08-15") return 2;
+      return 1;
     }
 
     function GetLink(puzzle) {
