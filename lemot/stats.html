@@ -170,6 +170,10 @@
             carres[i] = carres[i].replaceAll("🔵", "🟠");
           statistiques += `\n${carres[i]} ${NIVOS[i]} ${pourcentages[i]}%`;
         }
+        if (resultats[9] > 1)
+          statistiques += "\n👽 x " + resultats[9];
+        else if (resultats[9] > 0)
+          statistiques += "\n👽";
       } else {
         for (let i = 1; i < 8; i++) {
           const essais = i < 7 ? i : "X";
