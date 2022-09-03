@@ -100,7 +100,6 @@
                     .split('\n')
                     .filter(x => x.includes("puzzle") || x.includes("lemot6") || x.includes("fleur") || x.includes("labog"))
                     .map(x => x.replace(" \t", "-").replace(" ", "").replace("-X", "-7").split("-"));
-      console.dir(stats);
       // Comptabilise pour chaque résultats
       // - 0 : nombre de parties entamées
       // - 1 à 6 : nombre de parties gagnées en 1 à 6 coups
@@ -113,23 +112,39 @@
         const essai = parseInt(stats[i][3], 10) || 0;
         resultats[essai] += nombre;
       }
+      // Ne compte pas les cartons pleins sur #LaBOG
+      let extras = 0;
       if (labog) {
-        resultats[8] += resultats[9];
+        extras = resultats[9];
+        resultats[9] = 0;
       }
+      // Nombre de parties jouées (depuis le 2/9/22)
+      const jouees = resultats[0];
       // Calcule le nombre de parties terminées (jouées jusqu'au bout)
+      // * Sur LeMOT et LeMOT6 on n'alimente les stats qu'une fois au 1er mot
+      //   "-0" et une autre fois à la fin de la partie "-1" à "-6" + "-X")
       let total = resultats.reduce((x, y) => x + y) - resultats[0];
-      if (labee || labog) {
-        total = stats[0][2] === "0" ? resultats[1] : resultats[0];
-        resultats[0] = total;
-      }
       let excel = resultats.join("\t") + "\t" + total;
-      console.log(excel);
-      // Calcule le nombre de joueurs à chaque niveau de LaBEE
+      // * Alors que sur LaBEE ou LaBOG on alimente les stats au 1er mot validé
+      //   "-0" puis à chaque changement de niveau "-1" à "-9".
       if (labee || labog) {
+        total = stats[0][2] === "0" ? resultats[1] : resultats[0]; // à cause de LaBEE 0 ???
+        resultats[0] = total;
+        // Et donc pas besoin de total puisqu'il est en 1ère colonne
         excel = resultats.join("\t");
+      }
+      // Calcule le nombre de joueurs à chaque niveau de LaBEE ou LaBOG
+      if (labee || labog) {
+        // Quand un niveau est trop facile, il peut avoir moins de joueurs que le
+        // niveau au dessus => on adapte le nb de personnes qui y sont arrivées
+        for (let i = 0; i < resultats.length - 1; i++) {
+          if (resultats[i] < resultats[i + 1]) resultats[i] = resultats[i + 1];
+        }
+        // Le nombre de personne toujours à un niveau donné est égal au nombre
+        // de personnes qui ont atteint ce niveau diminué du nb de personnes qui
+        // sont arrivées au niveau au dessus
         for (let i = 0; i < resultats.length - 1; i++) {
           resultats[i] = resultats[i] - resultats[i + 1];
-          if (resultats[i] < 0) resultats[i] = 0;
         }
       }
       // Calcule le pourcentage de chaque résultat par rapport au nombre de parties terminées
@@ -147,7 +162,7 @@
       // Emplacement pour le mot à découvrir de la veille
       let reponse = " #XXXXXXXXXXXXX";
       // Génère les statistiques
-      let statistiques = `LeMOT #${puzzle} - ${total} parties jouées\n`;
+      let statistiques = `LeMOT #${puzzle} - ${jouees} parties jouées\n`;
       if (lemot6) statistiques = statistiques.replace("LeMOT", "LeMOT6");
       if (labee) {
         statistiques = statistiques.replace("LeMOT", "#LaBEE");
@@ -170,9 +185,9 @@
             carres[i] = carres[i].replaceAll("🔵", "🟠");
           statistiques += `\n${carres[i]} ${NIVOS[i]} ${pourcentages[i]}%`;
         }
-        if (resultats[9] > 1)
-          statistiques += "\n👽 x " + resultats[9];
-        else if (resultats[9] > 0)
+        if (extras > 1)
+          statistiques += "\n👽 x " + extras;
+        else if (extras > 0)
           statistiques += "\n👽";
       } else {
         for (let i = 1; i < 8; i++) {
@@ -181,7 +196,7 @@
         }
       }
       statistiques += `\n\n#LeMotStats #LeMotLeJeu${reponse}`;
-      const url = "https://www.goatcounter.com/ + 🖐️";
+      const url = "https://www.goatcounter.com/ +🖐️";
       statistiques += `\n\n${url}`;
       // Affiche et logue les statistiques
       $resultats.value = statistiques;
