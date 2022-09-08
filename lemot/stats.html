@@ -118,6 +118,7 @@
         extras = resultats[9];
         resultats[9] = 0;
       }
+      console.log(resultats.join(","));
       // Nombre de parties jouées (depuis le 2/9/22)
       const jouees = resultats[0];
       // Calcule le nombre de parties terminées (jouées jusqu'au bout)
@@ -137,9 +138,10 @@
       if (labee || labog) {
         // Quand un niveau est trop facile, il peut avoir moins de joueurs que le
         // niveau au dessus => on adapte le nb de personnes qui y sont arrivées
-        for (let i = 0; i < resultats.length - 1; i++) {
-          if (resultats[i] < resultats[i + 1]) resultats[i] = resultats[i + 1];
+        for (let i = resultats.length - 1; i > 0; i--) {
+          if (resultats[i - 1] < resultats[i]) resultats[i - 1] = resultats[i];
         }
+        console.log(resultats.join(","));
         // Le nombre de personne toujours à un niveau donné est égal au nombre
         // de personnes qui ont atteint ce niveau diminué du nb de personnes qui
         // sont arrivées au niveau au dessus
@@ -147,6 +149,7 @@
           resultats[i] = resultats[i] - resultats[i + 1];
         }
       }
+      console.log(resultats.join(","));
       // Calcule le pourcentage de chaque résultat par rapport au nombre de parties terminées
       const pourcentages = resultats.map(x => Math.round(x * 100 / total));
       const maximum = Math.max(...pourcentages);
