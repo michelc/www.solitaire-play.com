@@ -5,17 +5,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Solitaire / Play Yukon Solitaire</title>
-    <meta name="description" content="Play Yukon Solitaire online, for free. A focusing and strategic variant of solitaire with a good gameplay: undo, hint, automatic move... HTML5 and JavaScript solitaire card game for browser, tablet or phone.">
-    <meta name="keywords" content="Solitaire, Yukon, Alaska, Concentration, Strategy, Patience, Card, Game, Free, Play, Online, HTML5, JS, JavaScript">
-    <link rel="canonical" href="https://www.solitaire-play.com/yukon/">
+    <title>Solitaire / Play Thoughtful Turn Three</title>
+    <meta name="description" content="Play the special Thoughtful Turn Three online, for free. Get the gameplay from Windows Solitaire: undo, hint, automatic move... HTML5 and JavaScript solitaire card game for browser, tablet or phone.">
+    <meta name="keywords" content="Solitaire, Thoughtful, Saratoga, Face-Up, Three, Turn-Three, Draw-Three, Three-Cards, Patience, Card, Game, Free, Play, Online, HTML5, JS, JavaScript">
+    <link rel="canonical" href="https://www.solitaire-play.com/thoughtful-turn-three/">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@ms_michel">
-    <meta property="og:url" content="https://www.solitaire-play.com/yukon/">
+    <meta property="og:url" content="https://www.solitaire-play.com/thoughtful-turn-three/">
     <meta property="og:type" content="game">
-    <meta property="og:title" content="Yukon Solitaire">
-    <meta property="og:description" content="Play Yukon Solitaire card game online, for free. A focusing and strategic variant of solitaire with a good gameplay: undo, hint, automatic move...">
-    <meta property="og:image" content="https://www.solitaire-play.com/cards/yukon-solitaire.png">
+    <meta property="og:title" content="Thoughtful Turn Three">
+    <meta property="og:description" content="Play the special Thoughtful Turn Three card game online, for free. Get the gameplay from Windows Solitaire: undo, hint, automatic move...">
+    <meta property="og:image" content="https://www.solitaire-play.com/cards/thoughtful-turn-three.png">
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
     <script>
@@ -28,14 +28,14 @@
     <script>if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"michelc@gmail.com ",utcoffset:"1"}))};sessionStorage.setItem("_swa","1");</script>
   </head>
 
-  <body id="yukon">
+  <body id="thoughtful-3">
 
     <div class="container">
 
       <div id="header" class="row">
-        <h1><a href="" title="Yukon, a strategic solitaire card game">Yukon<span> Solitaire</span></a></h1>
+        <h1><a href="" title="Thoughtful 3, aka Klondike with all cards face up">Thoughtful<span> Turn 3</span><sup> 3</sup></a></h1>
         <div class="menu">
-          <button id="game" title="Play a new Yukon solitaire (F2)">GAME</button>
+          <button id="game" title="Play a new solitaire (F2)">GAME</button>
           <button id="hint" title="Show possible moves (H)">HINT</button>
           <button id="undo" title="Undo last move (Control+Z)">UNDO</button>
           <button id="tool" title="Select solitaire game">≡</button>
@@ -44,14 +44,16 @@
 
       <div id="solitaire" class="clearfix">
 
-        <div id="plateaux" class="row">
+        <div id="plateaux" class="row reverse">
+          <div id="stock" class="column pile pile-stack"><div class="write"><div>+</div></div></div>
+          <div id="waste" class="column two pile pile-flat"></div>
           <div id="f0" class="column drop pile pile-stack"></div>
           <div id="f1" class="column drop pile pile-stack"></div>
           <div id="f2" class="column drop pile pile-stack"></div>
           <div id="f3" class="column drop pile pile-stack"></div>
         </div>
 
-        <div id="tableaux" class="row">
+        <div id="tableaux" class="row thoughtful">
           <div id="t0" class="column drop pile pile-fan"></div>
           <div id="t1" class="column drop pile pile-fan"></div>
           <div id="t2" class="column drop pile pile-fan"></div>
@@ -97,8 +99,8 @@
 
       <div class="row" id="rules">
         <h2>
-          Yukon Solitaire Game
-          <span>(or play <a href="/russian/">Russian Solitaire</a>)</span>
+          Thoughtful Turn Three Game
+          <span>(or play <a href="/thoughtful/">Thoughtful Solitaire</a>)</span>
         </h2>
         <p>
           Your goal is to win!
@@ -108,39 +110,47 @@
           of the same suit in ascending order: Ace, 2, 3, 4, ..., 10, Jack,
           Queen and King.
         </p>
+        <p><em>
+          Note: Thoughtful Solitaire, also called Saratoga Solitaire, is exactly
+          the same card game as <a href="/">Klondike</a>, except all cards in
+          the tableau are “visible”. Face down cards are simply grayed out so we
+          can tell which card it is. Thus, the probability of winning should be
+          better (around 82% according to Wikipedia).
+        </em></p>
         <p>
-          Cards are shuffled and 28 form the tableau (the 7 piles in the bottom
-          of the screen). The remaining 24 cards are distributed face up to the
-          final 6 piles. There is no waste or stock.
+          Cards are shuffled and 28 are dealt on the tableau (the 7 piles in the
+          bottom of the screen). The remaining 24 cards form the stock (top
+          left) and the game start with three cards turned from the stock into
+          the waste pile.
         </p>
         <ul>
-          <li>You can play the last card of each pile from the tableau to the
-            foundation of the same suit, in ascending order.</li>
-          <li>All visibles cards from one pile can be moved to another, but in
+          <li>The last card of each pile from the tableau can be transferred to
+            the foundation of the same suit, in ascending order.</li>
+          <li>Any “visible” card from one pile can be moved to another, but in
             alternate color and descending order: 7 of Hearts, 6 of Clubs, 5 of
             Diamonds, 4 of Clubs...</li>
-          <li>Only a King can go to an empty pile.</li>
+          <li>The top card from the waste can also be played to the tableau
+            piles or foundations.</li>
+          <li>Only a King can be moved to an empty pile.</li>
         </ul>
         <p>
-          Yukon is easy to play but it's a strategic solitaire game. First,
-          build aces to the foundation as soon as possible. Then, uncover faces
-          down cards so you can start moving cards around...
+          When all moves are done, you turn three cards at a time from the stock
+          to the waste pile before playing it to a foundation or on the tableau
+          if suitable. When the stock is empty, the cards from the waste are
+          reused. You will know when you have lost.
         </p>
+        <h3>How to play Free Thoughtful Turn Three</h3>
         <p>
-          Read blog to get more informations about how to <a
-          href="../blog/free-yukon-solitaire.html">play Yukon Solitaire</a>.
-        </p>
-        <h3>How to play Free Yukon Solitaire</h3>
-        <p>
-          Yukon is an easy to learn HTML5 and JavaScript card game, similar to
-          Klondike Solitaire:
+          Thoughtful Turn Three is an HTML5 and JavaScript card game, but I tried
+          to copy the gameplay from Windows Classic Solitaire:
         </p>
         <ul>
           <li>Use drag &amp; drop to move cards from one pile to another</li>
+          <li>Click on the stock to draw three new cards</li>
           <li>Double-click on a card to add it to a foundation</li>
           <li>Right-click (or tap and hold) to move all possible cards to the foundations</li>
         </ul>
-        <h3>Yukon Solitaire online game</h3>
+        <h3>Thoughtful Turn Three online game</h3>
         <p>
           Simply click the top left title to play a new solitaire game, or use
           one of the menu commands:
@@ -156,6 +166,8 @@
               Golf, Monte Carlo, Pyramid, Russian, Thoughtful or Yukon Solitaire.</li>
         </ul>
       </div>
+
+      <div id="debug"></div>
 
       <footer>
         <p>
@@ -210,8 +222,8 @@
     <div id="overlay"></div>
 
     <script src="../js/jquery.20.03.22.min.js"></script>
-    <script src="../js/yukon.min.js"></script>
-    <script>(function($) { Start(1); })(jQuery);</script>
+    <script src="../js/solitaire.min.js"></script>
+    <script>(function($) { Start(3); })(jQuery);</script>
 
   </body>
 
