@@ -114,7 +114,7 @@
       }
       // Ne compte pas les cartons pleins sur #LaBOG
       let extras = 0;
-      if (labog) {
+      if (labee || labog) {
         extras = resultats[9];
         resultats[9] = 0;
       }
@@ -133,6 +133,7 @@
         resultats[0] = total;
         // Et donc pas besoin de total puisqu'il est en 1ère colonne
         excel = resultats.join("\t");
+        excel = excel.substring(0, excel.length - 1) + extras;
       }
       // Calcule le nombre de joueurs à chaque niveau de LaBEE ou LaBOG
       if (labee || labog) {
@@ -173,11 +174,15 @@
         statistiques = statistiques.replace(" - ", " 🌻 ");
         statistiques = statistiques.replace(" jouées", "");
         reponse = "";
-        for (let i = 0; i < 10; i++) {
-          if (i === 9)
+        for (let i = 0; i < 9; i++) {
+          if (i === 8)
             carres[i] = carres[i].replaceAll("🟦", "🟧");
           statistiques += `\n${carres[i]} ${NIVOS[i]} ${pourcentages[i]}%`;
         }
+        if (extras > 1)
+          statistiques += "\n🐝 x " + extras;
+        else if (extras > 0)
+          statistiques += "\n🐝";
       } else if (labog) {
         statistiques = statistiques.replace("LeMOT", "#LaBOG");
         statistiques = statistiques.replace(" #0", "");
@@ -197,10 +202,13 @@
           const essais = i < 7 ? i : "X";
           statistiques += `\n${essais}: ${carres[i]} ${pourcentages[i]}%`;
         }
+        statistiques += "\n\n#XXXXXXXXXXXXX";
       }
+      /*
       statistiques += `\n\n#LeMotStats #LeMotLeJeu${reponse}`;
       const url = "https://www.goatcounter.com/ +🖐️";
       statistiques += `\n\n${url}`;
+      */
       // Affiche et logue les statistiques
       $resultats.value = statistiques;
       console.log(statistiques);
@@ -228,22 +236,19 @@
     function GetPuzzleBog() {
       const today = new Date();
       const check = today.toISOString().substring(0, 10);
-      if (check > "2022-09-15") return 11;
-      if (check > "2022-09-12") return 10;
-      if (check > "2022-09-08") return 9;
-      if (check > "2022-09-05") return 8;
-      if (check > "2022-09-01") return 7;
-      if (check > "2022-08-29") return 6;
-      if (check > "2022-08-25") return 5;
-      if (check > "2022-08-22") return 4;
-      if (check > "2022-08-18") return 3;
-      if (check > "2022-08-15") return 2;
-      return 1;
+      if (check > "2022-10-07") return 21;   // Mercredi
+      if (check > "2022-10-05") return 20;   // Mercredi
+      if (check > "2022-10-03") return 19;   // Lundi
+      if (check > "2022-09-30") return 18;   // Vendredi
+      if (check > "2022-09-28") return 17;   // Mercredi
+      if (check > "2022-09-26") return 16;   // Mercredi
+      return 15;
     }
 
     function GetLink(puzzle) {
       if (!("" + puzzle).startsWith("fleur"))
-        return `https://lemot.goatcounter.com/?hl-period=week&filter=${puzzle}&daily=off`;
+        if (!("" + puzzle).startsWith("labog"))
+          return `https://lemot.goatcounter.com/?hl-period=week&filter=${puzzle}&daily=off`;
       let du = new Date();
       du.setDate(du.getDate() - 20);
       let au = new Date();
