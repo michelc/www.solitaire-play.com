@@ -5,33 +5,32 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LaBEE - Spelling Bee en français</title>
-  <meta name="description" content="Combien de mots pouvez-vous trouver avec 7 lettres ? Un Spelling Bee en français, pour jouer gratuitement sur ordinateur, tablette ou téléphone.">
-  <meta name="keywords" content="Spelling Bee, Français, Scrabble, Wordle, Jeu, Puzzle, Vocabulaire, Dictionnaire, Mot, Mots, Croisés, Fléchés, Mélés, Deviner, Découvrir, France, Français, Gratuit, Jouer, HTML5, JS, JavaScript">
-  <meta property="og:url" content="https://www.solitaire-play.com/lemot/demo.html">
+  <title>LeMOT - Un jeu de mot chaque jour (Wordle en français)</title>
+  <meta name="description" content="Devinez chaque jour un nouveau mot de 5 lettres en 6 essais... Un Wordle en français, pour jouer gratuitement sur ordinateur, tablette ou téléphone.">
+  <meta name="keywords" content="Wordle, Français, Motus, Mastermind, Pendu, Scrabble, Jeu, Puzzle, Vocabulaire, Dictionnaire, Mot, Mots, Croisés, Fléchés, Mélés, Deviner, Découvrir, France, Français, Gratuit, Jouer, HTML5, JS, JavaScript">
+  <meta property="og:url" content="https://www.solitaire-play.com/lemot/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="LaBEE - Spelling Bee en français">
-  <meta property="og:image" content="https://www.solitaire-play.com/lemot/labee-spelling-bee.min.png">
+  <meta property="og:title" content="LeMOT - Un jeu de mot chaque jour (Wordle en français)">
+  <meta property="og:image" content="https://www.solitaire-play.com/lemot/lemot-wordle-fr.min.png">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:image" content="https://www.solitaire-play.com/lemot/labee-spelling-bee.min.png">
+  <meta name="twitter:image" content="https://www.solitaire-play.com/lemot/twitter-wordle-fr.min.png">
   <meta name="twitter:site" content="@LeMotLeJeu">
-  <meta name="twitter:description" content="Combien de mots pouvez-vous trouver avec 7 lettres ?">
-  <link rel="canonical" href="https://www.solitaire-play.com/labee/">
-  <link rel="stylesheet" href="demo.min.css">
+  <meta name="twitter:description" content="Devinez chaque jour un nouveau mot de 5 lettres en six essais...">
+  <link rel="canonical" href="https://www.solitaire-play.com/lemot/">
+  <link rel="stylesheet" href="lemot.min.css">
   <!-- https://realfavicongenerator.net/ -->
   <link rel="apple-touch-icon" sizes="180x180" href="/lemot/images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/lemot/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/lemot/images/favicon-16x16.png">
-  <link rel="manifest" href="/lemot/demo.manifest.json">
+  <link rel="manifest" href="/lemot/manifest.json">
   <link rel="mask-icon" href="/lemot/images/safari-pinned-tab.svg" color="#ffb000">
   <link rel="shortcut icon" href="/lemot/images/favicon.ico">
   <meta name="msapplication-TileColor" content="#ffb000">
   <meta name="msapplication-config" content="/lemot/images/browserconfig.xml">
   <meta name="theme-color" content="#ffb000">
-  <meta http-equiv="refresh" content="1;URL=/labee/">
 </head>
 
-<body id="demo">
+<body id="lemot">
 
   <div class="container">
 
@@ -40,14 +39,14 @@
         <span class="icone aide">
           <svg><use href="#icone-aide"></use></svg>
         </span>
-        <span class="icone fleur">
-          <svg><use href="#icone-fleur"></use></svg>
-        </span>
+        <a class="icone lien" href="/lemot6/">
+          <svg><use href="#icone-lien"></use></svg>
+        </a>
       </div>
-      <h1>LaBEE</h1>
+      <h1 title="Wordle en français">LeMOT</h1>
       <div>
-        <span class="icone">
-          <svg></svg>
+        <span class="icone conseil">
+          <svg><use href="#icone-conseil"></use></svg>
         </span>
         <span class="icone outils">
           <svg><use href="#icone-outils"></use></svg>
@@ -55,62 +54,60 @@
       </div>
     </header>
 
-    <main id="content">
+    <div class="plateau-container">
+      <div class="plateau">
 
-      <div id="inside">
-        <p class="reponses"></p>
+        <div class="case"><span class="curseur">_</span></div><div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div>
+        <div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div>
+        <div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div>
+        <div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div>
+        <div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div>
+        <div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div><div class="case"></div>
+
       </div>
-
-    </main>
-
-    <div class="score">
-      <strong id="niveau"></strong>
-      <span id="jours"></span>
-      <span id="mots"></span>
-      <span id="points"></span>
-    </div>
-    <div class="score" id="progression">
-      <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
     </div>
 
-    <div class="message"></div>
-    <div class="bravo"></div>
+    <div class="message">Mot inconnu</div>
 
-    <div id="plateau">
-      <div class="case"></div>
-      <div class="case"></div>
-      <div class="case"></div>
-      <div class="case"></div>
-      <div class="case"></div>
-      <div class="case"></div>
-      <div class="case"></div>
-      <div class="case"></div>
-      <div class="case"></div>
+    <div class="clavier">
+
+      <div class="azerty">
+        <div class="rangee">
+          <button>A</button><button>Z</button><button>E</button><button>R</button><button>T</button>
+          <button>Y</button><button>U</button><button>I</button><button>O</button><button>P</button>
+        </div>
+        <div class="rangee">
+          <button>Q</button><button>S</button><button>D</button><button>F</button><button>G</button>
+          <button>H</button><button>J</button><button>K</button><button>L</button><button>M</button>
+        </div>
+        <div class="rangee">
+          <button class="enter"><svg><use href="#touche-enter"></use></svg></button>
+          <button>W</button><button>X</button><button>C</button>
+          <button>V</button><button>B</button><button>N</button>
+          <button class="back"><svg><use href="#touche-back"></use></svg></button>
+        </div>
+      </div>
+
+      <div class="qwerty">
+        <div class="rangee">
+          <button>Q</button><button>W</button><button>E</button><button>R</button><button>T</button>
+          <button>Y</button><button>U</button><button>I</button><button>O</button><button>P</button>
+        </div>
+        <div class="rangee">
+          <span></span>
+          <button>A</button><button>S</button><button>D</button><button>F</button><button>G</button>
+          <button>H</button><button>J</button><button>K</button><button>L</button>
+          <span></span>
+        </div>
+        <div class="rangee">
+          <button class="enter"><svg><use href="#touche-enter"></use></svg></button>
+          <button>Z</button><button>X</button><button>C</button>
+          <button>V</button><button>B</button><button>N</button><button>M</button>
+          <button class="back"><svg><use href="#touche-back"></use></svg></button>
+        </div>
+      </div>
+
     </div>
-
-    <footer id="keyboard">
-      <div class="sides">
-        <button id="shuffle"><svg><use href="#touche-shuffle"></use></svg></button>
-        <button id="back"><svg><use href="#touche-back"></use></svg></button>
-      </div>
-      <div class="column column-left">
-        <button class="around">C</button>
-        <button class="around">T</button>
-      </div>
-      <div class="column">
-        <button class="around">D</button>
-        <button class="center">O</button>
-        <button class="around">E</button>
-      </div>
-      <div class="column column-right">
-        <button class="around">N</button>
-        <button class="around">H</button>
-      </div>
-      <div class="sides">
-        <button id="hint"><svg><use href="#touche-lightbulb"></use></svg></button>
-        <button id="enter"><svg><use href="#touche-enter"></use></svg></button>
-      </div>
-    </footer>
 
     <div class="popup instructions">
       <div class="header">
@@ -119,118 +116,147 @@
           <svg><use href="#icone-ferme"></use></svg>
         </div>
       </div>
-      <p>Combien de mots allez-vous découvrir avec 7 lettres&nbsp;?</p>
-      <p>Le but du jeu est de trouver tous les mots possibles à partir des lettres
-        posées sur la fleur. Chaque mot peut compter entre 4 et 9 lettres et
-        doit toujours contenir la lettre placée au coeur de la fleur.</p>
+      <p>Devinez <strong>LeMOT</strong> en 6 tentatives.</p>
+      <p>Cette version française de Wordle accepte les mots selon les règles du
+        Scrabble, et donc les pluriels et les verbes conjugués.</p>
+      <p>Après chaque essai, la couleur des lettres change pour indiquer à
+        quel point votre réponse est proche du mot du jour.</p>
       <div class="exemples">
-        <p>Quelques règles du jeu :</p>
-        <ul>
-          <li>Le mot doit contenir au moins 4 lettres</li>
-          <li>La lettre au centre de la fleur est obligatoire</li>
-          <li>Une lettre peut être utilisée plusieurs fois</li>
-          <li>Les conjugaisons ne sont pas permises</li>
-          <li>Les mots inconnus du jeu ne sont pas acceptés</li>
-        </ul>
-        <p>Chaque mot de 4 lettres rapporte 1 point. Les mots plus longs
-          rapportent 1 point par lettre. Le jeu contient au moins un
-          <em>pangramme</em> qui utilise chaque lettre de la fleur et donne un
-          bonus de 7 points.</p>
-      </div>
-      <p>Bonne nouvelle, la partie va continuer des jours et des jours&nbsp;!
-        <strong>Alors prenez votre temps pour jouer...</strong> 5 minutes par
-        jour c'est un très bon rythme :)</p>
-      <p class="note">
-        LaBEE est inspiré de <a href="https://www.nytimes.com/puzzles/spelling-bee">Spelling Bee</a> en français.
-      </p>
-    </div>
-
-    <div class="popup informations">
-      <div class="header">
-        <h2>Informations</h2>
-        <div class="icone ferme">
-          <svg><use href="#icone-ferme"></use></svg>
+        <div class="word">
+          <div class="case correct">J</div>
+          <div class="case">O</div>
+          <div class="case">U</div>
+          <div class="case">E</div>
+          <div class="case">R</div>
         </div>
+        <p>La lettre <strong>J</strong> est dans le mot, au bon endroit.</p>
+        <div class="word">
+          <div class="case">P</div>
+          <div class="case">E</div>
+          <div class="case present">R</div>
+          <div class="case">D</div>
+          <div class="case">U</div>
+        </div>
+        <p>Le <strong>R</strong> est dans le mot mais pas à la bonne place.</p>
+        <div class="word">
+          <div class="case">G</div>
+          <div class="case">A</div>
+          <div class="case">G</div>
+          <div class="case absent">N</div>
+          <div class="case">E</div>
+        </div>
+        <p>La lettre <strong>N</strong> n'est pas dans le mot à deviner.</p>
       </div>
-      <div class="bloc">
-        <h4>Statistiques</h4>
-        <ul>
-          <li>Nombre de mots acceptés : %%</li>
-          <li>Total des points possibles : %%</li>
-          <li>Nombre de pangrammes existants : %%</li>
-        </ul>
-      </div>
-      <div class="bloc">
-        <h4>Niveaux</h4>
-        <p>Ils dépendent du nombre de points obtenus. Chaque niveau correspond à
-          un pourcentage du total des points possibles :</p>
-        %%
-      </div>
-      <div class="bloc">
-        <h4>#LaBEE</h4>
-        <p>
-          Suivez <a href="https://twitter.com/LeMotLeJeu" target="_blank" title="@LeMotLeJeu">@<u>LeMotLeJeu</u></a>
-          pour plus d'informations et d'indices...
-        </p>
-      </div>
+      <p><strong>Un nouveau LeMOT disponible chaque jour !</strong></p>
+      <p class="note">
+        LeMOT est une adaptation de <a href="https://www.nytimes.com/games/wordle/">WORDLE</a> en français.
+      </p>
     </div>
 
     <div class="popup parametres">
       <div class="header">
-        <h2>Outils</h2>
+        <h2>Paramètres</h2>
         <div class="icone ferme">
           <svg><use href="#icone-ferme"></use></svg>
         </div>
       </div>
-      <div class="resultats">
-        <p>
-          <textarea></textarea>
-        </p>
-        <p>
-          <button class="correct">
-            PARTAGER
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-              <path d="M13 0H6a2 2 0 0 0-2 2 2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 13V4a2 2 0 0 0-2-2H5a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1zM3 4a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z"/>
-            </svg>
-          </button>
-          <button class="present ferme">
-            JOUER
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-              <path d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
-            </svg>
-          </button>
-        </p>
-        <p class="note">
-          En cliquant sur PARTAGER, la grille est copiée dans le
-          presse-papiers, pour la coller dans Twitter, Facebook,
-          WhatsApp... et informer vos amis de vos progrès.
-        </p>
-        <p class="goto">
-          <a href="/lemot/">
-            LeMOT
-            <span>Wordle en français</span>
-          </a>
-          <a href="/lemot6/" class="second">
-            LeMOT6
-            <span>Wordle en 6 lettres</span>
-          </a>
-        </p>
+      <br>
+      <div class="header bloc">
+        <h4>Disposition clavier</h4>
+        <div>
+          <input type="radio" id="azerty" name="clavier" value="azerty" checked>
+          <label for="azerty">Azerty</label>
+          -
+          <input type="radio" id="qwerty" name="clavier" value="qwerty">
+          <label for="qwerty">Qwerty</label>
+        </div>
+      </div>
+      <div class="header bloc">
+        <h4>Commentaires</h4>
+        <div>
+          <a href="https://twitter.com/LeMotLeJeu"
+            target="_blank"
+            title="@LeMotLeJeu">@LeMotLeJeu</a>
+        </div>
+      </div>
+      <div class="header bloc">
+        <h4>Communauté</h4>
+        <div>
+          <a href="https://twitter.com/search?q=%23LeMotLeJeu&f=live"
+            target="_blank"
+            title="#LeMotLeJeu">#LeMotLeJeu</a>
+        </div>
       </div>
       <div class="bloc">
         <h4>Ressources</h4>
         <ul>
           <li><a href="https://icons.getbootstrap.com/" target="_blank">Bootstrap</a> (icones)</li>
-          <li><a href="http://www.lexique.org/shiny/openlexicon/" target="_blank">Open Lexicon</a> (mots)</li>
+          <li><a href="https://twitter.com/Wiktionnaire" target="_blank">Wiktionnaire</a>,
+              <a href="https://twitter.com/Grammalecte" target="_blank">Grammalecte</a> et
+              <a href="http://www.lexique.org/shiny/openlexicon/" target="_blank">Open Lexicon</a> (mots)</li>
           <li><a href="https://www.goatcounter.com/" target="_blank">GoatCounter</a> (stats)</li>
-          <li><a href="https://www.kirilv.com/canvas-confetti/" target="_blank">Canvas Confetti</a> (victoire)</li>
+        </ul>
+      </div>
+      <div class="bloc">
+        <h4>Crédits</h4>
+        <ul>
+          <li><a href="https://twitter.com/powerlanguish"
+            target="_blank"
+            title="@powerlanguish">Josh Wardle</a>, créateur de Wordle</li>
+          <li><a href="https://twitter.com/irihapeta"
+            target="_blank"
+            title="@irihapeta">Elizabeth S</a>, inventrice de la grille Wordle</li>
         </ul>
       </div>
       <p class="note">
-        LaBEE est inspiré de <a href="https://www.nytimes.com/puzzles/spelling-bee">Spelling Bee</a> en français.
+        LeMOT est une adaptation de <a href="https://www.nytimes.com/games/wordle/">WORDLE</a> en français.
       </p>
       <div id="puzzle" class="footnote"></div>
     </div>
 
+    <div class="popup resultats">
+      <div class="header">
+        <h2>Résultat</h2>
+        <div class="icone ferme">
+          <svg><use href="#icone-ferme"></use></svg>
+        </div>
+      </div>
+      <h3>Bravo !</h3>
+      <p style="margin: 0">
+        <textarea></textarea>
+      </p>
+      <p style="margin-top: -1em">
+        <button class="correct">
+          PARTAGER
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+            <path d="M13 0H6a2 2 0 0 0-2 2 2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 13V4a2 2 0 0 0-2-2H5a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1zM3 4a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z"/>
+          </svg>
+        </button>
+      </p>
+      <p class="note">
+        PARTAGER copie la grille dans le presse-papiers, pour la coller dans
+        Twitter, Facebook... et informer vos amis de vos progrès.
+      </p>
+      <p class="goto" style="padding: 7px">
+        <a href="/lemot/" class="goto-1">LeMOT<span>Wordle<br>français</span></a>
+        <a href="/lemot6/" class="goto-2">LeMOT6<span>Wordle<br>6 lettres</span></a>
+        <a href="/labog/" class="goto-3">LaBOG<span>Mini Mots<br>Cachés</span></a>
+        <a href="/labee/" class="goto-4">LaBEE<span>Spelling Bee<br>français</span></a>
+      </p>
+      <p>A demain 🕛 UTC pour un nouveau LeMOT !</p>
+      <div style="max-height: 75px">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- solitaire -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-5475403929650645"
+             data-ad-slot="2876021655"
+             data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+    </div>
   </div>
 
   <div class="popup">
@@ -239,15 +265,20 @@
         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
         <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
       </symbol>
+      <symbol id="icone-lien" viewBox="0 0 16 16">
+        <path d="M8.111 7.863c-.92 0-1.564.65-1.564 1.576 0 1.032.703 1.635 1.558 1.635.868 0 1.553-.533 1.553-1.629 0-1.06-.744-1.582-1.547-1.582Z"/>
+        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2Zm6.21 3.855c1.612 0 2.515.99 2.573 1.899H9.494c-.1-.358-.51-.815-1.312-.815-1.078 0-1.817 1.09-1.805 3.036h.082c.229-.545.855-1.155 1.98-1.155 1.254 0 2.508.88 2.508 2.555 0 1.77-1.218 2.783-2.847 2.783-.932 0-1.84-.328-2.409-1.254-.369-.603-.597-1.459-.597-2.642 0-3.012 1.248-4.407 3.117-4.407Z"/>
+      </symbol>
+      <symbol id="icone-conseil" viewBox="0 0 16 16">
+        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm6.43-5.228a7.025 7.025 0 0 1-3.658 3.658l-1.115-2.788a4.015 4.015 0 0 0 1.985-1.985l2.788 1.115zM5.228 14.43a7.025 7.025 0 0 1-3.658-3.658l2.788-1.115a4.015 4.015 0 0 0 1.985 1.985L5.228 14.43zm9.202-9.202-2.788 1.115a4.015 4.015 0 0 0-1.985-1.985l1.115-2.788a7.025 7.025 0 0 1 3.658 3.658zm-8.087-.87a4.015 4.015 0 0 0-1.985 1.985L1.57 5.228A7.025 7.025 0 0 1 5.228 1.57l1.115 2.788zM8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+      </symbol>
       <symbol id="icone-outils" viewBox="0 0 16 16">
         <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
         <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
       </symbol>
       <symbol id="icone-ferme" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M 3.734375 2.132812 C 3.597656 2.132812 3.460938 2.183594 3.355469 2.289062 L 2.289062 3.355469 C 2.082031 3.566406 2.082031 3.902344 2.289062 4.109375 L 6.179688 8 L 2.289062 11.890625 C 2.082031 12.097656 2.082031 12.4375 2.289062 12.644531 L 3.355469 13.710938 C 3.566406 13.917969 3.902344 13.917969 4.109375 13.710938 L 8 9.820312 L 11.890625 13.710938 C 12.097656 13.917969 12.4375 13.917969 12.644531 13.710938 L 13.710938 12.644531 C 13.917969 12.433594 13.917969 12.097656 13.710938 11.890625 L 9.820312 8 L 13.710938 4.109375 C 13.917969 3.902344 13.917969 3.5625 13.710938 3.355469 L 12.644531 2.289062 C 12.433594 2.082031 12.097656 2.082031 11.890625 2.289062 L 8 6.179688 L 4.109375 2.289062 C 4.007812 2.183594 3.871094 2.132812 3.734375 2.132812 Z M 3.734375 2.132812 "/>
-      </symbol>
-      <symbol id="icone-fleur" viewBox="0 0 16 16">
-        <path d="M11.424 8c.437-.052.811-.136 1.04-.268a2 2 0 0 0-2-3.464c-.229.132-.489.414-.752.767C9.886 4.63 10 4.264 10 4a2 2 0 1 0-4 0c0 .264.114.63.288 1.035-.263-.353-.523-.635-.752-.767a2 2 0 0 0-2 3.464c.229.132.603.216 1.04.268-.437.052-.811.136-1.04.268a2 2 0 1 0 2 3.464c.229-.132.489-.414.752-.767C6.114 11.37 6 11.736 6 12a2 2 0 1 0 4 0c0-.264-.114-.63-.288-1.035.263.353.523.635.752.767a2 2 0 1 0 2-3.464c-.229-.132-.603-.216-1.04-.268zM9 4a1.468 1.468 0 0 1-.045.205c-.039.132-.1.295-.183.484a12.88 12.88 0 0 1-.637 1.223L8 6.142a21.73 21.73 0 0 1-.135-.23 12.88 12.88 0 0 1-.637-1.223 4.216 4.216 0 0 1-.183-.484A1.473 1.473 0 0 1 7 4a1 1 0 1 1 2 0zM3.67 5.5a1 1 0 0 1 1.366-.366 1.472 1.472 0 0 1 .156.142c.094.1.204.233.326.4.245.333.502.747.742 1.163l.13.232a21.86 21.86 0 0 1-.265.002 12.88 12.88 0 0 1-1.379-.06 4.214 4.214 0 0 1-.51-.083 1.47 1.47 0 0 1-.2-.064A1 1 0 0 1 3.67 5.5zm1.366 5.366a1 1 0 0 1-1-1.732c.001 0 .016-.008.047-.02.037-.013.087-.028.153-.044.134-.032.305-.06.51-.083a12.88 12.88 0 0 1 1.379-.06c.09 0 .178 0 .266.002a21.82 21.82 0 0 1-.131.232c-.24.416-.497.83-.742 1.163a4.1 4.1 0 0 1-.327.4 1.483 1.483 0 0 1-.155.142zM9 12a1 1 0 0 1-2 0 1.476 1.476 0 0 1 .045-.206c.039-.131.1-.294.183-.483.166-.378.396-.808.637-1.223L8 9.858l.135.23c.241.415.47.845.637 1.223.083.19.144.352.183.484A1.338 1.338 0 0 1 9 12zm3.33-6.5a1 1 0 0 1-.366 1.366 1.478 1.478 0 0 1-.2.064c-.134.032-.305.06-.51.083-.412.045-.898.061-1.379.06-.09 0-.178 0-.266-.002l.131-.232c.24-.416.497-.83.742-1.163a4.1 4.1 0 0 1 .327-.4c.046-.05.085-.086.114-.11.026-.022.04-.03.041-.032a1 1 0 0 1 1.366.366zm-1.366 5.366a1.494 1.494 0 0 1-.155-.141 4.225 4.225 0 0 1-.327-.4A12.88 12.88 0 0 1 9.74 9.16a22 22 0 0 1-.13-.232l.265-.002c.48-.001.967.015 1.379.06.205.023.376.051.51.083.066.016.116.031.153.044l.048.02a1 1 0 1 1-1 1.732zM8 9a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+        <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+        <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
       </symbol>
       <symbol id="touche-enter" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
@@ -256,22 +287,11 @@
         <path d="M5.83 5.146a.5.5 0 0 0 0 .708L7.975 8l-2.147 2.146a.5.5 0 0 0 .707.708l2.147-2.147 2.146 2.147a.5.5 0 0 0 .707-.708L9.39 8l2.146-2.146a.5.5 0 0 0-.707-.708L8.683 7.293 6.536 5.146a.5.5 0 0 0-.707 0z"/>
         <path d="M13.683 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-7.08a2 2 0 0 1-1.519-.698L.241 8.65a1 1 0 0 1 0-1.302L5.084 1.7A2 2 0 0 1 6.603 1h7.08zm-7.08 1a1 1 0 0 0-.76.35L1 8l4.844 5.65a1 1 0 0 0 .759.35h7.08a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1h-7.08z"/>
       </symbol>
-      <symbol id="touche-lightbulb" viewBox="0 0 16 16">
-        <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z"/>
-      </symbol>
-      <symbol id="touche-shuffle" viewBox="0 0 16 16">
-        <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
-        <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
-      </symbol>
     </svg>
   </div>
 
-  <script>
-    Math.floor(document.getElementById("keyboard").getBoundingClientRect().bottom) > window.innerHeight && document.documentElement.classList.add("fix100");
-  </script>
-  <script src="demo.min.js"></script>
+  <script src="lemot.min.js"></script>
   <script data-goatcounter="https://lemot.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-  <script src="confetti.browser.min.js"></script>
 
 </body>
 
