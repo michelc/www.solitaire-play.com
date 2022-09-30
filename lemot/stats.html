@@ -181,7 +181,7 @@
       const cent = pourcentages.reduce((partialSum, a) => partialSum + a, 0);
       if (cent !== 100) {
         var last = labee || labog ? pourcentages.length - 2 : pourcentages.length - 1;
-        pourcentages[last] = 100 - (sum - pourcentages[last]);
+        pourcentages[last] = 100 - (cent - pourcentages[last]);
       }
       const maximum = Math.max(...pourcentages);
       // Génère 1 carré pour chaque 4%
