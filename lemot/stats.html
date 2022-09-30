@@ -53,8 +53,14 @@
     const $resultats = document.querySelector("#resultats");
     const $excel = document.querySelector("#excel");
     let sauvegarde = "";
-    $resultats.addEventListener("paste", Nettoyage, false);
+    //$resultats.addEventListener("paste", Nettoyage, false);
     $calculer.addEventListener("click", Statistiques, false);
+
+    $resultats.addEventListener("paste", (event) => {
+      let pasted = (event.clipboardData || window.clipboardData).getData("text");
+      GotoSource(pasted);
+      setTimeout(function() { Nettoyage2(); }, 0)
+    });
 
     const NIVOS = [
       "C'est parti",
@@ -70,6 +76,7 @@
     ];
 
     function Nettoyage() {
+      GotoSource();
       setTimeout(function() { Nettoyage2(); }, 0)
     }
 
@@ -79,6 +86,23 @@
       contenu = contenu.replaceAll("(pas de titre) \t\n", "");
       contenu = contenu.replaceAll("(pas de titre)", "");
       $resultats.value = contenu;
+      $calculer.click();
+    }
+
+    function GotoSource(pasted) {
+      // Si on est déjà sur la "page" source on y reste
+      if ($calculer.textContent === "GENERER") return;
+      // Sinon on récupère le contenu actuel
+      const contenu = $resultats.value.trim();
+      // Revient aux données sources quand statistiques sont déjà affichées
+      if (pasted) {
+        $resultats.value = "";
+      }
+      else if (contenu.includes("🟧") || contenu.includes("🟠") || contenu.includes("🟦") || contenu.includes("🔵")) {
+        $resultats.value = sauvegarde;
+      }
+      // Repasse en mode "page" source
+      $calculer.textContent = "GENERER";
     }
 
     function Statistiques() {
@@ -153,6 +177,12 @@
       console.log(resultats.join(","));
       // Calcule le pourcentage de chaque résultat par rapport au nombre de parties terminées
       const pourcentages = resultats.map(x => Math.round(x * 100 / total));
+      if (pourcentages.length === 8) pourcentages[0] = 0; // total dans le cas des LeMOT
+      const cent = pourcentages.reduce((partialSum, a) => partialSum + a, 0);
+      if (cent !== 100) {
+        var last = labee || labog ? pourcentages.length - 2 : pourcentages.length - 1;
+        pourcentages[last] = 100 - (sum - pourcentages[last]);
+      }
       const maximum = Math.max(...pourcentages);
       // Génère 1 carré pour chaque 4%
       let bloc = lemot6 ? "🟠" : "🟧";
