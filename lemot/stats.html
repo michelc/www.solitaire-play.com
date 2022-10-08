@@ -58,6 +58,7 @@
 
     $resultats.addEventListener("paste", (event) => {
       let pasted = (event.clipboardData || window.clipboardData).getData("text");
+      if (pasted.length < 10) return;
       GotoSource(pasted);
       setTimeout(function() { Nettoyage2(); }, 0)
     });
@@ -193,8 +194,6 @@
                    : pourcentages.map(x => bloc.repeat(Math.round(x / 4)));
       // Retrouve le numéro du puzzle correspondant aux stats
       let puzzle = stats[0][2];
-      // Emplacement pour le mot à découvrir de la veille
-      let reponse = " #XXXXXXXXXXXXX";
       // Génère les statistiques
       let statistiques = `LeMOT #${puzzle} - ${jouees} parties jouées\n`;
       if (lemot6) statistiques = statistiques.replace("LeMOT", "LeMOT6");
@@ -203,7 +202,6 @@
         statistiques = statistiques.replace(" #0", "");
         statistiques = statistiques.replace(" - ", " 🌻 ");
         statistiques = statistiques.replace(" jouées", "");
-        reponse = "";
         for (let i = 0; i < 9; i++) {
           if (i === 8)
             carres[i] = carres[i].replaceAll("🟦", "🟧");
@@ -217,7 +215,6 @@
         statistiques = statistiques.replace("LeMOT", "#LaBOG");
         statistiques = statistiques.replace(" #0", "");
         statistiques = statistiques.replace(" jouées", "");
-        reponse = "";
         for (let i = 0; i < 9; i++) {
           if (i === 8)
             carres[i] = carres[i].replaceAll("🔵", "🟠");
@@ -232,13 +229,8 @@
           const essais = i < 7 ? i : "X";
           statistiques += `\n${essais}: ${carres[i]} ${pourcentages[i]}%`;
         }
-        statistiques += "\n\n#XXXXXXXXXXXXX";
+        statistiques += "\n\n" + "#"; // début hashtag avec réponse de la veille...
       }
-      /*
-      statistiques += `\n\n#LeMotStats #LeMotLeJeu${reponse}`;
-      const url = "https://www.goatcounter.com/ +🖐️";
-      statistiques += `\n\n${url}`;
-      */
       // Affiche et logue les statistiques
       $resultats.value = statistiques;
       console.log(statistiques);
@@ -266,13 +258,10 @@
     function GetPuzzleBog() {
       const today = new Date();
       const check = today.toISOString().substring(0, 10);
-      if (check > "2022-10-07") return 21;   // Mercredi
-      if (check > "2022-10-05") return 20;   // Mercredi
-      if (check > "2022-10-03") return 19;   // Lundi
-      if (check > "2022-09-30") return 18;   // Vendredi
-      if (check > "2022-09-28") return 17;   // Mercredi
-      if (check > "2022-09-26") return 16;   // Mercredi
-      return 15;
+      if (check > "2022-10-14") return 24;   // Vendredi
+      if (check > "2022-10-12") return 23;   // Mercredi
+      if (check > "2022-10-10") return 22;   // Lundi
+      return 21;
     }
 
     function GetLink(puzzle) {
