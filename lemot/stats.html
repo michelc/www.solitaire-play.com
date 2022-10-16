@@ -258,13 +258,15 @@
     function GetPuzzleBog() {
       const today = new Date();
       const check = today.toISOString().substring(0, 10);
+      if (check > "2022-11-01") return 32;   // Mardi 01/11 = quotidien
+      if (check > "2022-10-31") return 31;   // Lundi 31/10 = Halloween
+      if (check > "2022-10-28") return 30;   // Vendredi
+      if (check > "2022-10-26") return 29;   // Mercredi
+      if (check > "2022-10-24") return 28;   // Lundi
       if (check > "2022-10-21") return 27;   // Vendredi
       if (check > "2022-10-19") return 26;   // Mercredi
       if (check > "2022-10-17") return 25;   // Lundi
-      if (check > "2022-10-14") return 24;   // Vendredi
-      if (check > "2022-10-12") return 23;   // Mercredi
-      if (check > "2022-10-10") return 22;   // Lundi
-      return 21;
+      return 24;
     }
 
     function GetLink(puzzle) {
