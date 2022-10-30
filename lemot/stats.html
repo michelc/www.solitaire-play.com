@@ -44,9 +44,9 @@
 
   <script>
     const $links = document.querySelector("#links");
-    $links.innerHTML = `<a target='_blank' href="${GetLink(GetPuzzle() - 1 - 56)}">MOT6</a> / `
-                     + `<a target='_blank' href="${GetLink(GetPuzzle() - 1)}">MOT</a> / `
-                     + `<a target='_blank' href="${GetLink("labog-" + GetPuzzleBog())}">BOG</a> / `
+    $links.innerHTML = `<a target='_blank' href="${GetLink("lemot6-" + (GetPuzzle() - 1 - 56))}">MOT6</a> / `
+                     + `<a target='_blank' href="${GetLink("puzzle-" + (GetPuzzle() - 1))}">MOT</a> / `
+                     + `<a target='_blank' href="${GetLink("labog-" + (GetPuzzleBog() - 1))}">BOG</a> / `
                      + `<a target='_blank' href="${GetLink("fleur-" + GetPuzzleBee())}">BEE</a>`;
 
     const $calculer = document.querySelector("#calculer");
@@ -249,30 +249,22 @@
 
     function GetPuzzleBee() {
       const today = new Date();
-      const debut = new Date(Date.UTC(2022, 3, 16));
+      const debut = new Date(Date.UTC(2022, 3, 17)); // en vrai: const debut = new Date(Date.UTC(2022, 3, 16));
       const jour = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()));
       const difference = jour.getTime() - debut.getTime();
       return Math.ceil(difference / 1000 / 60 / 60 / 24 / 14);
     }
 
     function GetPuzzleBog() {
-      const today = new Date();
-      const check = today.toISOString().substring(0, 10);
-      if (check > "2022-11-01") return 32;   // Mardi 01/11 = quotidien
-      if (check > "2022-10-31") return 31;   // Lundi 31/10 = Halloween
-      if (check > "2022-10-28") return 30;   // Vendredi
-      if (check > "2022-10-26") return 29;   // Mercredi
-      if (check > "2022-10-24") return 28;   // Lundi
-      if (check > "2022-10-21") return 27;   // Vendredi
-      if (check > "2022-10-19") return 26;   // Mercredi
-      if (check > "2022-10-17") return 25;   // Lundi
-      return 24;
+      const debut = new Date(Date.UTC(2022, 9, 1)); // 1er octobre 2022 => 30 octobre = 30ème partie !
+      const jour = new Date(Date.now());
+      const difference = jour.getTime() - debut.getTime();
+      return Math.ceil(difference / 1000 / 60 / 60 / 24);
     }
 
     function GetLink(puzzle) {
       if (!("" + puzzle).startsWith("fleur"))
-        if (!("" + puzzle).startsWith("labog"))
-          return `https://lemot.goatcounter.com/?hl-period=week&filter=${puzzle}&daily=off`;
+        return `https://lemot.goatcounter.com/?hl-period=week&filter=${puzzle}&daily=off`;
       let du = new Date();
       du.setDate(du.getDate() - 20);
       let au = new Date();
