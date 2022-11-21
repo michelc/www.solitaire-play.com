@@ -195,10 +195,10 @@
       // Retrouve le numéro du puzzle correspondant aux stats
       let puzzle = stats[0][2];
       // Génère les statistiques
-      let statistiques = `LeMOT #${puzzle} - ${jouees} parties jouées\n`;
+      let statistiques = `#LeMOT #${puzzle} - ${jouees} parties jouées\n`;
       if (lemot6) statistiques = statistiques.replace("LeMOT", "LeMOT6");
       if (labee) {
-        statistiques = statistiques.replace("LeMOT", "#LaBEE");
+        statistiques = statistiques.replace("#LeMOT", "#LaBEE");
         statistiques = statistiques.replace(" #0", "");
         statistiques = statistiques.replace(" - ", " 🌻 ");
         statistiques = statistiques.replace(" jouées", "");
@@ -212,7 +212,7 @@
         else if (extras > 0)
           statistiques += "\n🐝";
       } else if (labog) {
-        statistiques = statistiques.replace("LeMOT", "#LaBOG");
+        statistiques = statistiques.replace("#LeMOT", "#LaBOG");
         statistiques = statistiques.replace(" #0", "");
         statistiques = statistiques.replace(" jouées", "");
         for (let i = 0; i < 9; i++) {
