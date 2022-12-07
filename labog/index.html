@@ -39,7 +39,9 @@
         <span class="icone aide">
           <svg><use href="#icone-aide"></use></svg>&nbsp;
         </span>
-        <span><svg></svg></span>
+        <span class="icone info">
+          <svg><use href="#icone-info"></use></svg>
+        </span>
       </div>
       <h1><a href="/labog/" title="Boggle en français">LaBOG</a></h1>
       <div>
@@ -126,30 +128,82 @@
           <svg><use href="#icone-ferme"></use></svg>
         </div>
       </div>
+      <p>
+        Comme Boggle, le but du jeu est de trouver un maximum de mots à partir
+        des 16 lettres présentes sur la grille.
+      </p>
       <div class="bloc">
         <h4>Règle du jeu</h4>
         <ul>
-          <li>16 lettres au départ (comme Boggle)</li>
-          <li>%% mots de 4 à 9 lettres à l'arrivée</li>
-          <li>Uniquement des lettres adjacentes (horizontalement, verticalement, ou diagonalement)</li>
-          <li>Faut pas repasser sur une lettre déjà utilisée</li>
+          <li>
+            Les cases utilisées pour former un mot doivent se toucher, que ce
+            soit horizontalement, verticalement ou en diagonale.
+          </li>
+          <li>
+            Chaque case ne peut servir qu'une fois.
+          </li>
+          <li>
+            Les mots trouvés doivent faire au moins 4 lettres.
+          </li>
         </ul>
       </div>
       <div class="bloc">
-        <h4>Niveaux</h4>
-        %%
+        <h4>Calcul des points</h4>
+        <ul>
+          <li>
+            Un mot de 4 lettres vaut 1 point.
+          </li>
+          <li>
+            Les mots plus longs rapportent 1 point par lettre.
+          </li>
+        </ul>
       </div>
       <div class="bloc">
         <h4>Mots acceptés</h4>
         <ul>
-          <li>Ils proviennent uniquement de Grammalecte</li>
-          <li>Il n'y a ni vérification ni relecture...</li>
-          <li>Infinitifs et participes ok (pas de conjugaisons)</li>
+          <li>
+            Les mots jouables sont tirés de Grammalecte. Cette liste est reprise
+            telle quelle et elle n'est ni vérifiée, ni révisée, ni complétée.
+          </li>
+          <li>
+            Les verbes sont acceptés à l'infinitif, au participe passé et au
+            participe présent. Les autres formes sont refusées.
+          </li>
+          <li>
+            Les noms propres ne sont pas autorisés.
+          </li>
         </ul>
-        <p class="note">
-          Une nouvelle partie chaque jour à minuit UTC !
-        </p>
       </div>
+    </div>
+
+    <div class="popup informations">
+      <div class="header">
+        <h2>Informations</h2>
+        <div class="icone ferme">
+          <svg><use href="#icone-ferme"></use></svg>
+        </div>
+      </div>
+      <div class="bloc">
+        <h4>#LaBOG %%</h4>
+        <ul>
+          <li>Nombre de mots acceptés : %%</li>
+          <li>Total des points possibles : %%</li>
+          <li>Twitter : <a href="https://twitter.com/LeMotLeJeu" target="_blank" title="@LeMotLeJeu">@LeMotLeJeu</a></li>
+          <li>Mastodon : <a href="https://mastodon.top/@LeMotLeJeu" target="_blank" title="@LeMotLeJeu">@LeMotLeJeu@mastodon.top</a></li>
+        </ul>
+      </div>
+      <div class="bloc">
+        <h4>Niveaux</h4>
+        <p>
+          Ils dépendent des points obtenus. Chaque niveau correspond à
+          un pourcentage des points possibles :
+        </p>
+        %%
+      </div>
+      <p class="note">
+        Une nouvelle partie est disponible chaque jour à minuit UTC et dure
+        une journée entière.
+      </p>
     </div>
 
     <div class="popup solutions">
@@ -222,6 +276,10 @@
       <symbol id="icone-aide" viewBox="0 0 16 16">
         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
         <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
+      </symbol>
+      <symbol id="icone-info" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+        <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
       </symbol>
       <symbol id="icone-hier" viewBox="0 0 16 16">
         <path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2z"/>
