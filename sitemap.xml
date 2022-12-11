@@ -98,25 +98,25 @@
   </url>
   <url>
     <loc>https://www.solitaire-play.com/lemot/</loc>
-    <lastmod>2022-12-07</lastmod>
+    <lastmod>2022-12-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.solitaire-play.com/lemot6/</loc>
-    <lastmod>2022-12-07</lastmod>
+    <lastmod>2022-12-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.solitaire-play.com/labee/</loc>
-    <lastmod>2022-12-07</lastmod>
-    <changefreq>daily</changefreq>
+    <lastmod>2022-12-11</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.solitaire-play.com/labog/</loc>
-    <lastmod>2022-12-07</lastmod>
+    <lastmod>2022-12-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -134,7 +134,7 @@
   </url>
   <url>
     <loc>https://www.solitaire-play.com/blog/</loc>
-    <lastmod>2022-11-27</lastmod>
+    <lastmod>2022-12-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -327,6 +327,12 @@
   <url>
     <loc>https://www.solitaire-play.com/blog/labee-17-g-adnort.html</loc>
     <lastmod>2022-11-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.solitaire-play.com/blog/labee-18-l-aejotv.html</loc>
+    <lastmod>2022-12-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
