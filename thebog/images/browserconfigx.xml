@@ -2,7 +2,7 @@
 <browserconfig>
     <msapplication>
         <tile>
-            <square150x150logo src="/lemot/images/mstile-150x150.png"/>
+            <square150x150logo src="/lemotlejeu/images/mstile-150x150.png"/>
             <TileColor>#ffb000</TileColor>
         </tile>
     </msapplication>
