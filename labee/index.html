@@ -36,20 +36,14 @@
 
     <header>
       <div>
-        <span class="icone aide">
-          <svg><use href="#icone-aide"></use></svg>&nbsp;
-        </span>
-        <span class="icone info">
-          <svg><use href="#icone-info"></use></svg>
+        <span class="icone menu">
+          <svg><use href="#icone-menu"></use></svg>&nbsp;
         </span>
       </div>
       <h1><a href="/labee/" title="Spelling Bee en français">LaBEE</a></h1>
       <div>
-        <span class="icone puzzle">
-          <svg><use href="#icone-puzzle"></use></svg>&nbsp;
-        </span>
-        <span class="icone outils">
-          <svg><use href="#icone-outils"></use></svg>
+        <span class="icone partage">
+          <svg><use href="#icone-partage"></use></svg>
         </span>
       </div>
     </header>
@@ -118,7 +112,44 @@
       </p>
     </div>
 
-    <div class="popup instructions">
+    <div class="popup" id="menu">
+      <div class="header">
+        <h2>Menu</h2>
+        <div class="icone ferme">
+          <svg><use href="#icone-ferme"></use></svg>
+        </div>
+      </div>
+      <div class="bloc">
+        <br>
+        <menu>
+          <li><a class="instructions"><b>Comment jouer ?</b> <span>(la règle du jeu)</span></a></li>
+          <li><a class="informations"><b>Informations</b> <span>(sur la partie en cours)</span></a></li>
+          <li><a class="archives"><b>Archives</b> <span>(des parties précédentes)</span></a></li>
+        </menu>
+      </div>
+      <div class="bloc">
+        <h4>Tous les jeux</h4>
+        <menu>
+          <li><a href="/lemot/"><b>LeMOT</b> <span>(Wordle en français)</span></a></li>
+          <li><a href="/lemot6/"><b>LeMOT6</b> <span>(Wordle en 6 lettres)</span></a></li>
+          <li><a href="/labee/"><b>LaBEE</b> <span>(Spelling Bee en français)</span></a></li>
+          <li><a href="/labog/"><b>LaBOG</b> <span>(Boggle en français)</span></a></li>
+          <li><a href="/thebog/"><b>TheBOG</b> <span>(Boggle every<s>day</s>week)</span></a></li>
+        </menu>
+      </div>
+      <div class="bloc">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="https://icons.getbootstrap.com/" target="_blank">Bootstrap</a> (icones)</li>
+          <li><a href="http://www.lexique.org/shiny/openlexicon/" target="_blank">Open Lexicon</a> et
+              <a href="https://twitter.com/Grammalecte" target="_blank">Grammalecte</a> (mots)</li>
+          <li><a href="https://www.goatcounter.com/" target="_blank">GoatCounter</a> (stats)</li>
+          <li><a href="https://www.kirilv.com/canvas-confetti/" target="_blank">Canvas Confetti</a> (victoire)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="popup" id="instructions">
       <div class="header">
         <h2>Comment jouer ?</h2>
         <div class="icone ferme">
@@ -157,7 +188,7 @@
       </p>
     </div>
 
-    <div class="popup archives">
+    <div class="popup" id="archives">
       <div class="header">
         <h2>Archives</h2>
         <div class="icone ferme">
@@ -172,14 +203,14 @@
       </div>
       <div class="note">
         <p>
-          Puis utiliser l'icone "info" pour obtenir des informations sur
+          Puis utiliser "Menu + Informations" pour obtenir des informations sur
           la partie en cours et le lien vers le blog, avec la grille qui donne
           la répartition des mots par initiale et nombre de lettres.
         </p>
       </div>
     </div>
 
-    <div class="popup informations">
+    <div class="popup" id="informations">
       <div class="header">
         <h2>Informations</h2>
         <div class="icone ferme">
@@ -207,7 +238,7 @@
         %%
       </div>
       <div class="bloc">
-        <h4>P.S.</h4>
+        <h4>Commentaires</h4>
         <ul>
           <li>Mastodon : <a href="https://mastodon.top/@LeMotLeJeu" target="_blank" title="@LeMotLeJeu">@LeMotLeJeu@mastodon.top</a></li>
           <li>Twitter : <a href="https://twitter.com/LeMotLeJeu" target="_blank" title="@LeMotLeJeu">@LeMotLeJeu</a></li>
@@ -215,9 +246,9 @@
       </div>
     </div>
 
-    <div class="popup parametres">
+    <div class="popup" id="partage">
       <div class="header">
-        <h2>Outils</h2>
+        <h2>Résultat</h2>
         <div class="icone ferme">
           <svg><use href="#icone-ferme"></use></svg>
         </div>
@@ -243,50 +274,33 @@
         <p class="note">
           PARTAGER copie la grille dans le presse-papiers, pour la coller dans
           Twitter, Facebook, WhatsApp... et informer vos amis de votre résultat.
-          </p>
-        <p class="goto">
-          <a href="/lemot/" title="WORDLE en français" class="goto-1">LeMOT<span>Wordle<br>français</span></a>
-          <a href="/lemot6/" title="WORDLE en 6 lettres" class="goto-2">LeMOT6<span>Wordle<br>6 lettres</span></a>
-          <a href="/labog/" title="BOGGLE en français" class="goto-3">LaBOG<span>Boggle<br>français</span></a>
-          <a href="/labee/" title="Spelling Bee en français" class="goto-4">LaBEE<span>Spelling Bee<br>français</span></a>
         </p>
       </div>
       <div class="bloc">
-        <h4>Ressources</h4>
-        <ul>
-          <li><a href="https://icons.getbootstrap.com/" target="_blank">Bootstrap</a> (icones)</li>
-          <li><a href="http://www.lexique.org/shiny/openlexicon/" target="_blank">Open Lexicon</a> et
-              <a href="https://twitter.com/Grammalecte" target="_blank">Grammalecte</a> (mots)</li>
-          <li><a href="https://www.goatcounter.com/" target="_blank">GoatCounter</a> (stats)</li>
-          <li><a href="https://www.kirilv.com/canvas-confetti/" target="_blank">Canvas Confetti</a> (victoire)</li>
-        </ul>
+        <menu>
+          <li><a href="/lemot/"><b>LeMOT</b> <span>(Wordle en français)</span></a></li>
+          <li><a href="/lemot6/"><b>LeMOT6</b> <span>(Wordle en 6 lettres)</span></a></li>
+          <li><a href="/labee/"><b>LaBEE</b> <span>(Spelling Bee en français)</span></a></li>
+          <li><a href="/labog/"><b>LaBOG</b> <span>(Boggle en français)</span></a></li>
+          <li><a href="/thebog/"><b>TheBOG</b> <span>(Boggle every<s>day</s>week)</span></a></li>
+        </menu>
       </div>
-      <p class="note">
-        LaBEE est inspiré de <a href="https://www.nytimes.com/puzzles/spelling-bee">Spelling Bee</a> en français.
-      </p>
     </div>
 
   </div>
 
   <div class="popup">
     <svg>
-      <symbol id="icone-aide" viewBox="0 0 16 16">
-        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-        <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
+      <symbol id="icone-menu" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
       </symbol>
-      <symbol id="icone-info" viewBox="0 0 16 16">
-        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-        <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
-      </symbol>
-      <symbol id="icone-puzzle" viewBox="0 0 16 16">
-        <path d="M3.112 3.645A1.5 1.5 0 0 1 4.605 2H7a.5.5 0 0 1 .5.5v.382c0 .696-.497 1.182-.872 1.469a.459.459 0 0 0-.115.118.113.113 0 0 0-.012.025L6.5 4.5v.003l.003.01c.004.01.014.028.036.053a.86.86 0 0 0 .27.194C7.09 4.9 7.51 5 8 5c.492 0 .912-.1 1.19-.24a.86.86 0 0 0 .271-.194.213.213 0 0 0 .036-.054l.003-.01v-.008a.112.112 0 0 0-.012-.025.459.459 0 0 0-.115-.118c-.375-.287-.872-.773-.872-1.469V2.5A.5.5 0 0 1 9 2h2.395a1.5 1.5 0 0 1 1.493 1.645L12.645 6.5h.237c.195 0 .42-.147.675-.48.21-.274.528-.52.943-.52.568 0 .947.447 1.154.862C15.877 6.807 16 7.387 16 8s-.123 1.193-.346 1.638c-.207.415-.586.862-1.154.862-.415 0-.733-.246-.943-.52-.255-.333-.48-.48-.675-.48h-.237l.243 2.855A1.5 1.5 0 0 1 11.395 14H9a.5.5 0 0 1-.5-.5v-.382c0-.696.497-1.182.872-1.469a.459.459 0 0 0 .115-.118.113.113 0 0 0 .012-.025L9.5 11.5v-.003l-.003-.01a.214.214 0 0 0-.036-.053.859.859 0 0 0-.27-.194C8.91 11.1 8.49 11 8 11c-.491 0-.912.1-1.19.24a.859.859 0 0 0-.271.194.214.214 0 0 0-.036.054l-.003.01v.002l.001.006a.113.113 0 0 0 .012.025c.016.027.05.068.115.118.375.287.872.773.872 1.469v.382a.5.5 0 0 1-.5.5H4.605a1.5 1.5 0 0 1-1.493-1.645L3.356 9.5h-.238c-.195 0-.42.147-.675.48-.21.274-.528.52-.943.52-.568 0-.947-.447-1.154-.862C.123 9.193 0 8.613 0 8s.123-1.193.346-1.638C.553 5.947.932 5.5 1.5 5.5c.415 0 .733.246.943.52.255.333.48.48.675.48h.238l-.244-2.855z"/>
-      </symbol>
-      <symbol id="icone-outils" viewBox="0 0 16 16">
-        <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
-        <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+      <symbol id="icone-partage" viewBox="0 0 16 16">
+        <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+        <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z"/>
       </symbol>
       <symbol id="icone-ferme" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M 3.734375 2.132812 C 3.597656 2.132812 3.460938 2.183594 3.355469 2.289062 L 2.289062 3.355469 C 2.082031 3.566406 2.082031 3.902344 2.289062 4.109375 L 6.179688 8 L 2.289062 11.890625 C 2.082031 12.097656 2.082031 12.4375 2.289062 12.644531 L 3.355469 13.710938 C 3.566406 13.917969 3.902344 13.917969 4.109375 13.710938 L 8 9.820312 L 11.890625 13.710938 C 12.097656 13.917969 12.4375 13.917969 12.644531 13.710938 L 13.710938 12.644531 C 13.917969 12.433594 13.917969 12.097656 13.710938 11.890625 L 9.820312 8 L 13.710938 4.109375 C 13.917969 3.902344 13.917969 3.5625 13.710938 3.355469 L 12.644531 2.289062 C 12.433594 2.082031 12.097656 2.082031 11.890625 2.289062 L 8 6.179688 L 4.109375 2.289062 C 4.007812 2.183594 3.871094 2.132812 3.734375 2.132812 Z M 3.734375 2.132812 "/>
+        <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+        <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
       </symbol>
       <symbol id="touche-enter" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
