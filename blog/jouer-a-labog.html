@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Solitaire / Jouer à LaBOG</title>
+    <meta name="description" content="Comment jouer à LaBOG, un jeu de mots quotidien inspiré de Boggle">
+    <meta name="keywords" content="Boggle, Ruzzle, Word Hunt, Word Blitz, Mots cachés, Français, Scrabble, Wordle, Jeu, Puzzle, Vocabulaire, Dictionnaire, Mot, Mots, Croisés, Fléchés, Mélés, Deviner, Découvrir, France, Français, Gratuit, Jouer, HTML5, JS, JavaScript">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="../css/solitaire.min.css">
+    <style>
+      .play { text-align: center; }
+      @media (max-width: 24rem) { .play > img { height: 100%; width: 100%; padding: 0 30px; } }
+    </style>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+    <script>if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"michelc@gmail.com ",utcoffset:"1"}))};sessionStorage.setItem("_swa","1");</script>
+  </head>
+
+  <body class="blog">
+
+    <div class="container">
+
+      <div class="row">
+
+        <h1>
+          <a href="/" title="Play Solitaire online">Solitaire</a>
+          / Jouer à LaBOG
+        </h1>
+
+        <p>
+          <a href="/labog/">LaBOG</a> est un jeu de mots quotidien inspiré de
+          Boggle qui se joue à partir d'une grille de 16 lettres disposées sur
+          un plateau de 4 cases sur 4.
+        </p>
+
+        <p class="play">
+          <img src="../img/labog-grille.png" title="LaBOG : grille de départ" alt="" />
+        </p>
+
+        <h2>Présentation et but du jeu</h2>
+
+        <p>
+          L'objectif de LaBOG est de trouver le maximum de mots possibles, en
+          reliant les cases adjacentes du plateau, soit horizontalement, soit
+          verticalement, soit en diagonale.
+        </p>
+
+        <p>
+          Au début de la partie, 16 lettres sont placées sur la grille de jeu.
+          Ces lettres sont identiques pour tous les joueurs et elles constituent
+          la grille du jour. Vous disposez d'une journée entière pour
+          participer à cette partie. Le changement de lettres a lieu à minuit
+          UTC, ce qui en France correspond à 1 heure du matin (heure d'hiver) ou
+          2 heures du matin (heure d'été).
+        </p>
+
+        <p>
+          Avec ces 16 lettres, vous pouvez commencer à rechercher les mots
+          présents dans la grille comme sur Boggle. Pour cela, vous devez former
+          des mots en reliant les lettres adjacentes. Les cases peuvent être
+          reliées si elles se "touchent" que ce soit horizontalement (à gauche
+          ou à droite), verticalement (au dessus ou au dessous) ou même
+          diagonalement. Notez qu'une case ne peut pas être utilisée plus d'une
+          fois dans le même mot.
+        </p>
+
+        <h2>Règles du jeu</h2>
+
+        <p>
+          Pour qu'un mot soit valable, il doit respecter un certain nombre de
+          conditions :
+        </p>
+
+        <ul>
+          <li>Il doit compter 4 lettres ou plus</li>
+          <li>Il ne peut pas contenir plus de 9 lettres</li>
+          <li>Il doit exister dans la liste des mots acceptés</li>
+        </ul>
+
+        <p>
+          Les mots acceptés par LaBOG sont tous issus du dictionnaire de
+          <a href="https://grammalecte.net/">Grammalecte</a> (version 7.5), à
+          l'exception :
+        </p>
+
+        <ul>
+          <li>Des mots vraiment trop compliqués</li>
+          <li>Des noms propres</li>
+          <li>Des mots composés</li>
+          <li>Des formes conjuguées</li>
+        </ul>
+
+        <p>
+          Par contre, les pluriels, les verbes à l'infinitif, les participes
+          passés et les participes présents sont bien autorisés. Pour corser un
+          peu le jeu, chaque partie quotidienne de LaBOG contient au minimum un
+          mot de 8 ou 9 lettres !
+        </p>
+
+        <p class="play">
+          <img src="../img/labog-lettres.png" title="LaBOG : premier mot de 8 lettres" alt="" />
+        </p>
+
+        <h2>Compter les points</h2>
+
+        <p>
+          LaBOG compte automatiquement le nombre de mots trouvés ainsi que le
+          score que cela représente. Le fait de trouver un mot de 4 lettres
+          rapporte 1 point. Les mots de plus de 4 lettres rapportent 1 point par
+          lettre :
+        </p>
+
+        <ul>
+          <li>4 lettres => 1 point</li>
+          <li>5 lettres => 5 points</li>
+          <li>6 lettres => 6 points</li>
+          <li>7 lettres => 7 points</li>
+          <li>8 lettres => 8 points</li>
+          <li>9 lettres => 9 points</li>
+        </ul>
+
+        <p>
+          C'est le score (et pas le nombre de points) qui détermine le niveau
+          atteint dans le jeu. Pour gagner à LaBOG, l'objectif est d'atteindre
+          le niveau "Génial", ce qui est réalisé en réussissant à faire environ
+          60&nbsp;% du total des points possibles.
+        </p>
+
+        <p>
+          Normalement, le niveau "Génial" est atteignable avec un bon
+          vocabulaire "courant", sans avoir besoin de piocher dans les mots
+          trop rares.
+        </p>
+
+        <p>
+          Théoriquement, le niveau des parties quotidiennes progresse tout au
+          long de la semaine, en allant de la plus facile à la plus difficile :
+        </p>
+
+        <ul>
+          <li>Partie facile le lundi</li>
+          <li>Partie un peu moins facile le mardi</li>
+          <li>Partie moyenne le mercredi</li>
+          <li>Partie plutôt moyenne le jeudi</li>
+          <li>Partie un peu plus difficile le vendredi</li>
+          <li>Partie difficile le samedi</li>
+        </ul>
+
+        <p>
+          Puis la semaine se termine en douceur avec une autre partie moyenne le
+          dimanche.
+        </p>
+
+        <h2>Conclusion</h2>
+
+        <p>
+          J'espère que cette documentation vous a aidé à comprendre les règles
+          de base pour <a href="/labog/">jouer à LaBOG</a>. Et maintenant,
+          bonne chance et amusez-vous bien !
+        </p>
+
+        <p>
+          Michel <span>(2023/04/19)</span>
+        </p>
+
+      </div>
+
+      <div class="row" id="pub">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- solitaire -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5475403929650645"
+     data-ad-slot="2876021655"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      </div>
+
+      <footer>
+        <p>
+          &copy; 2023
+          <span>
+            / <a href="/" title="Play Klondike Solitaire">Solitaire</a>
+            / <a href="/games/" title="Online solitaire games">Games</a>
+            / <a href="/about/" title="About Solitaire-Play">About</a>
+            / <a href="/blog/" title="Solitaire News">Blog</a>
+            / <a href="/lemot/" title="WORDLE en français" hreflang="fr-FR">LeMOT</a>
+          </span>
+          <span>
+            - https://www.solitaire-play.com/
+          </span>
+        </p>
+      </footer>
+
+    </div>
+
+  </body>
+
+</html>
