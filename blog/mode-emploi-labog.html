@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Solitaire / Mode emploi LaBOG</title>
+    <meta name="description" content="Comment jouer à LaBOG, un jeu de mots quotidien inspiré de Boggle">
+    <meta name="keywords" content="Boggle, Ruzzle, Word Hunt, Word Blitz, Mots cachés, Français, Scrabble, Wordle, Jeu, Puzzle, Vocabulaire, Dictionnaire, Mot, Mots, Croisés, Fléchés, Mélés, Deviner, Découvrir, France, Français, Gratuit, Jouer, HTML5, JS, JavaScript">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="../css/solitaire.min.css">
+    <style>
+      .play { text-align: center; }
+      @media (max-width: 24rem) { .play > img { height: 100%; width: 100%; padding: 0 30px; } }
+      .notes { font-style: italic; }
+      svg {
+        background-color: white;
+        fill: gray;
+        height: 1.1em;
+        width: 1.1em;
+      }
+      svg.btns {
+        background-color: #0d6efd;
+        fill: white;
+        border-radius: 2px;
+        padding: 1px;
+      }
+    </style>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+    <script>if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"michelc@gmail.com ",utcoffset:"1"}))};sessionStorage.setItem("_swa","1");</script>
+  </head>
+
+  <body class="blog">
+
+    <div class="container">
+
+      <div class="row">
+
+        <h1>
+          <a href="/" title="Play Solitaire online">Solitaire</a>
+          / Mode emploi LaBOG
+        </h1>
+
+        <p>
+          <a href="/labog/">LaBOG</a> est un jeu de mots quotidien inspiré de
+          Boggle qui se joue à partir d'une grille de 16 lettres disposées sur
+          un plateau de 4 cases sur 4.
+        </p>
+
+        <p class="play">
+          <img src="../img/labog/labog-grille-230.png" title="LaBOG : grille de départ" alt="" />
+        </p>
+
+        <p class="notes">
+          Cet article présente le fonctionnement du jeu et décrit comment
+          l'utiliser et comment il fonctionne. Pour avoir des explications plus
+          détaillées sur la règle du jeu, vous pouvez aussi consulter
+          <a href="jouer-a-labog.html" title="Règles du jeu LaBOG">Comment jouer à LaBOG&nbsp;?</a>
+        </p>
+
+        <h2>Menu principal</h2>
+
+        <p>
+          Appuyer sur l'icone <svg><use href="#icone-menu"></use></svg> en haut
+          à la gauche du titre de l'écran pour faire apparaitre le menu
+          principal du jeu :
+        </p>
+
+        <p class="play">
+          <img src="../img/labog/labog-menu.png" title="LaBOG : menu principal" alt="" />
+        </p>
+
+        <ul>
+          <li>
+            "Comment jouer ?" présente succinctement la règle du jeu et les mots
+            acceptés.
+          </li>
+          <li>
+            "Informations" indique le nombre de mots acceptés sur la partie du
+            jour et le nombre de points nécessaires pour terminer la partie.
+          </li>
+          <li>
+            "Solutions" affiche la grille de la partie précédente avec la liste
+            des réponses possibles.
+          </li>
+        </ul>
+
+        <p class="notes">
+          Plus on joue, plus on s'améliore... surtout si on consulte
+          régulièrement les solutions de la partie précédente pour voir ce qui
+          nous avait échappé :)
+        </p>
+
+        <h2>
+          Saisir un mot
+        </h2>
+
+        <p>
+          Pour proposer une réponse, vous devez taper votre mot en appuyant sur
+          les cases de la grille. Les lettres du mot entré doivent se suivre en
+          se touchant (horizontalement, verticalement ou en diagonale). Et il
+          n'est pas possible d'utiliser deux fois la même case.
+        </p>
+
+        <p class="play">
+          <video controls width="300px" height="518px">
+            <source src="../img/labog/labog-video.mp4" type="video/mp4">
+          </video>
+        </p>
+
+        <p>
+          Comme le montre la vidéo, la couleur des cases change au fur et à
+          mesure de la saisie :
+        </p>
+
+        <ul>
+          <li>Une fois utilisée, la case est bleue.</li>
+          <li>La dernière case sélectionnée est orange.</li>
+          <li>Les cases inutilisables (car non adjacentes) sont grises.</li>
+        </ul>
+
+        <p class="notes">
+          Si besoin, l'icone <svg class="btns"><use href="#touche-back"></use></svg>
+          (en bas à gauche de la grille) permet d'effacer la dernière lettre
+          choisie.
+        </p>
+
+        <p>
+          Quand le mot est complet, il reste à valider la saisie avec l'icone
+          <svg class="btns"><use href="#touche-enter"></use></svg> (en bas à droite de la grille).
+        </p>
+
+        <ul>
+          <li>
+            Si le mot est correct, une animation indique le nombre de points
+            gagnés grâce à lui.
+          </li>
+          <li>
+            Le message "Mot inconnu" apparait lorsque le mot saisi ne fait pas
+            parti des mots acceptés par LaBOG.
+          </li>
+          <li>
+            En cas d'erreur, un message "Déjà trouvé" ou "Trop court" explique
+            pourquoi le mot est refusé.
+          </li>
+        </ul>
+
+        <h2>
+          Déroulement du jeu
+        </h2>
+
+        <p>
+          Après chaque mot validé, le milieu de l'écran de LaBOG permet de
+          visualiser la progression dans la partie :
+        </p>
+
+        <p class="play">
+          <img src="../img/labog/labog-niveau-5.png" title="LaBOG : niveau du jeu" alt="" />
+        </p>
+
+        <ul>
+          <li>Le niveau en cours : "Joli"</li>
+          <li>Le nombre de mots trouvés : 10</li>
+          <li>Le nombre de points obtenus : 50</li>
+        </ul>
+
+        <p>
+          C'est le nombre de points qui détermine le niveau en cours. La partie
+          démarre avec zéro point au niveau "C'est parti" :
+        </p>
+
+        <p class="play">
+          <img src="../img/labog/labog-niveau-0.png" title="LaBOG : démarrage du jeu" alt="" />
+        </p>
+
+        <p>
+          Le nombre de points est calculé en fonction des mots trouvés. Les mots
+          de 4 lettres ne font gagner que 1 seul point. Les mots plus longs (de
+          5 à 9 lettres) rapportent 1 point par lettre (de 5 à 9 points donc).
+        </p>
+
+        <p class="play">
+          <img src="../img/labog/labog-niveau-1.png" title="LaBOG : premier niveau" alt="" />
+        </p>
+
+        <p>
+          L'objectif est de réaliser environ 60&nbsp;% du total des points
+          possibles pour arriver au niveau "Génial" et ainsi gagner la partie.
+        </p>
+
+        <p class="play">
+          <img src="../img/labog/labog-niveau-8.png" title="LaBOG : niveau Génial atteint" alt="" />
+        </p>
+
+        <p class="notes">
+          La partie est gagné lorsque le niveau "Génial" est atteint. Mais il
+          reste des mots jouables... Et donc, un ultime niveau "Formidable" pour
+          les personnes qui réussissent à découvrir tous les mots acceptés.
+        </p>
+
+        <h2>C'est quoi cette icone "recycler" ?</h2>
+
+        <p>
+          Réponse : C'est pour éviter de tourner en rond :)
+        </p>
+
+        <p>
+          Au lieu de tourner autour de la grille en trépignant, ça permet de
+          faire tourner la grille ! On a alors un autre point de vue, ce qui
+          aide beaucoup pour trouver de nouveaux mots...
+        </p>
+
+        <p>
+          Au commencement il y a la grille au naturel :
+        </p>
+
+        <p class="play">
+          <img src="../img/labog/labog-tourner-1.png" title="LaBOG : grille numéro 230" alt="" />
+        </p>
+
+        <p>
+          Après un premier clic sur <svg class="btns"><use href="#touche-shuffle"></use></svg>
+          celle-ci effectue un quart de tour vers la droite :
+        </p>
+
+        <p class="play">
+          <img src="../img/labog/labog-tourner-2.png" title="LaBOG : j'ai cru voir un nouveau mot..." alt="" />
+        </p>
+
+        <p>
+          Et ainsi de suite...
+        </p>
+
+        <p class="notes">
+          L'icone devient grise (et donc inutilisable) dès qu'une lettre a été
+          saisie.
+        </p>
+
+        <h2>A quoi sert l'ampoule ?</h2>
+
+        <p>
+          Réponse : Elle indique le nombre de mots qu'il reste à trouver !
+        </p>
+
+        <p class="play">
+          <img src="../img/labog/labog-ampoule-1.png" title="LaBOG : affichage des indices" alt="" />
+        </p>
+
+        <ul>
+          <li>
+            Zone de saisie : au début de la partie il y a 27 mots de 4 lettres,
+            20 de 5 lettres, ... 1 de 8 lettres et zéro de 9 lettres
+          </li>
+          <li>
+            Grille de lettres : il y a 3 mots qui commencent par un "E", 8 par
+            un "S", 9 par un "R", 6 par un "N", 5 par un "U", zéro par un "I", ...
+          </li>
+        </ul>
+
+        <p>
+          Ces nombres sont ensuite recalculés au fur et à mesure qu'on trouve
+          des mots pour indiquer combien il en reste à découvrir.
+        </p>
+
+        <p class="play">
+          <img src="../img/labog/labog-ampoule-2.png" title="LaBOG : mise à jour des indices" alt="" />
+        </p>
+
+        <p>
+          Mauvaise nouvelle, y'a un bug...
+        </p>
+
+        <p class="play">
+          <img src="../img/labog/labog-ampoule-3.png" title="LaBOG : merci Laurent pour l'astuce" alt="" />
+        </p>
+
+        <div class="notes">
+          <p>
+            Les cases grisées (le "O" et le "J" dans la copie d'écran) indiquent
+            que la lettre n'est plus du tout utilisée dans les mots qui restent
+            à trouver :
+          </p>
+          <ul>
+            <li>Plus de mots qui commencent par "O" ou "J"</li>
+            <li>Plus de mots qui <strong>contiennent</strong> un "O" ou un "J"</li>
+          </ul>
+          <p>
+            À la différence du "I" pour lequel l'ampoule indique seulement qu'il
+            n'y a plus de mot débutant par un "I". Par contre, il reste encore
+            au moins un mot qui contient cette lettre "I".
+          </p>
+        </div>
+
+        <h2>Conclusion</h2>
+
+        <p>
+          Il reste encore quelques trucs à expliquer, mais cette documentation
+          devrait vous permettre de <a href="/labog/">jouer à LaBOG</a> dans de
+          bonnes conditions. Alors bonne chance, et que le meilleur gagne...
+        </p>
+
+        <p>
+          Michel <span>(2023/05/18)</span>
+        </p>
+
+      </div>
+
+      <div style="display: none">
+        <svg>
+          <symbol id="icone-menu" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+          </symbol>
+          <symbol id="icone-annonce" viewBox="0 0 16 16">
+            <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+            <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z"/>
+          </symbol>
+          <symbol id="icone-ferme" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+            <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+          </symbol>
+          <symbol id="touche-enter" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+          </symbol>
+          <symbol id="touche-back" viewBox="0 0 16 16">
+            <path d="M5.83 5.146a.5.5 0 0 0 0 .708L7.975 8l-2.147 2.146a.5.5 0 0 0 .707.708l2.147-2.147 2.146 2.147a.5.5 0 0 0 .707-.708L9.39 8l2.146-2.146a.5.5 0 0 0-.707-.708L8.683 7.293 6.536 5.146a.5.5 0 0 0-.707 0z"/>
+            <path d="M13.683 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-7.08a2 2 0 0 1-1.519-.698L.241 8.65a1 1 0 0 1 0-1.302L5.084 1.7A2 2 0 0 1 6.603 1h7.08zm-7.08 1a1 1 0 0 0-.76.35L1 8l4.844 5.65a1 1 0 0 0 .759.35h7.08a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1h-7.08z"/>
+          </symbol>
+          <symbol id="touche-lightbulb" viewBox="0 0 16 16">
+            <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z"/>
+          </symbol>
+          <symbol id="touche-shuffle" viewBox="0 0 16 16">
+            <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+            <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+          </symbol>
+        </svg>
+      </div>
+
+      <footer>
+        <p>
+          &copy; 2023
+          <span>
+            / <a href="/" title="Play Klondike Solitaire">Solitaire</a>
+            / <a href="/games/" title="Online solitaire games">Games</a>
+            / <a href="/about/" title="About Solitaire-Play">About</a>
+            / <a href="/blog/" title="Solitaire News">Blog</a>
+            / <a href="/lemot/" title="WORDLE en français" hreflang="fr-FR">LeMOT</a>
+          </span>
+          <span>
+            - https://www.solitaire-play.com/
+          </span>
+        </p>
+      </footer>
+
+    </div>
+
+  </body>
+
+</html>
