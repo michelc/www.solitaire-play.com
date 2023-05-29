@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Solitaire / Play TheBOG</title>
+    <meta name="description" content="How to play TheBOG, a daily word game inspired by Boggle">
+    <meta name="keywords" content="Boggle, Ruzzle, Word Hunt, Word Blitz, Wordsearch, English, Scrabble, Wordle, Game, Puzzle, Vocabulary, Dictionary, Word, Words, Crossword, Shuffle, Guess, Discover, Free, Play, HTML5, JS, JavaScript">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
+    <link rel="stylesheet" href="../css/solitaire.min.css">
+    <style>
+      .play { text-align: center; }
+      @media (max-width: 24rem) { .play > img { height: 100%; width: 100%; padding: 0 30px; } }
+      .notes { font-style: italic; }
+    </style>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+    <script>if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"michelc@gmail.com ",utcoffset:"1"}))};sessionStorage.setItem("_swa","1");</script>
+  </head>
+
+  <body class="blog">
+
+    <div class="container">
+
+      <div class="row">
+
+        <h1>
+          <a href="/" title="Play Solitaire online">Solitaire</a>
+          / Play TheBOG
+        </h1>
+
+        <p>
+          <a href="/thebog/">TheBOG</a> is a daily word game inspired by Boggle
+          that's played on a grid of 16 letters arranged on a 4 by 4 board.
+        </p>
+
+        <p class="play">
+          <img src="../img/labog/labog-grille.png" title="TheBOG : starting grid" alt="" />
+        </p>
+
+        <!--
+        <p class="notes">
+          This article explains the game rules in detail. For instructions on
+          how to play, you can also refer to
+          <a href="mode-emploi-labog.html" title="How to use TheBOG">TheBOG User Manual</a>.
+        </p>
+        -->
+
+        <h2>Objective of the Game</h2>
+
+        <p>
+          The goal of TheBOG is to find as many words as possible by connecting
+          adjacent cells on the board, either horizontally, vertically, or
+          diagonally.
+        </p>
+
+        <p>
+          At the beginning of the game, 16 letters are placed on the game grid.
+          These letters are the same for all players and make up the daily grid.
+          You have a full day to participate in this game. The letter are
+          updated at midnight UTC, which corresponds to 1 am (winter time) or 2
+          am (summer time) in France.
+        </p>
+
+        <p>
+          Using these 16 letters, you can start searching for words that are
+          present on the grid, similar to Boggle. To do this, you must form
+          words by connecting adjacent letters. Cells can be connected if they
+          "touch" either horizontally (left or right), vertically (above or
+          below), or even diagonally. It's important to note that a cell cannot
+          be used more than once in the same word.
+        </p>
+
+        <h2>Game Rules</h2>
+
+        <p>
+          For a word to be valid, it must meet certain conditions:
+        </p>
+
+        <ul>
+          <li>It must be at least 4 letters long</li>
+          <li>It cannot exceed 9 letters</li>
+          <li>It must be listed in the accepted words</li>
+        </ul>
+
+        <p>
+          TheBOG only accepts words from the
+          <a href="https://github.com/Fj00/CEL">Common English Lexicon (CEL)</a>.
+          Verbs and conjugations are allowed, but proper nouns are not accepted.
+          To make things more challenging, each daily TheBOG game includes at
+          least one word with 8 or 9 letters!
+        </p>
+
+        <p class="play">
+          <img src="../img/labog/labog-lettres.png" title="TheBOG : first word with 8 letters" alt="" />
+        </p>
+
+        <h2>Scoring</h2>
+
+        <p>
+          TheBOG automatically keeps track of the number of words found and
+          calculates their scores. Finding a 4-letter word is worth 1 point.
+          Words with more than 4 letters earn 1 point per letter:
+        </p>
+
+        <ul>
+          <li>4 letters => 1 point</li>
+          <li>5 letters => 5 points</li>
+          <li>6 letters => 6 points</li>
+          <li>7 letters => 7 points</li>
+          <li>8 letters => 8 points</li>
+          <li>9 letters => 9 points</li>
+        </ul>
+
+        <p>
+          The score, not the number of words, determines the level achieved in
+          the game. The objective in TheBOG is to reach the "Genius" level,
+          which requires scoring around 60% of the total possible points.
+        </p>
+
+        <p>
+          Typically, the "Genius" level is attainable with a good "everyday"
+          vocabulary, without the need for rare words.
+        </p>
+
+        <p>
+          Theoretically, the difficulty of each daily game progresses throughout
+          the week, starting from easiest to most difficult:
+        </p>
+
+        <ul>
+          <li>Easy game on Monday</li>
+          <li>Slightly less easy game on Tuesday</li>
+          <li>Moderate game on Wednesday</li>
+          <li>Fairly average game on Thursday</li>
+          <li>Somewhat more challenging game on Friday</li>
+          <li>Difficult game on Saturday</li>
+        </ul>
+
+        <p>
+          The week concludes with another moderately challenging game on Sunday.
+        </p>
+
+        <h2>Conclusion</h2>
+
+        <p>
+          I hope this documentation has helped you understand the basic rules
+          for <a href="/thebog/">playing TheBOG</a>. So... good luck and have
+          fun!
+        </p>
+
+        <p>
+          Michel <span>(2023/05/29)</span>
+        </p>
+
+      </div>
+
+      <div class="row" id="pub">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- solitaire -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5475403929650645"
+     data-ad-slot="2876021655"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      </div>
+
+      <footer>
+        <p>
+          &copy; 2023
+          <span>
+            / <a href="/" title="Play Klondike Solitaire">Solitaire</a>
+            / <a href="/games/" title="Online solitaire games">Games</a>
+            / <a href="/about/" title="About Solitaire-Play">About</a>
+            / <a href="/blog/" title="Solitaire News">Blog</a>
+            / <a href="/lemot/" title="WORDLE en français" hreflang="fr-FR">LeMOT</a>
+          </span>
+          <span>
+            - https://www.solitaire-play.com/
+          </span>
+        </p>
+      </footer>
+
+    </div>
+
+  </body>
+
+</html>
