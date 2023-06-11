@@ -98,31 +98,31 @@
   </url>
   <url>
     <loc>https://www.solitaire-play.com/lemot/</loc>
-    <lastmod>2023-05-28</lastmod>
+    <lastmod>2023-06-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.solitaire-play.com/lemot6/</loc>
-    <lastmod>2023-05-28</lastmod>
+    <lastmod>2023-06-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.solitaire-play.com/labee/</loc>
-    <lastmod>2023-05-28</lastmod>
+    <lastmod>2023-06-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.solitaire-play.com/labog/</loc>
-    <lastmod>2023-05-28</lastmod>
+    <lastmod>2023-06-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.solitaire-play.com/thebog/</loc>
-    <lastmod>2023-05-28</lastmod>
+    <lastmod>2023-06-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -254,7 +254,7 @@
   </url>
   <url>
     <loc>https://www.solitaire-play.com/blog/labee/</loc>
-    <lastmod>2023-05-28</lastmod>
+    <lastmod>2023-06-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -435,6 +435,12 @@
   <url>
     <loc>https://www.solitaire-play.com/blog/labee/labee-30-o-ilnprt.html</loc>
     <lastmod>2023-06-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.solitaire-play.com/blog/labee/labee-31-o-bgilnw.html</loc>
+    <lastmod>2023-06-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
