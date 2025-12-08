@@ -98,31 +98,31 @@
   </url>
   <url>
     <loc>https://www.solitaire-play.com/lemot/</loc>
-    <lastmod>2025-11-23</lastmod>
+    <lastmod>2025-12-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.solitaire-play.com/lemot6/</loc>
-    <lastmod>2025-11-23</lastmod>
+    <lastmod>2025-12-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.solitaire-play.com/labee/</loc>
-    <lastmod>2025-11-23</lastmod>
+    <lastmod>2025-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.solitaire-play.com/labog/</loc>
-    <lastmod>2025-11-23</lastmod>
+    <lastmod>2025-12-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.solitaire-play.com/thebog/</loc>
-    <lastmod>2025-11-23</lastmod>
+    <lastmod>2025-12-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -831,6 +831,12 @@
   <url>
     <loc>https://www.solitaire-play.com/blog/labee/labee-95-b-ailnot.html</loc>
     <lastmod>2025-11-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.solitaire-play.com/blog/labee/labee-96-t-eginux.html</loc>
+    <lastmod>2025-12-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
